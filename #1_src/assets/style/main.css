@@ -1,0 +1,26 @@
+:root {
+	--color-background-primary: #FBFBFB;
+	--color-background-secondary: #FFFFFF;
+	--color-font-primary: #353535;
+	--color-font-secondary: #9b9b9b;
+	--color-font-validation: #ee5253;
+}
+
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+html {
+	background-color: var(--color-background-primary);
+	width: 100%;
+	height: 100%;
+	color: var(--color-font-primary);
+	font-family: 'Open Sans', sans-serif;
+	font-size: calc(15px + 0.390625vw);
+}
+
+.hidden-element {
+	display: none !important;
+}

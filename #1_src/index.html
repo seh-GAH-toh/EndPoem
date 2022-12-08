@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The End Poem by Julian Gough</title>
+	<link rel="stylesheet" href="assets/style/main.css">
+	<link rel="stylesheet" href="assets/style/loader.css">
+	<link rel="stylesheet" href="assets/style/home.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+
+	</header>
+	<main>
+		<section id="loader" class="loader">
+			<span class="spinner"></span>
+		</section>
+		<section id="home" class="home hidden-element">
+			<div class="home__container">
+				<div class="home__titles">
+					<h1 class="home__title">The End Poem</h1>
+					<h2 class="home__subtitle">
+						<i>by Julian Gough</i>
+					</h2>
+				</div>
+				<form id="homeForm" class="home__input-field" autocomplete="off" novalidate>
+					<div class="home__input-group">
+						<input type="text" name="userName" id="userName" class="home__input" placeholder=" " required>
+						<label for="userName" class="home__label">Name:</label>
+						<button id="userNameButton" type="submit" class="home__button">
+							<svg xmlns="http://www.w3.org/2000/svg" class="home__icon" viewBox="0 0 16 16">
+								<path d="M15.85.15a.5.5 0 0 1 .11.54l-5.82 14.54a.75.75 0 0 1-1.32.13l-3.18-5-5-3.18a.75.75 0 0 1 .13-1.33L15.3.04a.5.5 0 0 1 .54.1Zm-9.21 9.92 2.76 4.34 4.73-11.83-7.5 7.49Zm6.78-8.2L1.6 6.6l4.34 2.76 7.5-7.5Z"/>
+							</svg>
+						</button>
+					</div>
+					<span id="homeValidationText" class="home__validation hidden-element">Please write your name in the field above.</span>
+				</form>
+			</div>
+		</section>
+		<section id="poem" class="poem hidden-element">
+			<article>
+				<p>I see the player you mean.</p>
+				<p>((insert player’s name here))?</p>
+			</article>
+		</section>
+	</main>
+	<script src="assets/scripts/main.js"></script>
+</body>
+
+</html>
+<!--
+	Credits
+	Spinner:
+	https://cssloaders.github.io
+	Shadow Box:
+	https://getcssscan.com/css-box-shadow-examples
+	Icon:
+	https://icons.getbootstrap.com/icons/send/
+	Font:
+	https://fonts.google.com/specimen/Open+Sans?preview.text=The%20End%20Poem&preview.size=55&preview.text_type=custom&sort=popularity&subset=latin-ext&noto.lang=cs_Latn
+-->

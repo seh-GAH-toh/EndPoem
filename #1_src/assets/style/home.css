@@ -1,0 +1,114 @@
+.home {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+}
+
+.home__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 5vh 5vw 5vh 5vw;
+	gap: 10vh;
+}
+
+.home__titles {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	line-height: 1;
+}
+
+.home__title {
+	font-size: 3.5rem;
+}
+
+.home__subtitle {
+	font-size: 1.8rem;
+	font-weight: 100;
+}
+
+.home__input-field {
+	position: relative;
+}
+
+.home__input-group {
+	display: flex;
+	flex-direction: row;
+	transition: border-color 0.2s;
+	border-bottom: 2px solid var(--color-font-secondary);
+}
+
+.home__input-group:focus-within {
+	border-bottom: 2px solid var(--color-font-primary);
+}
+
+.home__input-group:focus-within .home__button {
+	fill: var(--color-font-primary);
+}
+
+.home__input-group:focus-within>.home__label {
+	display: block;
+	position: absolute;
+	top: -0.6rem;
+	transition: 0.2s;
+	color: var(--color-font-primary);
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.home__input {
+	outline: 0;
+	background: transparent;
+	padding: 7px 0;
+	text-transform: capitalize;
+	color: var(--color-font-primary);
+	font-family: inherit;
+	font-size: 1rem;
+}
+
+.home__input::placeholder {
+	color: transparent;
+}
+
+.home__input:not(:placeholder-shown)~.home__label {
+	top: -0.6rem;
+	font-size: 0.8rem;
+}
+
+.home__button {
+	outline: 0;
+	background: transparent;
+	padding: 0vh 1vw 0vh 1vw;
+	font-family: inherit;
+	font-size: 0rem;
+	fill: var(--color-font-secondary);
+}
+
+.home__button:hover {
+	cursor: pointer;
+}
+
+.home__icon {
+	width: 1rem;
+	height: 1rem;
+}
+
+.home__label {
+	display: block;
+	position: absolute;
+	top: 0;
+	transition: 0.2s;
+	color: var(--color-font-secondary);
+	font-size: 1rem;
+}
+
+.home__validation {
+	color: var(--color-font-validation);
+	font-size: 0.7rem;
+}
