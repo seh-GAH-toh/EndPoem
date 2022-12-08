@@ -1,0 +1,25 @@
+.poem {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.poem__container {
+    display: flex;
+    flex-direction: column;
+    padding: 20vh 30vw 20vh 30vw;
+    line-height: 1.5;
+    gap: 2vh;
+}
+
+.poem__title {
+    font-size: 1.5rem;
+}
+
+.poem__text {
+    color: var(--color-font-poem);
+    font-size: 0.8rem;
+}
+
+.poem__text--blue {
+    color: var(--color-font-poem-secondary);
+}

@@ -6,7 +6,7 @@
 	height: 100vh;
 }
 
-.spinner {
+.loader__spinner {
 	box-sizing: border-box;
 	display: inline-block;
 	border: 2px solid var(--color-font-primary);
