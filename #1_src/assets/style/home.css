@@ -89,6 +89,8 @@
 	font-family: inherit;
 	font-size: 0rem;
 	fill: var(--color-font-secondary);
+	min-width: 50px;
+	min-height: 50px;
 }
 
 .form__button:hover {

@@ -3,7 +3,8 @@
     font-style: normal;
     font-weight: 400;
     src: local(''),
-        url('../fonts/open-sans-400.woff2') format('woff2')
+        url('../fonts/open-sans-400.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
@@ -11,7 +12,8 @@
     font-style: normal;
     font-weight: 700;
     src: local(''),
-        url('../fonts/open-sans-700.woff2') format('woff2')
+        url('../fonts/open-sans-700.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
@@ -19,5 +21,6 @@
     font-style: normal;
     font-weight: 400;
     src: local(''),
-        url('../fonts/nothing-you-could-do-400.woff2') format('woff2')
+        url('../fonts/nothing-you-could-do-400.woff2') format('woff2');
+    font-display: swap;
 }

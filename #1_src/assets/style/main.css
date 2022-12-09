@@ -2,7 +2,7 @@
 	--color-background-primary: #FBFBFB;
 	--color-background-secondary: #FFFFFF;
 	--color-font-primary: #353535;
-	--color-font-secondary: #9b9b9b;
+	--color-font-secondary: #6d6d6d;
 	--color-font-validation: #ee5253;
 	--color-font-poem: #007800;
 	--color-font-poem-secondary: #007878;
@@ -12,6 +12,7 @@
 	margin: 0;
 	border: 0;
 	padding: 0;
+	scroll-behavior: smooth;
 }
 
 html {
