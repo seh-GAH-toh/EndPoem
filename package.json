@@ -2,10 +2,17 @@
   "name": "theendpoem.com",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "source": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "author": "Arthur Segato Paulo",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.8.1",
+    "@parcel/transformer-webmanifest": "^2.8.1",
+    "parcel": "latest"
+  }
 }
