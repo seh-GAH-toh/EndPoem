@@ -5,6 +5,7 @@ const userNameDOM = document.getElementById("form-username");
 const validationTextDOM = document.getElementById("form-validation")
 const poemDOM = document.getElementById("poem");
 const modalDOM = document.getElementById("modal");
+const modalCloseDOM = document.getElementById("modal__button");
 const headerDOM = document.getElementById("header");
 const headerButtonDOM = document.getElementById("header-button");
 const playerName1DOM = document.getElementById("poem-name-1");
@@ -65,6 +66,12 @@ headerButtonDOM.addEventListener("click", () => {
 	headerButtonDOM.classList.add("header__button--active");
 	showElement(modalDOM);
 	disableScroll();
+})
+
+modalCloseDOM.addEventListener("click", () => {
+	headerButtonDOM.classList.remove("header__button--active");
+	hiddeElement(modalDOM);
+	enableScroll();
 })
 
 window.addEventListener("load", () => {

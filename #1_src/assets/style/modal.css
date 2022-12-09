@@ -11,6 +11,7 @@
 }
 
 .modal__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: var(--color-background-primary);
@@ -18,6 +19,32 @@
     width: 60%;
     height: fit-content;
     gap: 1vh;
+}
+
+.modal__button {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: transparent;
+    cursor: pointer;
+    width: 2vw;
+    height: 2vw;
+}
+
+.modal__button div {
+    margin-bottom: 6px;
+    border-radius: 4px;
+    background-color: var(--color-font-primary);
+    width: 100%;
+    height: 16%;
+}
+
+.modal__button div:first-child {
+    transform: translateY(85%) rotateZ(-45deg);
+}
+
+.modal__button div:last-child {
+    transform: translateY(-85%) rotateZ(45deg);
 }
 
 .modal__title {

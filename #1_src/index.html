@@ -4,30 +4,45 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google" content="notranslate">
+	<meta name="robots" content="noimageindex">
+	<meta name="revisit-after" content="1 day">
+	<meta name="theme-color" content="#353535">
+	<meta name="description" content>
+	<meta name="keywords" content="arthur,segato,arthursegato,arthur segato,segatto,arthursegatto,arthur segatto, developer, game developer, web developer,steam,games,dev,game dev,gamedev,itchio">
+	<meta property="og:title" content="The End Poem by Julian Gough">
+	<meta property="og:type" content="website">
+	<meta property="og:description" content>
+	<meta property="og:image:width" content="1240">
+	<meta property="og:image:height" content="650">
+	<meta property="og:image" content="https://theendpoem.com/images/facebook-card.jpg">
+	<meta property="og:url" content="https://theendpoem.com">
+	<meta property="og:site_name" content="The End Poem by Julian Gough">
+	<meta name="twitter:title" content="The End Poem by Julian Gough">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:description" content>
+	<meta name="twitter:image" content="https://theendpoem.com/images/twitter-card.jpg">
+	<meta name="twitter:url" content="https://theendpoem.com">
+	<meta name="twitter:site" content="https://theendpoem.com">
+	<link href="https://theendpoem.com" rel="canonical">
+	<link href="manifest.webmanifest" rel="manifest">
 	<title>The End Poem by Julian Gough</title>
+	<!-- inject:css -->
+	<link href="assets/style/fonts.css" rel="stylesheet">
 	<link href="assets/style/main.css" rel="stylesheet">
 	<link href="assets/style/loader.css" rel="stylesheet">
 	<link href="assets/style/home.css" rel="stylesheet">
 	<link href="assets/style/poem.css" rel="stylesheet">
 	<link href="assets/style/header.css" rel="stylesheet">
 	<link href="assets/style/modal.css" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<!-- endinject -->
 </head>
 <body>
-	<header id="header" class="header hidden-element">
-		<button id="header-button" class="header__button">
-			<div></div>
-			<div></div>
-			<div></div>
-		</button>
-	</header>
 	<main>
 		<section id="loader" class="loader hidden-element">
 			<span class="loader__spinner"></span>
 		</section>
-		<section id="home" class="home hidden-element">
+		<section id="home" class="home hidden-element fade-in-fwd">
 			<div class="home__container">
 				<div class="home__titles">
 					<h1 class="titles__title">The End Poem</h1>
@@ -48,7 +63,14 @@
 				</form>
 			</div>
 		</section>
-		<section id="poem" class="poem hidden-element">
+		<section id="poem" class="poem hidden-element fade-in-fwd">
+			<header id="header" class="header hidden-element">
+				<button id="header-button" class="header__button">
+					<div></div>
+					<div></div>
+					<div></div>
+				</button>
+			</header>
 			<article class="poem__container">
 				<h3 class="poem__title">The End Poem.</h3>
 				<p class="poem__text poem__text--blue">I see the player you mean.</p>
@@ -206,7 +228,11 @@
 			</article>
 		</section>
 		<section id="modal" class="modal hidden-element">
-			<div class="modal__container">
+			<div class="modal__container scale-in-center">
+				<button id="modal__button" class="modal__button">
+					<div></div>
+					<div></div>
+				</button>
 				<h4 class="modal__title">Credits</h4>
 				<article>
 					<h5 class="modal__subtitle">Poem:</h5>
@@ -256,7 +282,9 @@
 				<article>
 					<h5 class="modal__subtitle">Fonts:</h5>
 					<p class="modal__text">
-						<a href="https://fonts.google.com/specimen/Open+Sans?preview.text=The%20End%20Poem&preview.size=55&preview.text_type=custom&sort=popularity&subset=latin-ext&noto.lang=cs_Latn">Open Sans</a>
+						<a href="https://fonts.google.com/specimen/Open+Sans?preview.text=The%20End%20Poem&preview.size=55&preview.text_type=custom&sort=popularity&subset=latin-ext&noto.lang=cs_Latn">Open Sans</a> 
+						and <a href="https://fonts.google.com/specimen/Nothing+You+Could+Do?preview.text=by%20Julian%20Gough&preview.text_type=custom&category=Handwriting&sort=popularity">Nothing You Could Do
+						</a>
 					</p>
 				</article>
 				<article>
