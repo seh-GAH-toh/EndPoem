@@ -5,7 +5,6 @@ const userNameDOM = document.getElementById("form-username");
 const validationTextDOM = document.getElementById("form-validation")
 const poemDOM = document.getElementById("poem");
 const modalDOM = document.getElementById("modal");
-const modalCloseDOM = document.getElementById("modal__button");
 const headerDOM = document.getElementById("header");
 const headerButtonDOM = document.getElementById("header-button");
 const playerName1DOM = document.getElementById("poem-name-1");
@@ -19,6 +18,7 @@ document.getElementById("glitch-5"),
 document.getElementById("glitch-6"),
 document.getElementById("glitch-7"),
 document.getElementById("glitch-8")];
+let isCredits = false;
 
 const showElement = async element => element.classList.remove("hidden-element");
 
@@ -63,15 +63,18 @@ homeFormDOM.addEventListener("submit", (event) => {
 });
 
 headerButtonDOM.addEventListener("click", () => {
-	headerButtonDOM.classList.add("header__button--active");
-	showElement(modalDOM);
-	disableScroll();
-})
+	if(!isCredits) {
+		headerButtonDOM.classList.add("header__button--active");
+		hiddeElement(poemDOM);
+		showElement(modalDOM);
+		isCredits = true;
+	}else{
+		headerButtonDOM.classList.remove("header__button--active");
+		showElement(poemDOM);
+		hiddeElement(modalDOM);
+		isCredits = false;
+	}
 
-modalCloseDOM.addEventListener("click", () => {
-	headerButtonDOM.classList.remove("header__button--active");
-	hiddeElement(modalDOM);
-	enableScroll();
 })
 
 window.addEventListener("load", () => {

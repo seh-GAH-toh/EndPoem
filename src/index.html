@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,14 @@
 	<meta name="google" content="notranslate">
 	<meta name="robots" content="noimageindex">
 	<meta name="revisit-after" content="1 day">
-	<meta name="description" content="The End Poem is a freehand poem written by musician Julian Gough that appears when the player finishes minecraft, before the credits. It has been in the public domain, under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, since 2022.">
-	<meta name="keywords" content="the end poem,the end,poem,minecraft,julian,gough,julian gough,public doamin,public,domain">
+	<meta name="description"
+		content="The End Poem is a freehand poem written by musician Julian Gough that appears when the player finishes minecraft, before the credits. It has been in the public domain, under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, since 2022.">
+	<meta name="keywords"
+		content="the end poem,the end,poem,minecraft,julian,gough,julian gough,public doamin,public,domain">
 	<meta property="og:title" content="The End Poem by Julian Gough">
 	<meta property="og:type" content="website">
-	<meta property="og:description" content="The End Poem is a freehand poem written by musician Julian Gough that appears when the player finishes minecraft, before the credits. It has been in the public domain, under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, since 2022.">
+	<meta property="og:description"
+		content="The End Poem is a freehand poem written by musician Julian Gough that appears when the player finishes minecraft, before the credits. It has been in the public domain, under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, since 2022.">
 	<meta property="og:image:width" content="1240">
 	<meta property="og:image:height" content="650">
 	<meta property="og:image" content="card.jpg">
@@ -19,7 +23,8 @@
 	<meta property="og:site_name" content="The End Poem by Julian Gough">
 	<meta name="twitter:title" content="The End Poem by Julian Gough">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:description" content="The End Poem is a freehand poem written by musician Julian Gough that appears when the player finishes minecraft, before the credits. It has been in the public domain, under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, since 2022.">
+	<meta name="twitter:description"
+		content="The End Poem is a freehand poem written by musician Julian Gough that appears when the player finishes minecraft, before the credits. It has been in the public domain, under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, since 2022.">
 	<meta name="twitter:image" content="twitter.jpg">
 	<meta name="twitter:url" content="https://www.theendpoem.com">
 	<meta name="twitter:site" content="https://www.theendpoem.com">
@@ -41,7 +46,15 @@
 	<link href="assets/style/header.css" rel="stylesheet">
 	<link href="assets/style/modal.css" rel="stylesheet">
 </head>
+
 <body>
+	<header id="header" class="header hidden-element fade-in-fwd">
+		<button id="header-button" class="header__button">
+			<div></div>
+			<div></div>
+			<div></div>
+		</button>
+	</header>
 	<main>
 		<section id="loader" class="loader hidden-element">
 			<span class="loader__spinner"></span>
@@ -54,11 +67,14 @@
 				</div>
 				<form id="home-form" class="home__form" autocomplete="off" novalidate>
 					<div class="form__input-field">
-						<input id="form-username" class="form__input" name="username" type="text" placeholder=" " required>
+						<input id="form-username" class="form__input" name="username" type="text" placeholder=" "
+							required>
 						<label class="form__label" for="form-username">Name:</label>
 						<button class="form__button" name="submit" type="submit" aria-label="Submit">
 							<svg class="form__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-								<path d="M15.85.15a.5.5 0 0 1 .11.54l-5.82 14.54a.75.75 0 0 1-1.32.13l-3.18-5-5-3.18a.75.75 0 0 1 .13-1.33L15.3.04a.5.5 0 0 1 .54.1Zm-9.21 9.92 2.76 4.34 4.73-11.83-7.5 7.49Zm6.78-8.2L1.6 6.6l4.34 2.76 7.5-7.5Z"></path>
+								<path
+									d="M15.85.15a.5.5 0 0 1 .11.54l-5.82 14.54a.75.75 0 0 1-1.32.13l-3.18-5-5-3.18a.75.75 0 0 1 .13-1.33L15.3.04a.5.5 0 0 1 .54.1Zm-9.21 9.92 2.76 4.34 4.73-11.83-7.5 7.49Zm6.78-8.2L1.6 6.6l4.34 2.76 7.5-7.5Z">
+								</path>
 							</svg>
 						</button>
 					</div>
@@ -68,13 +84,6 @@
 			</div>
 		</section>
 		<section id="poem" class="poem hidden-element fade-in-fwd">
-			<header id="header" class="header hidden-element">
-				<button id="header-button" class="header__button">
-					<div></div>
-					<div></div>
-					<div></div>
-				</button>
-			</header>
 			<article class="poem__container">
 				<h3 class="poem__title">The End Poem.</h3>
 				<p class="poem__text poem__text--blue">I see the player you mean.</p>
@@ -101,7 +110,8 @@
 				<p class="poem__text">Hah, the original interface. A million years old, and it still works. But what
 					true structure did this player create, in the reality behind the screen?</p>
 				<p class="poem__text">It worked, with a million others, to sculpt a true world in a fold of</p>
-				<p class="poem__text poem__text--blue">the <span id="glitch-1"></span>, and created a <span id="glitch-2"></span> for <span id="glitch-3"></span>, in the <span id="glitch-4"></span>.</p>
+				<p class="poem__text poem__text--blue">the <span id="glitch-1"></span>, and created a <span
+						id="glitch-2"></span> for <span id="glitch-3"></span>, in the <span id="glitch-4"></span>.</p>
 				<p class="poem__text">It cannot read that thought.</p>
 				<p class="poem__text poem__text--blue">No. It has not yet achieved the highest level. That, it must
 					achieve in the long
@@ -231,73 +241,52 @@
 				<p class="poem__text">Wake up.</p>
 			</article>
 		</section>
-		<section id="modal" class="modal hidden-element">
-			<div class="modal__container scale-in-center">
-				<button id="modal__button" class="modal__button">
-					<div></div>
-					<div></div>
-				</button>
+		<section id="modal" class="modal hidden-element fade-in-fwd">
+			<article class="modal__container">
 				<h4 class="modal__title">Credits</h4>
-				<article>
-					<h5 class="modal__subtitle">Poem:</h5>
-					<p class="modal__text">
-						<strong>'The End Poem'</strong> 
-						was made 
-						<a href="https://creativecommons.org/publicdomain/zero/1.0/">public domain</a> 
-						by his creator 
-						<a href="https://www.juliangough.com">Julian Gough</a>, 
-						you can read more about why 
-						<a href="https://theeggandtherock.substack.com/p/i-wrote-a-story-for-a-friend">on his blog</a>.</p>
-					<p class="modal__text">If you wish to support him, consider making a donation 
-						<a href="https://www.paypal.com/donate/?business=YVKG8LRYWWLP6&no_recurring=0&currency_code=EUR">
-							here.
-						</a>
-					</p>
-				</article>
-				<article>
-					<h5 class="modal__subtitle">Website:</h5>
-					<p class="modal__text">
-						This site was made by 
-						<a href="https://github.com/ArthurSegato">Arthur Segato</a>, 
-						if you find something broken please contact me through 
-						<a href="mailto:hello@theendpoem.com">hello@theendpoem.com</a>, 
-						or if you prefer to fix it yourself, you are very welcome to do so at 
-						<a href="https://github.com/ArthurSegato/Website-TheEndPOem">the github repositorie.</a>
-					</p>
-				</article>
-				<article>
-					<h5 class="modal__subtitle">Spinner:</h5>
-					<p class="modal__text">
-						<a href="https://cssloaders.github.io">https://cssloaders.github.io</a>
-					</p>
-				</article>
-				<article>
-					<h5 class="modal__subtitle">ShadowBox:</h5>
-					<p class="modal__text">
-						<a href="https://getcssscan.com/css-box-shadow-examples">https://getcssscan.com/css-box-shadow-examples</a>
-					</p>
-				</article>
-				<article>
-					<h5 class="modal__subtitle">Icons: by <a href="https://icons.getbootstrap.com">BootStrap Icons</a></h5>
-				</article>
-				<article>
-					<h5 class="modal__subtitle">Fonts:</h5>
-					<p class="modal__text">
-						<a href="https://fonts.google.com/specimen/Open+Sans?preview.text=The%20End%20Poem&preview.size=55&preview.text_type=custom&sort=popularity&subset=latin-ext&noto.lang=cs_Latn">Open Sans</a> 
-						and <a href="https://fonts.google.com/specimen/Nothing+You+Could+Do?preview.text=by%20Julian%20Gough&preview.text_type=custom&category=Handwriting&sort=popularity">Nothing You Could Do
-						</a>
-					</p>
-				</article>
-				<article>
-					<h5 class="modal__subtitle">Menu:</h5>
-					<p class="modal__text">
-						<a href="https://codepen.io/himalayasingh/pen/KOdJPM">https://codepen.io/himalayasingh/pen/KOdJPM</a>
-					</p>
-				</article>
-			</div>
+				<p class="modal__text">
+					The <strong>“End Poem”</strong> has been made <a
+						href="https://creativecommons.org/publicdomain/zero/1.0/">public domain</a> by its creator
+					<a href="https://www.juliangough.com">Julian Gough</a>,
+					if you want to know the reason behind his decision,
+					I recommend reading <a
+						href="https://theeggandtherock.substack.com/p/i-wrote-a-story-for-a-friend">this post</a> he
+					made on his blog,
+					plus if you wish to support his work,
+					consider making a donation on <a
+						href="https://www.paypal.com/donate/?business=YVKG8LRYWWLP6&no_recurring=0&currency_code=EUR">his
+						paypal.</a>
+				</p>
+				<p class="modal__text">
+					The <strong>"theendpoem.com"</strong> was created by <a
+						href="https://github.com/ArthurSegato">Arthur Segato</a>
+					with the goal to spread and disassociate the End Poem with <a
+						href="https://en.wikipedia.org/wiki/Minecraft">Minecraft</a>,
+					if you wish to support this project,
+					consider sending me a donation <a href="">on paypal</a>,
+					any amount is greatly appreciated.
+				</p>
+				<p class="modal__text">
+					All the resources used in the development of it are listed below,
+					if you find anything broken or want to request an improvement,
+					please send me an email through <a href="mailto:hello@theendpoem.com">hello@theendpoem.com</a>,
+					or if you prefer to fix it yourself,
+					you are very welcome to do so at the <a
+						href="https://github.com/ArthurSegato/Website-TheEndPOem">github repository</a>.
+				</p>
+				<p class="modal__text">
+					Icons by <a href="https://icons.getbootstrap.com">Bootstrap Icons</a>,
+					<a href="https://fonts.google.com/specimen/Open+Sans">Open Sans</a> and
+					<a href="https://fonts.google.com/specimen/Nothing+You+Could+Do">Nothing You Could Do</a> by
+					Google Fonts,
+					Shadowbox by <a href="https://getcssscan.com/css-box-shadow-examples">Css Scan</a>,
+					<a href="https://cssloaders.github.io">Spinner</a> and
+					<a href="https://codepen.io/himalayasingh/pen/KOdJPM">Menu button</a>.
+				</p>
+			</article>
 		</section>
 	</main>
-	<script src="assets/scripts/disabelScroll.js"></script>
 	<script src="assets/scripts/main.js"></script>
 </body>
+
 </html>

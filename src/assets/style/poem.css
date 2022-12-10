@@ -6,9 +6,9 @@
 .poem__container {
     display: flex;
     flex-direction: column;
-    padding: 20vh 30vw 20vh 30vw;
+    padding: var(--padding-topdown-poem-container) var(--padding-sides-poem-container) var(--padding-topdown-poem-container) var(--padding-sides-poem-container);
     line-height: 1.5;
-    gap: 2vh;
+    gap: 1rem;
 }
 
 .poem__title {

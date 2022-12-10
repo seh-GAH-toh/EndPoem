@@ -12,7 +12,7 @@
 	align-items: center;
 	justify-content: center;
 	padding: 5vh 5vw 5vh 5vw;
-	gap: 10vh;
+	gap: var(--gap-home-container);
 }
 
 .home__titles {
@@ -29,9 +29,9 @@
 }
 
 .titles__subtitle {
+	font-family: 'Nothing You Could Do', cursive;
 	font-size: 1.8rem;
 	font-weight: 400;
-	font-family: 'Nothing You Could Do', cursive;
 }
 
 .home__form {
@@ -86,11 +86,11 @@
 	outline: 0;
 	background: transparent;
 	padding: 0vh 1vw 0vh 1vw;
+	min-width: 50px;
+	min-height: 50px;
 	font-family: inherit;
 	font-size: 0rem;
 	fill: var(--color-font-secondary);
-	min-width: 50px;
-	min-height: 50px;
 }
 
 .form__button:hover {

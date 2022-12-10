@@ -1,50 +1,14 @@
 .modal {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(0, 0, 0, 0.8);
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .modal__container {
-    position: relative;
     display: flex;
     flex-direction: column;
-    background-color: var(--color-background-primary);
-    padding: 5vh 5vw 5vh 5vw;
-    width: 60%;
-    height: fit-content;
-    gap: 1vh;
-}
-
-.modal__button {
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    background-color: transparent;
-    cursor: pointer;
-    width: 2vw;
-    height: 2vw;
-}
-
-.modal__button div {
-    margin-bottom: 6px;
-    border-radius: 4px;
-    background-color: var(--color-font-primary);
-    width: 100%;
-    height: 16%;
-}
-
-.modal__button div:first-child {
-    transform: translateY(85%) rotateZ(-45deg);
-}
-
-.modal__button div:last-child {
-    transform: translateY(-85%) rotateZ(45deg);
+    padding: var(--padding-topdown-poem-container) var(--padding-sides-poem-container) var(--padding-topdown-poem-container) var(--padding-sides-poem-container);
+    line-height: 1.5;
+    gap: 1rem;
 }
 
 .modal__title {
@@ -52,10 +16,6 @@
     text-align: center;
     font-size: 2.5rem;
     font-weight: 400;
-}
-
-.modal__subtitle {
-    font-size: 1.2rem;
 }
 
 .modal__text {

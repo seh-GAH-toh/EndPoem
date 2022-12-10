@@ -6,6 +6,9 @@
 	--color-font-validation: #ee5253;
 	--color-font-poem: #007800;
 	--color-font-poem-secondary: #007878;
+	--gap-home-container: 10vh;
+	--padding-sides-poem-container: 30vw;
+	--padding-topdown-poem-container: 20vh;
 }
 
 * {
@@ -113,5 +116,25 @@ html {
 		transform: scale(1);
 		opacity: 1;
 		-webkit-transform: scale(1);
+	}
+}
+
+@media (orientation: portrait) {
+	:root {
+		--gap-home-container: 5vh;
+		--padding-sides-poem-container: 20vw;
+		--padding-topdown-poem-container: 20vh;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-background-primary: #29292A;
+		--color-background-secondary: #333333;
+		--color-font-primary: #FBFBFB;
+		--color-font-secondary: #FFFFFF;
+		--color-font-validation: #ee5253;
+		--color-font-poem: #4da14d;
+		--color-font-poem-secondary: #b3d7d7;
 	}
 }
