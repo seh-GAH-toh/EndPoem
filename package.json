@@ -4,15 +4,27 @@
   "description": "",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "src/index.html",
+  "targets": {
+    "dist": {
+      "optimize": true
+    }
+  },
   "scripts": {
-    "dev": "parcel",
-    "build": "parcel build"
+    "dev": "parcel 'src/*.html'",
+    "build": "parcel build 'src/*.html'"
+  },
+  "staticFiles": {
+    "staticPath": "src/static"
   },
   "author": "Arthur Segato Paulo",
   "license": "ISC",
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.8.1",
     "@parcel/transformer-webmanifest": "^2.8.1",
-    "parcel": "latest"
+    "parcel": "latest",
+    "parcel-reporter-static-files-copy": "^1.4.0"
+  },
+  "dependencies": {
+    "@plasmohq/parcel-bundler": "^0.4.3"
   }
 }

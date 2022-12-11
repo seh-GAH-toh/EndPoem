@@ -1,38 +1,47 @@
 const loaderDOM = document.getElementById("loader");
 const homeDOM = document.getElementById("home");
+const poemDOM = document.getElementById("poem");
+const creditsDOM = document.getElementById("credits");
+const headerDOM = document.getElementById("header");
 const homeFormDOM = document.getElementById("home-form");
 const userNameDOM = document.getElementById("form-username");
-const validationTextDOM = document.getElementById("form-validation")
-const poemDOM = document.getElementById("poem");
-const modalDOM = document.getElementById("modal");
-const headerDOM = document.getElementById("header");
+const validationTextDOM = document.getElementById("form-validation");
 const headerButtonDOM = document.getElementById("header-button");
 const playerName1DOM = document.getElementById("poem-name-1");
 const playerName2DOM = document.getElementById("poem-name-2");
 const playerName3DOM = document.getElementById("poem-name-3");
 const glitchDOM = [document.getElementById("glitch-1"),
-document.getElementById("glitch-2"),
-document.getElementById("glitch-3"),
-document.getElementById("glitch-4"),
-document.getElementById("glitch-5"),
-document.getElementById("glitch-6"),
-document.getElementById("glitch-7"),
-document.getElementById("glitch-8")];
+					document.getElementById("glitch-2"),
+					document.getElementById("glitch-3"),
+					document.getElementById("glitch-4"),
+					document.getElementById("glitch-5"),
+					document.getElementById("glitch-6"),
+					document.getElementById("glitch-7"),
+					document.getElementById("glitch-8")
+				];
 let isCredits = false;
 
-const showElement = async element => element.classList.remove("hidden-element");
-
-const hiddeElement = async element => element.classList.add("hidden-element");
+const toggleElement = async ( hiddeList, showList ) => {
+	if(hiddeList != null){
+		hiddeList.forEach( element => {
+			element.classList.add("hidden-element");
+		});
+	}
+	if(showList != null){
+		showList.forEach( element => {
+			element.classList.remove("hidden-element");
+		});
+	}
+};
 
 const validadeForm = async (input) => {
 	if (!input.checkValidity()) {
-		showElement(validationTextDOM);
+		toggleElement(
+			null,
+			[validationTextDOM]
+		);
 	} else {
-		hiddeElement(homeDOM);
-		showElement(poemDOM);
-		showElement(headerDOM);
-		setName();
-		createGlitch();
+		stateMachine("poem");
 	}
 };
 
@@ -57,6 +66,42 @@ const createGlitch = async () => {
 	}, 500);
 }
 
+const stateMachine = ( state ) => {
+	switch (state) {
+		case "home":
+			toggleElement(
+				[loaderDOM],
+				[homeDOM]
+			);
+			break;
+		case "poem":
+			toggleElement(
+				[homeDOM, creditsDOM],
+				[poemDOM, headerDOM]
+			);
+			isCredits = false;
+			setName();
+			createGlitch();
+			break;
+		case "credits":
+			toggleElement(
+				[poemDOM],
+				[creditsDOM]
+			);
+			isCredits = true;
+			break;
+		default:
+			toggleElement(
+				null,
+				[loaderDOM]
+			);
+	}
+}
+
+window.addEventListener("load", () => {
+	stateMachine("home");
+});
+
 homeFormDOM.addEventListener("submit", (event) => {
 	event.preventDefault();
 	validadeForm(userNameDOM);
@@ -65,19 +110,11 @@ homeFormDOM.addEventListener("submit", (event) => {
 headerButtonDOM.addEventListener("click", () => {
 	if(!isCredits) {
 		headerButtonDOM.classList.add("header__button--active");
-		hiddeElement(poemDOM);
-		showElement(modalDOM);
-		isCredits = true;
+		stateMachine("credits");
 	}else{
 		headerButtonDOM.classList.remove("header__button--active");
-		showElement(poemDOM);
-		hiddeElement(modalDOM);
-		isCredits = false;
+		stateMachine("poem");
 	}
-
-})
-
-window.addEventListener("load", () => {
-	hiddeElement(loaderDOM);
-	showElement(homeDOM);
 });
+
+console.info("See you, space cowboy!");

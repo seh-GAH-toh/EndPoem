@@ -1,9 +1,9 @@
-.modal {
+.credits {
     width: 100%;
     min-height: 100vh;
 }
 
-.modal__container {
+.credits__container {
     display: flex;
     flex-direction: column;
     padding: var(--padding-topdown-poem-container) var(--padding-sides-poem-container) var(--padding-topdown-poem-container) var(--padding-sides-poem-container);
@@ -11,17 +11,17 @@
     gap: 1rem;
 }
 
-.modal__title {
+.credits__title {
     width: 100%;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 400;
 }
 
-.modal__text {
+.credits__text {
     font-size: 0.8rem;
 }
 
-.modal__text a {
+.credits__text a {
     color: inherit;
 }
