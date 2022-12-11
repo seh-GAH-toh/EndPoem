@@ -23,5 +23,5 @@
 }
 
 .credits__text a {
-    color: inherit;
+    color: var(--color-font-secondary);
 }

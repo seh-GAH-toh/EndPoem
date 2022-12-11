@@ -2,8 +2,8 @@
 	--color-background-primary: #FBFBFB;
 	--color-background-secondary: #FFFFFF;
 	--color-font-primary: #353535;
-	--color-font-secondary: #6d6d6d;
-	--color-font-validation: #ee5253;
+	--color-font-secondary: #000000;
+	--color-font-validation: #a7393a;
 	--color-font-poem: #007800;
 	--color-font-poem-secondary: #007878;
 	--gap-home-container: 10vh;
@@ -133,8 +133,35 @@ html {
 		--color-background-secondary: #333333;
 		--color-font-primary: #FBFBFB;
 		--color-font-secondary: #FFFFFF;
-		--color-font-validation: #ee5253;
+		--color-font-validation: #f06364;
 		--color-font-poem: #4da14d;
 		--color-font-poem-secondary: #b3d7d7;
 	}
 }
+
+@media (prefers-reduced-motion: reduce) {
+	.fade-in-fwd {
+		animation: none;
+		-webkit-animation: none;
+	}
+
+	.scale-in-center {
+		animation: none;
+		-webkit-animation: none;
+	}
+	* {
+		transition: none!important;
+	}
+}
+
+@media (prefers-contrast: more) {
+	:root {
+		--color-background-primary: #000000;
+		--color-background-secondary: #333333;
+		--color-font-primary: #FFFFFF;
+		--color-font-secondary: #FFFF00;
+		--color-font-validation: #FFFF00;
+		--color-font-poem: #FFFF00;
+		--color-font-poem-secondary: #00FFF2;
+	}
+  }

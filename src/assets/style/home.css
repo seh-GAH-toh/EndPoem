@@ -42,15 +42,15 @@
 	display: flex;
 	flex-direction: row;
 	transition: border-color 0.2s;
-	border-bottom: 2px solid var(--color-font-secondary);
-}
-
-.form__input-field:focus-within {
 	border-bottom: 2px solid var(--color-font-primary);
 }
 
+.form__input-field:focus-within {
+	border-bottom: 2px solid var(--color-font-secondary);
+}
+
 .form__input-field:focus-within .form__button {
-	fill: var(--color-font-primary);
+	fill: var(--color-font-secondary);
 }
 
 .form__input-field:focus-within>.form__label {
@@ -58,7 +58,7 @@
 	position: absolute;
 	top: -0.6rem;
 	transition: 0.2s;
-	color: var(--color-font-primary);
+	color: var(--color-font-secondary);
 	font-size: 0.8rem;
 	font-weight: 700;
 }
@@ -90,7 +90,8 @@
 	min-height: 50px;
 	font-family: inherit;
 	font-size: 0rem;
-	fill: var(--color-font-secondary);
+	fill: var(--color-font-primary);
+	transition: all 0.2s ease-in-out;
 }
 
 .form__button:hover {
@@ -106,8 +107,8 @@
 	display: block;
 	position: absolute;
 	top: 0;
-	transition: 0.2s;
-	color: var(--color-font-secondary);
+	transition: all 0.2s ease-in-out;
+	color: var(--color-font-primary);
 	font-size: 1rem;
 }
 

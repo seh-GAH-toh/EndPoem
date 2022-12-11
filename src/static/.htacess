@@ -1,6 +1,6 @@
 # DO NOT REMOVE THIS LINE AND THE LINES BELOW ERRORPAGEID:YwLvhx9pTx
-ErrorDocument 404 /404.html
-ErrorDocument 403 /403.html
+ErrorDocument 404 /error.html
+ErrorDocument 403 /error.html
 # DO NOT REMOVE THIS LINE AND THE LINES ABOVE YwLvhx9pTx:ERRORPAGEID
 
 # Headers
@@ -11,8 +11,12 @@ ErrorDocument 403 /403.html
 	Header set X-Content-Type-Options "nosniff"
 	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 	Header set Content-Security-Policy "default-src 'self';"
+	Header set Content-Security-Policy "base-uri 'self'";
+	Header set Content-Security-Policy "form-action 'self';"
 	Header set Referrer-Policy "same-origin"
-	Header set Feature-Policy "geolocation 'self'; vibrate 'none'"
+    Content-Security-Policy: frame-ancestors 'self' https://www.theendpoem.com;
+
+	Header set Permissions-Policy: accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()
     # Cors
     Header add Access-Control-Allow-Origin: "https://www.theendpoem.com"
     Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
@@ -21,6 +25,7 @@ ErrorDocument 403 /403.html
     Header set unset ETag
     # Easter Egg
     Header add The-Universe: "said=I love you because you are love"
+    Access-Control-Allow-Origin: *
 </IfModule>
 
 # Force HTTPS and WWW everywere

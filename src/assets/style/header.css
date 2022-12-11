@@ -48,7 +48,6 @@
 
 .header__button--active div {
     margin-left: 12px;
-    background-color: var(--color-font-secondary);
     width: 20% !important;
     height: 20%;
 }
