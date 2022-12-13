@@ -91,11 +91,17 @@
 	font-family: inherit;
 	font-size: 0rem;
 	fill: var(--color-font-primary);
-	transition: all 0.2s ease-in-out;
+	transition: fill 0.2s ease-in-out;
 }
 
 .form__button:hover {
 	cursor: pointer;
+}
+
+.form__button:focus {
+	border-top: 2px solid var(--color-font-secondary);
+	border-left: 2px solid var(--color-font-secondary);
+	border-right: 2px solid var(--color-font-secondary);
 }
 
 .form__icon {

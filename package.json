@@ -23,8 +23,5 @@
     "@parcel/transformer-webmanifest": "^2.8.1",
     "parcel": "latest",
     "parcel-reporter-static-files-copy": "^1.4.0"
-  },
-  "dependencies": {
-    "@plasmohq/parcel-bundler": "^0.4.3"
   }
 }
