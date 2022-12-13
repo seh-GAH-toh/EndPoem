@@ -11,7 +11,7 @@ ErrorDocument 403 /error.html
 	Header set X-Content-Type-Options "nosniff"
 	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 	Header add Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; "
-    Header add Content-Security-Policy "script-src 'self' 'strict-dynamic' https: 'self';default-src 'self';"
+    Header add Content-Security-Policy "script-src 'self'"
 	Header set Referrer-Policy "same-origin"
 	Header set Permissions-Policy: accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), xr-spatial-tracking=()
     # Cors
