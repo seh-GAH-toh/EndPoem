@@ -1,3 +1,8 @@
+@import "main.css";
+@import "home.css";
+@import "header.css";
+@import "poem.css";
+@import "credits.css";
 .loader {
 	display: flex;
 	align-items: center;
