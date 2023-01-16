@@ -6,6 +6,9 @@
 
 The End Poem is a freehand poem written by musician Julian Gough that appears when the player finishes minecraft, before the credits. It has been in the public domain, under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, since 2022.
 
+## Donators
+- Laura Newman
+
 ## Development
 Requirements:
 
