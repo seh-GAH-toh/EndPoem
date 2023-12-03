@@ -1,27 +1,19 @@
 {
-  "name": "theendpoem.com",
-  "version": "1.0.0",
-  "description": "",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
-  "source": "src/index.html",
-  "targets": {
-    "dist": {
-      "optimize": true
-    }
-  },
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "parcel 'src/*.html'",
-    "build": "parcel build 'src/*.html'"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "staticFiles": {
-    "staticPath": "src/static"
-  },
-  "author": "Arthur Segato Paulo",
-  "license": "ISC",
   "devDependencies": {
-    "@parcel/packager-raw-url": "^2.8.1",
-    "@parcel/transformer-webmanifest": "^2.8.1",
-    "parcel": "latest",
-    "parcel-reporter-static-files-copy": "^1.4.0"
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/tailwindcss": "latest",
+    "nuxt": "^3.8.2",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5"
   }
 }
