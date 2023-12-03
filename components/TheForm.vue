@@ -1,12 +1,24 @@
 <script setup lang="ts">
 const name = useName();
 const isSubmitted = useSubmitted();
+
+const handleSubmit = () => {
+    useFetch("/api/name", {
+        method: "POST",
+        body: {
+            name
+        },
+        onRequest({ }) {
+            isSubmitted.value = true;
+        }
+    })
+}
 </script>
 
 <template>
-    <form class="relative flex w-fit flex-col">
+    <form @submit.prevent="handleSubmit" class="relative flex w-fit flex-col">
         <div class="peer h-12 border-b-2 transition-all duration-300 ease-in-out">
-            <input type="text" name="name" id="name" autoComplete="off" :value="name"
+            <input type="text" name="name" id="name" autoComplete="off" v-model="name"
                 class="h-full bg-transparent text-base capitalize outline-none" />
             <button type="submit"
                 class="h-full fill-[#f6f5f4] px-6 outline-none transition-all duration-300 ease-in-out focus:-translate-y-1 disabled:fill-[#f6f5f4]/50"

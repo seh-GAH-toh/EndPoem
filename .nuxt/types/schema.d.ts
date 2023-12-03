@@ -14,6 +14,8 @@ declare module 'nuxt/schema' {
 
       cdnURL: string,
    },
+
+   discordWebhook: string,
   }
   interface PublicRuntimeConfig {
 
