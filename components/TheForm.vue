@@ -17,11 +17,14 @@ const handleSubmit = () => {
 
 <template>
     <form @submit.prevent="handleSubmit" class="relative flex w-fit flex-col">
-        <div class="peer h-12 border-b-2 transition-all duration-300 ease-in-out">
+        <div class="peer h-12 border-b-2 transition-all duration-300 ease-in-out" :class="{
+            'dark:border-b-[#FBFBFB]': name.length >= 2, 'dark:border-b-[#FBFBFB]/50': name.length < 2,
+            'border-b-[#29292a]': name.length >= 2, 'border-b-[#29292a]/50': name.length < 2
+        }">
             <input type="text" name="name" id="name" autoComplete="off" v-model="name"
                 class="h-full bg-transparent text-base capitalize outline-none" />
             <button type="submit"
-                class="h-full fill-[#f6f5f4] px-6 outline-none transition-all duration-300 ease-in-out focus:-translate-y-1 disabled:fill-[#f6f5f4]/50"
+                class="h-full dark:fill-[#FBFBFB] fill-[#29292a] px-6 outline-none transition-all duration-300 ease-in-out focus:-translate-y-1 dark:disabled:fill-[#FBFBFB]/50 disabled:fill-[#29292a]/50 disabled:cursor-not-allowed"
                 :disabled="name.length < 2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " viewBox="0 0 16 16">
                     <path
@@ -30,8 +33,8 @@ const handleSubmit = () => {
             </button>
         </div>
         <label for="name"
-            class="absolute top-4 transition-all duration-200 ease-in-out peer-focus-within:-top-2 peer-active:-top-2"
-            :class="{ '-top-2': name.length > 0 }">
+            class="absolute transition-all duration-200 ease-in-out peer-focus-within:-top-2 peer-active:-top-2"
+            :class="{ '-top-2': name.length != 0, 'top-4': name.length == 0 }">
             Name:
         </label>
     </form>

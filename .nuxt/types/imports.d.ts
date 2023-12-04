@@ -41,6 +41,7 @@ declare global {
   const isReadonly: typeof import('../../node_modules/vue')['isReadonly']
   const isRef: typeof import('../../node_modules/vue')['isRef']
   const isShallow: typeof import('../../node_modules/vue')['isShallow']
+  const isValid: typeof import('../../composables/states')['isValid']
   const isVue2: typeof import('../../node_modules/nuxt/dist/app/compat/vue-demi')['isVue2']
   const isVue3: typeof import('../../node_modules/nuxt/dist/app/compat/vue-demi')['isVue3']
   const loadPayload: typeof import('../../node_modules/nuxt/dist/app/composables/payload')['loadPayload']
@@ -186,6 +187,7 @@ declare module 'vue' {
     readonly isReadonly: UnwrapRef<typeof import('../../node_modules/vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('../../node_modules/vue')['isRef']>
     readonly isShallow: UnwrapRef<typeof import('../../node_modules/vue')['isShallow']>
+    readonly isValid: UnwrapRef<typeof import('../../composables/states')['isValid']>
     readonly isVue2: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/vue-demi')['isVue2']>
     readonly isVue3: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/vue-demi')['isVue3']>
     readonly loadPayload: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/payload')['loadPayload']>
@@ -324,6 +326,7 @@ declare module '@vue/runtime-core' {
     readonly isReadonly: UnwrapRef<typeof import('../../node_modules/vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('../../node_modules/vue')['isRef']>
     readonly isShallow: UnwrapRef<typeof import('../../node_modules/vue')['isShallow']>
+    readonly isValid: UnwrapRef<typeof import('../../composables/states')['isValid']>
     readonly isVue2: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/vue-demi')['isVue2']>
     readonly isVue3: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/vue-demi')['isVue3']>
     readonly loadPayload: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/payload')['loadPayload']>
