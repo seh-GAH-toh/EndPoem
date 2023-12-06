@@ -1,15 +1,27 @@
 <script setup lang="ts">
+const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789èêěęėëéřþțťýùûůűüúìîıïíòôõöøōóąăåäãâáàßșšşśðďğĺľłźžż¢çčćñňńÈÊĚĘÉŘÞȚŤÝÚŮŰÜÍİÎÓÖØÔĄĂÅÄÂÁÀŚȘŠŞÐĎĞĽŁŹŽŻÇČĆŃ[]{}()§¬&%$#"|';
+
 const name = useName();
 
-const first = ref("");
+const secrets = reactive({
+    first: "",
+    second: "",
+    third: "",
+    fourth: "",
+    fifth: "",
+    sixth: "",
+    seventh: "",
+    eighth: ""
+});
 
 const generateGlitch = () => {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789èêěęėëéřþțťýùûůűüúìîıïíòôõöøōóąăåäãâáàßșšşśðďğĺľłźžż¢çčćñňń[]{}()§¬&%$#"|';
-    first.value = "";
+    Object.keys(secrets).forEach(key => {
+        secrets[key] = "";
 
-    for (let i = 0; i < 5; i++) {
-        first.value += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
+        for (let i = 0; i < 5; i++) {
+            secrets[key] += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+    })
 }
 
 onMounted(() => {
@@ -17,6 +29,7 @@ onMounted(() => {
         generateGlitch();
     }, 100);
 });
+
 </script>
 
 <template>
@@ -53,8 +66,12 @@ onMounted(() => {
             true structure did this player create, in the reality behind the screen?</p>
         <p class="text-lg dark:text-[#4da14d] text-[#007800]">It worked, with a million others, to sculpt a true world in a
             fold of</p>
-        <p class="text-lg dark:text-[#b3d7d7] text-[#007878]">the <span>{{ first }}</span>, and created a <span>{{ }}</span>
-            for <span>{{ }}</span>, in the <span>{{ }}</span>.</p>
+        <p class="text-lg dark:text-[#b3d7d7] text-[#007878]">the
+            <span class="w-16 inline-block text-center">{{ secrets.first }}, </span>
+            and created a <span class="w-16 inline-block text-center">{{ secrets.second }}</span>
+            for <span class="w-16 inline-block text-center">{{ secrets.third }},</span>
+            in the <span class="w-16 inline-block text-center">{{ secrets.fourth }}.</span>
+        </p>
         <p class="text-lg dark:text-[#4da14d] text-[#007800]">It cannot read that thought.</p>
         <p class="text-lg dark:text-[#b3d7d7] text-[#007878]">No. It has not yet achieved the highest level. That, it must
             achieve in the long
@@ -76,9 +93,11 @@ onMounted(() => {
             word they fear.</p>
         <p class="text-lg dark:text-[#b3d7d7] text-[#007878]">It reads our thoughts.</p>
         <p class="text-lg dark:text-[#4da14d] text-[#007800]">Sometimes I do not care. Sometimes I wish to tell them, this
-            world you take for
-            truth is merely <span>{{ }}</span> and <span>{{ }}</span>, I wish to tell them that they are
-            <span>{{ }}</span> in the <span>{{ }}</span>. They see so little of reality, in their long
+            world you take for truth is merely <span class="w-16 inline-block text-center">{{ secrets.fifth }}</span> and
+            <span class="w-16 inline-block text-center">{{ secrets.sixth }},</span> I wish to tell them that they are
+            <span class="w-16 inline-block text-center">{{ secrets.seventh }}</span> in the <span
+                class="w-16 inline-block text-center">{{ secrets.eighth
+                }}.</span> They see so little of reality, in their long
             dream.
         </p>
         <p class="text-lg dark:text-[#b3d7d7] text-[#007878]">And yet they play the game.</p>
@@ -136,7 +155,7 @@ onMounted(() => {
             the ground. A woman gathered the atoms; she drank and ate and inhaled; and the woman assembled the
             player, in her body.</p>
         <p class="text-lg dark:text-[#4da14d] text-[#007800]">And the player awoke, from the warm, dark world of its
-            mother’s body, into the
+            mother's body, into the
             long dream.</p>
         <p class="text-lg dark:text-[#4da14d] text-[#007800]">And the player was a new story, never told before, written in
             letters of DNA. And
