@@ -3,7 +3,8 @@ export default defineEventHandler(async (event) => {
     const runtimeConfig = useRuntimeConfig();
     const body = await readBody(event);
 
-    if (body.name.length === 0) throw new Error("Name cannot be empty");
+    if (body.name === undefined || body.name.length === 0)
+      throw new Error("Name cannot be empty");
 
     fetch(runtimeConfig.discordWebhook, {
       method: "POST",
@@ -16,12 +17,14 @@ export default defineEventHandler(async (event) => {
     });
 
     return {
-      message: "ok",
+      message: "Name successfully submitted",
     };
   } catch (error) {
-    throw createError({
-      statusCode: 400,
-      statusMessage: error.message,
-    });
+    if (error instanceof Error) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: error.message,
+      });
+    }
   }
 });

@@ -27,5 +27,4 @@ export { updateSiteConfig } from '../node_modules/nuxt-site-config/dist/runtime/
 export { useNitroOrigin } from '../node_modules/nuxt-site-config/dist/runtime/composables/useNitroOrigin';
 export { createSitePathResolver, withSiteTrailingSlash, withSiteUrl } from '../node_modules/nuxt-site-config/dist/runtime/composables/utils';
 export { defineRobotMeta } from '../node_modules/nuxt-simple-robots/dist/runtime/composables/defineRobotMeta';
-export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';
