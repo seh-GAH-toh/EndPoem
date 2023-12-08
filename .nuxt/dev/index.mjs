@@ -139,7 +139,7 @@ const _inlineRuntimeConfig = {
       {
         "_context": "package.json",
         "_priority": -10,
-        "name": "nuxt-app"
+        "name": "theendpoem"
       },
       {
         "_context": "computed-env",
