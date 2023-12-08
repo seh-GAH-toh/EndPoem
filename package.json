@@ -11,18 +11,15 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxtjs/google-fonts": "^3.1.0",
     "@nuxtjs/tailwindcss": "latest",
     "nuxt": "^3.8.2",
     "nuxt-link-checker": "^2.1.10",
     "nuxt-simple-robots": "^3.1.9",
     "nuxt-simple-sitemap": "^4.1.9",
-    "vite-plugin-pwa": "^0.17.4",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.1.1",
-    "@vite-pwa/nuxt": "^0.3.4"
+    "@vercel/analytics": "^1.1.1"
   }
 }
