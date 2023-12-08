@@ -25,7 +25,7 @@ const handleSubmit = () => {
         }">
             <input type="text" name="name" id="name" autoComplete="off" v-model="name"
                 class="h-full bg-transparent text-base capitalize outline-none" />
-            <button type="submit"
+            <button type="submit" aria-label="submit"
                 class="h-full dark:fill-[#FBFBFB] fill-[#29292a] px-6 outline-none transition-all duration-300 ease-in-out focus:-translate-y-1 dark:disabled:fill-[#FBFBFB]/50 disabled:fill-[#29292a]/50 disabled:cursor-not-allowed"
                 :disabled="name.length < 2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 16 16">
