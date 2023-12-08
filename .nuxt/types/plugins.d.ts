@@ -13,6 +13,9 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/plugins/prefetch.client").default> &
   InjectionType<typeof import("../../node_modules/@nuxt/devtools/dist/runtime/plugins/devtools.server").default> &
   InjectionType<typeof import("../../node_modules/@nuxt/devtools/dist/runtime/plugins/devtools.client").default> &
+  InjectionType<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/plugins/pwa.client").default> &
+  InjectionType<typeof import("../../node_modules/nuxt-link-checker/dist/runtime/plugin/ui.client").default> &
+  InjectionType<typeof import("../../node_modules/nuxt-site-config/dist/runtime/plugins/0.siteConfig").default> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/chunk-reload.client").default> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/check-outdated-build.client").default>
 

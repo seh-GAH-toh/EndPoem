@@ -3,24 +3,30 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { mkdirSync } from 'node:fs';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler, readBody, createError, getQuery as getQuery$1, getResponseStatusText } from 'file:///home/segato/Documents/TheEndPoem/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHost, getRequestProtocol, getRequestHeaders, getQuery as getQuery$1, setHeader, getHeader, readBody, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler, createError, getResponseStatusText } from 'file:///home/segato/Documents/TheEndPoem/node_modules/h3/dist/index.mjs';
 import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///home/segato/Documents/TheEndPoem/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { stringify, uneval } from 'file:///home/segato/Documents/TheEndPoem/node_modules/devalue/index.js';
 import { renderToString } from 'file:///home/segato/Documents/TheEndPoem/node_modules/vue/server-renderer/index.mjs';
 import { renderSSRHead } from 'file:///home/segato/Documents/TheEndPoem/node_modules/@unhead/ssr/dist/index.mjs';
-import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///home/segato/Documents/TheEndPoem/node_modules/ofetch/dist/node.mjs';
+import { $fetch as $fetch$1, createFetch as createFetch$1, Headers as Headers$1 } from 'file:///home/segato/Documents/TheEndPoem/node_modules/ofetch/dist/node.mjs';
 import destr from 'file:///home/segato/Documents/TheEndPoem/node_modules/destr/dist/index.mjs';
 import { createCall, createFetch } from 'file:///home/segato/Documents/TheEndPoem/node_modules/unenv/runtime/fetch/index.mjs';
 import { createHooks } from 'file:///home/segato/Documents/TheEndPoem/node_modules/hookable/dist/index.mjs';
 import { snakeCase } from 'file:///home/segato/Documents/TheEndPoem/node_modules/scule/dist/index.mjs';
 import { klona } from 'file:///home/segato/Documents/TheEndPoem/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file:///home/segato/Documents/TheEndPoem/node_modules/defu/dist/defu.mjs';
+import defu, { defuFn, createDefu, defu as defu$1 } from 'file:///home/segato/Documents/TheEndPoem/node_modules/defu/dist/defu.mjs';
 import { hash } from 'file:///home/segato/Documents/TheEndPoem/node_modules/ohash/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery } from 'file:///home/segato/Documents/TheEndPoem/node_modules/ufo/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withLeadingSlash, withBase, withTrailingSlash, withoutTrailingSlash, withoutProtocol } from 'file:///home/segato/Documents/TheEndPoem/node_modules/ufo/dist/index.mjs';
 import { createStorage, prefixStorage } from 'file:///home/segato/Documents/TheEndPoem/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file:///home/segato/Documents/TheEndPoem/node_modules/unstorage/drivers/fs.mjs';
 import { toRouteMatcher, createRouter } from 'file:///home/segato/Documents/TheEndPoem/node_modules/radix3/dist/index.mjs';
-import { version, unref } from 'file:///home/segato/Documents/TheEndPoem/node_modules/vue/index.mjs';
+import devalue from 'file:///home/segato/Documents/TheEndPoem/node_modules/@nuxt/devalue/dist/devalue.mjs';
+import { toValue, version, unref } from 'file:///home/segato/Documents/TheEndPoem/node_modules/vue/index.mjs';
+import Fuse from 'file:///home/segato/Documents/TheEndPoem/node_modules/fuse.js/dist/fuse.mjs';
+import { defineNitroPlugin } from 'file:///home/segato/Documents/TheEndPoem/node_modules/nitropack/dist/runtime/plugin.mjs';
+import { readFile } from 'node:fs/promises';
+import { diffLines } from 'file:///home/segato/Documents/TheEndPoem/node_modules/diff/lib/index.mjs';
+import MagicString from 'file:///home/segato/Documents/TheEndPoem/node_modules/magic-string/dist/magic-string.es.mjs';
 import { createServerHead as createServerHead$1 } from 'file:///home/segato/Documents/TheEndPoem/node_modules/unhead/dist/index.mjs';
 import { defineHeadPlugin } from 'file:///home/segato/Documents/TheEndPoem/node_modules/@unhead/shared/dist/index.mjs';
 
@@ -60,8 +66,115 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {},
-  "discordWebhook": ""
+  "public": {
+    "nuxt-link-checker": {
+      "hasSitemapModule": false,
+      "excludeLinks": [],
+      "skipInspections": [],
+      "fetchTimeout": 10000,
+      "showLiveInspections": true,
+      "fetchRemoteUrls": true
+    }
+  },
+  "discordWebhook": "",
+  "nuxt-simple-sitemap": {
+    "isI18nMapped": false,
+    "sitemapName": "sitemap.xml",
+    "isMultiSitemap": false,
+    "excludeAppSources": [],
+    "autoLastmod": false,
+    "defaultSitemapsChunkSize": 1000,
+    "sortEntries": true,
+    "debug": false,
+    "discoverImages": true,
+    "isNuxtContentDocumentDriven": false,
+    "xsl": "/__sitemap__/style.xsl",
+    "xslTips": true,
+    "xslColumns": [
+      {
+        "label": "URL",
+        "width": "50%"
+      },
+      {
+        "label": "Images",
+        "width": "25%",
+        "select": "count(image:image)"
+      },
+      {
+        "label": "Last Updated",
+        "width": "25%",
+        "select": "concat(substring(sitemap:lastmod,0,11),concat(' ', substring(sitemap:lastmod,12,5)),concat(' ', substring(sitemap:lastmod,20,6)))"
+      }
+    ],
+    "credits": true,
+    "version": "4.1.9",
+    "sitemaps": {
+      "sitemap.xml": {
+        "sitemapName": "sitemap.xml",
+        "route": "sitemap.xml",
+        "defaults": {},
+        "include": [],
+        "exclude": [
+          "/_nuxt/**",
+          "/api/**"
+        ],
+        "includeAppSources": true
+      }
+    }
+  },
+  "nuxt-site-config": {
+    "stack": [
+      {
+        "_priority": -20,
+        "_context": "defaults",
+        "defaultLocale": "en",
+        "trailingSlash": false
+      },
+      {
+        "_context": "system",
+        "_priority": -15,
+        "name": "TheEndPoem",
+        "env": "development"
+      },
+      {
+        "_context": "package.json",
+        "_priority": -10,
+        "name": "nuxt-app"
+      },
+      {
+        "_context": "computed-env",
+        "_priority": -4,
+        "indexable": false
+      },
+      {
+        "_priority": -3,
+        "_context": "nuxt-site-config:config",
+        "url": "https://theendpoem.com/"
+      }
+    ],
+    "version": "1.5.5",
+    "debug": false
+  },
+  "nuxt-simple-robots": {
+    "isRobotsGroupsBlockingIndexing": false,
+    "credits": true,
+    "groups": [
+      {
+        "userAgent": [
+          "*"
+        ],
+        "disallow": [
+          ""
+        ],
+        "allow": []
+      }
+    ],
+    "sitemap": [
+      "/sitemap.xml"
+    ],
+    "robotsEnabledValue": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "robotsDisabledValue": "noindex, nofollow"
+  }
 };
 const ENV_PREFIX = "NITRO_";
 const ENV_PREFIX_ALT = _inlineRuntimeConfig.nitro.envPrefix ?? process.env.NITRO_ENV_PREFIX ?? "_";
@@ -80,7 +193,18 @@ function useRuntimeConfig(event) {
   event.context.nitro.runtimeConfig = runtimeConfig;
   return runtimeConfig;
 }
-_deepFreeze(klona(appConfig));
+const _sharedAppConfig = _deepFreeze(klona(appConfig));
+function useAppConfig(event) {
+  if (!event) {
+    return _sharedAppConfig;
+  }
+  if (event.context.nitro.appConfig) {
+    return event.context.nitro.appConfig;
+  }
+  const appConfig$1 = klona(appConfig);
+  event.context.nitro.appConfig = appConfig$1;
+  return appConfig$1;
+}
 function _getEnv(key) {
   const envKey = snakeCase(key).toUpperCase();
   return destr(
@@ -577,10 +701,6 @@ const _C75sQO8Vt9 = (function(nitro) {
   });
 });
 
-const plugins = [
-  _C75sQO8Vt9
-];
-
 function defineRenderHandler(handler) {
   return eventHandler(async (event) => {
     if (event.path.endsWith("/favicon.ico")) {
@@ -610,6 +730,186 @@ function defineRenderHandler(handler) {
     return response.body;
   });
 }
+
+function createSiteConfigStack(options) {
+  const debug = options?.debug || false;
+  const stack = [];
+  function push(input) {
+    if (!input || typeof input !== "object" || Object.keys(input).length === 0)
+      return;
+    if (!input._context && debug) {
+      let lastFunctionName = new Error("tmp").stack?.split("\n")[2].split(" ")[5];
+      if (lastFunctionName?.includes("/"))
+        lastFunctionName = "anonymous";
+      input._context = lastFunctionName;
+    }
+    const entry = {};
+    for (const k in input) {
+      const val = input[k];
+      if (typeof val !== "undefined" && val !== "")
+        entry[k] = val;
+    }
+    if (Object.keys(entry).filter((k) => !k.startsWith("_")).length > 0)
+      stack.push(entry);
+  }
+  function get(options2) {
+    const siteConfig = {};
+    if (options2?.debug)
+      siteConfig._context = {};
+    for (const o in stack.sort((a, b) => (a._priority || 0) - (b._priority || 0))) {
+      for (const k in stack[o]) {
+        const key = k;
+        const val = stack[o][k];
+        if (!k.startsWith("_")) {
+          siteConfig[k] = val;
+          if (options2?.debug)
+            siteConfig._context[key] = stack[o]._context?.[key] || stack[o]._context || "anonymous";
+        }
+      }
+    }
+    return normalizeSiteConfig(siteConfig);
+  }
+  return {
+    stack,
+    push,
+    get
+  };
+}
+
+function normalizeSiteConfig(config) {
+  if (typeof config.indexable !== "undefined")
+    config.indexable = String(config.indexable) !== "false";
+  if (typeof config.trailingSlash !== "undefined")
+    config.trailingSlash = String(config.trailingSlash) !== "false";
+  if (config.url && !hasProtocol(config.url, { acceptRelative: true, strict: false }))
+    config.url = withHttps(config.url);
+  const keys = Object.keys(config).sort((a, b) => a.localeCompare(b));
+  const newConfig = {};
+  for (const k of keys)
+    newConfig[k] = config[k];
+  return newConfig;
+}
+function resolveSitePath$1(pathOrUrl, options) {
+  let path = pathOrUrl;
+  if (hasProtocol(pathOrUrl, { strict: false, acceptRelative: true })) {
+    const parsed = parseURL(pathOrUrl);
+    path = parsed.pathname;
+  }
+  const base = withLeadingSlash(options.base || "/");
+  if (base !== "/" && path.startsWith(base)) {
+    path = path.slice(base.length);
+  }
+  const origin = options.absolute ? options.siteUrl : "";
+  const baseWithOrigin = options.withBase ? withBase(base, origin || "/") : origin;
+  const resolvedUrl = withBase(path, baseWithOrigin);
+  return path === "/" && !options.withBase ? withTrailingSlash(resolvedUrl) : fixSlashes$1(options.trailingSlash, resolvedUrl);
+}
+function fixSlashes$1(trailingSlash, pathOrUrl) {
+  const $url = parseURL(pathOrUrl);
+  const isFileUrl = $url.pathname.includes(".");
+  if (isFileUrl)
+    return pathOrUrl;
+  const fixedPath = trailingSlash ? withTrailingSlash($url.pathname) : withoutTrailingSlash($url.pathname);
+  return `${$url.protocol ? `${$url.protocol}//` : ""}${$url.host || ""}${fixedPath}${$url.search || ""}${$url.hash || ""}`;
+}
+
+function useSiteConfig(e, _options) {
+  e.context.siteConfig = e.context.siteConfig || createSiteConfigStack();
+  const options = defu(_options, useRuntimeConfig()["nuxt-site-config"], { debug: false });
+  return e.context.siteConfig.get(options);
+}
+
+function useNitroOrigin(e) {
+  const cert = process.env.NITRO_SSL_CERT;
+  const key = process.env.NITRO_SSL_KEY;
+  let host = process.env.NITRO_HOST || process.env.HOST || false;
+  let port;
+  port = process.env.NITRO_PORT || process.env.PORT || "3000";
+  let protocol = cert && key || !true ? "https" : "http";
+  if (!e) {
+    if (process.env.NUXT_VITE_NODE_OPTIONS) {
+      const origin = JSON.parse(process.env.NUXT_VITE_NODE_OPTIONS).baseURL.replace("/__nuxt_vite_node__", "");
+      host = withoutProtocol(origin);
+      protocol = origin.includes("https") ? "https" : "http";
+    }
+  } else {
+    host = getRequestHost(e, { xForwardedHost: true }) || host;
+    protocol = getRequestProtocol(e, { xForwardedProto: true }) || protocol;
+  }
+  if (typeof host === "string" && host.includes(":")) {
+    port = host.split(":").pop();
+    host = host.split(":")[0];
+  }
+  port = port ? `:${port}` : "";
+  return `${protocol}://${host}${port}/`;
+}
+
+function createSitePathResolver(e, options = {}) {
+  const siteConfig = useSiteConfig(e);
+  const nitroOrigin = useNitroOrigin(e);
+  const nuxtBase = useRuntimeConfig().app.baseURL || "/";
+  return (path) => {
+    return resolveSitePath$1(path, {
+      ...options,
+      siteUrl: options.canonical !== false || false ? siteConfig.url : nitroOrigin,
+      trailingSlash: siteConfig.trailingSlash,
+      base: nuxtBase
+    });
+  };
+}
+function withSiteUrl(e, path, options = {}) {
+  const siteConfig = e.context.siteConfig?.get();
+  return resolveSitePath$1(path, {
+    absolute: true,
+    siteUrl: options.canonical !== false || false ? siteConfig.url : e.context.siteConfigNitroOrigin,
+    trailingSlash: siteConfig.trailingSlash,
+    base: e.context.nitro.baseURL,
+    withBase: options.withBase
+  });
+}
+
+function buildAssetsDir() {
+  return useRuntimeConfig().app.buildAssetsDir;
+}
+function buildAssetsURL(...path) {
+  return joinURL(publicAssetsURL(), buildAssetsDir(), ...path);
+}
+function publicAssetsURL(...path) {
+  const publicBase = useRuntimeConfig().app.cdnURL || useRuntimeConfig().app.baseURL;
+  return path.length ? joinURL(publicBase, ...path) : publicBase;
+}
+
+const InjectStatePlugin = async (nitroApp) => {
+  nitroApp.hooks.hook("render:html", async (ctx, { event }) => {
+    const routeOptions = getRouteRules(event);
+    const isIsland = false ;
+    event.path;
+    const noSSR = event.context.nuxt?.noSSR || routeOptions.ssr === false && !isIsland || (false);
+    if (noSSR) {
+      const siteConfig = Object.fromEntries(
+        Object.entries(useSiteConfig(event)).map(([k, v]) => [k, toValue(v)])
+      );
+      ctx.body.push(`<script>window.__NUXT_SITE_CONFIG__=${devalue(siteConfig)}<\/script>`);
+    }
+  });
+};
+const _3s22vI4mSA = InjectStatePlugin;
+
+const _SgpVaCXoVR = defineNitroPlugin((nitro) => {
+  setTimeout(() => {
+    $fetch("/api/__link_checker__/links").then((pages) => {
+      nitro._linkCheckerPageSearch = new Fuse(pages, {
+        threshold: 0.5
+      });
+    });
+  }, 200);
+});
+
+const plugins = [
+  _C75sQO8Vt9,
+_3s22vI4mSA,
+_SgpVaCXoVR
+];
 
 const errorHandler = (async function errorhandler(error, event) {
   const { stack, statusCode, statusMessage, message } = normalizeError(error);
@@ -666,6 +966,1424 @@ const errorHandler = (async function errorhandler(error, event) {
   return send(event, html);
 });
 
+const _Tpf93A = defineEventHandler((e) => {
+  const config = useRuntimeConfig()["nuxt-site-config"];
+  const siteConfig = e.context.siteConfig || createSiteConfigStack({
+    // @ts-expect-error untyped
+    debug: config.debug
+  });
+  if (siteConfig) {
+    const appConfig = useAppConfig();
+    const nitroOrigin = useNitroOrigin(e);
+    e.context.siteConfigNitroOrigin = nitroOrigin;
+    siteConfig.push({
+      _context: "nitro:init",
+      _priority: -4,
+      url: nitroOrigin
+    });
+    const buildStack = config.stack || [];
+    buildStack.forEach((c) => siteConfig.push(c));
+    if (appConfig.site) {
+      siteConfig.push({
+        _priority: -2,
+        _context: "app:config",
+        ...appConfig.site
+      });
+    }
+    if (e.context._nitro.routeRules.site) {
+      siteConfig.push({
+        _context: "route-rules",
+        ...e.context._nitro.routeRules.site
+      });
+    }
+  }
+  e.context.siteConfig = siteConfig;
+});
+
+function generateRobotsTxt({ groups, sitemaps }) {
+  const lines = [];
+  for (const group of groups) {
+    for (const comment of group.comment || [])
+      lines.push(`# ${comment}`);
+    for (const userAgent of group.userAgent || ["*"])
+      lines.push(`User-agent: ${userAgent}`);
+    for (const allow of group.allow || [])
+      lines.push(`Allow: ${allow}`);
+    for (const disallow of group.disallow || [])
+      lines.push(`Disallow: ${disallow}`);
+    lines.push("");
+  }
+  for (const sitemap of sitemaps)
+    lines.push(`Sitemap: ${sitemap}`);
+  return lines.join("\n");
+}
+
+const _Tyk1r6 = defineEventHandler(async (e) => {
+  const query = getQuery$1(e);
+  setHeader(e, "Content-Type", "text/plain; charset=utf-8");
+  setHeader(e, "Cache-Control", "no-store" );
+  const { groups, sitemap, credits, isRobotsGroupsBlockingIndexing } = useRuntimeConfig()["nuxt-simple-robots"];
+  const { indexable: _indexable, _context } = useSiteConfig(e, { debug: true });
+  let indexable = Boolean(_indexable);
+  const queryIndexableEnabled = String(query.indexable) === "true" || query.indexable === "";
+  let sitemaps = [...Array.isArray(sitemap) ? sitemap : [sitemap]].map((s) => {
+    if (!s.startsWith("http"))
+      return withSiteUrl(e, s, { withBase: true, absolute: true });
+    return s;
+  });
+  sitemaps = [...new Set(sitemaps)];
+  const devHints = [];
+  {
+    if (!indexable && _context.indexable === "nuxt-simple-robots:config") {
+      devHints.push("You are blocking indexing with your nuxt-simple-robots config.");
+    } else if (queryIndexableEnabled && _context.indexable === "computed-env") {
+      indexable = true;
+      devHints.push("You are mocking a production enviroment with ?indexable query.");
+    } else if (!indexable && !indexable) {
+      if (_context.indexable === "computed-env")
+        devHints.push(`Indexing is blocked because of the environment. You can mock a production environment with ?indexable query.`);
+      else
+        devHints.push(`Indexing is blocked by site config set by ${_context.indexable}.`);
+    }
+  }
+  if (!indexable) {
+    sitemaps = [];
+  }
+  const robotGroups = indexable ? [...groups] : [
+    {
+      allow: [],
+      comment: [],
+      userAgent: ["*"],
+      disallow: ["/"]
+    }
+  ];
+  let robotsTxt = generateRobotsTxt({ groups: robotGroups, sitemaps });
+  if (devHints.length) {
+    robotsTxt += `
+# DEVELOPMENT HINTS: ${devHints.join(", ")}
+`;
+  }
+  if (credits) {
+    robotsTxt = [
+      `# START nuxt-simple-robots (${indexable ? "indexable" : "indexing disabled"})`,
+      robotsTxt,
+      "# END nuxt-simple-robots"
+    ].filter(Boolean).join("\n");
+  }
+  const hookCtx = { robotsTxt };
+  const nitro = useNitroApp();
+  await nitro.hooks.callHook("robots:robots-txt", hookCtx);
+  return hookCtx.robotsTxt;
+});
+
+function asArray(v) {
+  return typeof v === "undefined" ? [] : Array.isArray(v) ? v : [v];
+}
+function indexableFromGroup(groups, path) {
+  let indexable = true;
+  const wildCardGroups = groups.filter((group) => asArray(group.userAgent).includes("*"));
+  for (const group of wildCardGroups) {
+    const hasDisallowRule = asArray(group.disallow).filter((rule) => Boolean(rule)).some((rule) => path.startsWith(rule));
+    const hasAllowRule = asArray(group.allow).some((rule) => path.startsWith(rule));
+    if (hasDisallowRule && !hasAllowRule) {
+      indexable = false;
+      break;
+    }
+  }
+  return indexable;
+}
+
+const _8T2Mu0 = defineEventHandler((e) => {
+  if (e.path === "/robots.txt")
+    return;
+  const { indexable } = useSiteConfig(e);
+  const { robotsDisabledValue, groups } = useRuntimeConfig()["nuxt-simple-robots"];
+  const routeRules = getRouteRules(e);
+  if (typeof routeRules.robots === "string") {
+    setHeader(e, "X-Robots-Tag", routeRules.robots);
+    return;
+  }
+  if (routeRules.index === false || indexable === false) {
+    setHeader(e, "X-Robots-Tag", robotsDisabledValue);
+    return;
+  }
+  const groupIndexable = indexableFromGroup(groups, e.path);
+  if (!groupIndexable)
+    setHeader(e, "X-Robots-Tag", robotsDisabledValue);
+});
+
+async function fetchDataSource(input) {
+  const context = typeof input.context === "string" ? { name: input.context } : input.context || { name: "fetch" };
+  context.tips = context.tips || [];
+  const url = typeof input.fetch === "string" ? input.fetch : input.fetch[0];
+  const options = typeof input.fetch === "string" ? {} : input.fetch[1];
+  const start = Date.now();
+  const timeout = options.timeout || 5e3;
+  const timeoutController = new AbortController();
+  const abortRequestTimeout = setTimeout(() => timeoutController.abort(), timeout);
+  let isHtmlResponse = false;
+  try {
+    const urls = await globalThis.$fetch(url, {
+      responseType: "json",
+      signal: timeoutController.signal,
+      headers: {
+        Accept: "application/json"
+      },
+      onResponse({ response }) {
+        if (typeof response._data === "string" && response._data.startsWith("<!DOCTYPE html>"))
+          isHtmlResponse = true;
+      }
+    });
+    const timeTakenMs = Date.now() - start;
+    if (isHtmlResponse) {
+      context.tips.push("This is usually because the URL isn't correct or is throwing an error. Please check the URL");
+      return {
+        ...input,
+        context,
+        urls: [],
+        timeTakenMs,
+        error: "Received HTML response instead of JSON"
+      };
+    }
+    return {
+      ...input,
+      context,
+      timeTakenMs,
+      urls
+    };
+  } catch (_err) {
+    const error = _err;
+    if (error.message.includes("This operation was aborted"))
+      context.tips.push("The request has taken too long. Make sure app sources respond within 5 seconds or adjust the timeout fetch option.");
+    else
+      context.tips.push(`Response returned a status of ${error.response?.status || "unknown"}.`);
+    console.error("[nuxt-simple-sitemap] Failed to fetch source.", { url, error });
+    return {
+      ...input,
+      context,
+      urls: [],
+      error: error.message
+    };
+  } finally {
+    abortRequestTimeout && clearTimeout(abortRequestTimeout);
+  }
+}
+function globalSitemapSources() {
+  return Promise.resolve().then(function () { return globalSources; }).then((m) => m.sources);
+}
+function childSitemapSources(definition) {
+  return definition?._hasSourceChunk ? Promise.resolve().then(function () { return childSources; }).then((m) => m.sources[definition.sitemapName] || []) : Promise.resolve([]);
+}
+async function resolveSitemapSources(sources) {
+  return (await Promise.all(
+    sources.map((source) => {
+      if (typeof source === "object" && "urls" in source) {
+        return {
+          timeTakenMs: 0,
+          ...source,
+          urls: source.urls
+        };
+      }
+      if (source.fetch)
+        return fetchDataSource(source);
+      return {
+        ...source,
+        error: "Invalid source"
+      };
+    })
+  )).flat();
+}
+
+const _u53bwd = defineEventHandler(async (e) => {
+  const _runtimeConfig = useRuntimeConfig()["nuxt-simple-sitemap"];
+  const { sitemaps: _sitemaps } = _runtimeConfig;
+  const runtimeConfig = { ..._runtimeConfig };
+  delete runtimeConfig.sitemaps;
+  const globalSources = await globalSitemapSources();
+  const nitroOrigin = useNitroOrigin(e);
+  const sitemaps = {};
+  for (const s of Object.keys(_sitemaps)) {
+    sitemaps[s] = {
+      ..._sitemaps[s],
+      sources: await resolveSitemapSources(await childSitemapSources(_sitemaps[s]))
+    };
+  }
+  return {
+    nitroOrigin,
+    sitemaps,
+    runtimeConfig,
+    globalSources: await resolveSitemapSources(globalSources)
+  };
+});
+
+const _jevHwJ = defineEventHandler(async (e) => {
+  setHeader(e, "Content-Type", "application/xslt+xml");
+  const fixPath = createSitePathResolver(e, { absolute: false, withBase: true });
+  const { sitemapName: fallbackSitemapName, version, xslColumns, xslTips } = useRuntimeConfig()["nuxt-simple-sitemap"];
+  const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" style="margin-right: 4px; font-size: 25px;" width="1em" height="1em" viewBox="0 0 32 32"><path fill="#93c5fd" d="M4 26h4v4H4zm10 0h4v4h-4zm10 0h4v4h-4zm1-10h-8v-2h-2v2H7a2.002 2.002 0 0 0-2 2v6h2v-6h8v6h2v-6h8v6h2v-6a2.002 2.002 0 0 0-2-2zM9 2v10h14V2zm2 2h2v6h-2zm10 6h-6V4h6z"></path></svg>`;
+  const creditName = `<a href="https://github.com/harlan-zw/nuxt-simple-sitemap" style="color: black; display: flex; align-items: center; font-weight: 500;" target="_blank" rel="noopener">${svgIcon} Nuxt
+            Simple Sitemap v${version}</a>`;
+  const { name: siteName, url: siteUrl } = useSiteConfig(e);
+  const referrer = getHeader(e, "Referer") || "/";
+  const isNotIndexButHasIndex = referrer !== fixPath("/sitemap.xml") && parseURL(referrer).pathname.endsWith("-sitemap.xml");
+  const sitemapName = parseURL(referrer).pathname.split("/").pop()?.split("-sitemap")[0] || fallbackSitemapName;
+  const title = `${siteName}${sitemapName !== "sitemap.xml" ? ` - ${sitemapName === "sitemap_index.xml" ? "index" : sitemapName}` : ""}`;
+  const canonicalQuery = getQuery(referrer).canonical;
+  const isShowingCanonical = typeof canonicalQuery !== "undefined" && canonicalQuery !== "false";
+  const conditionalTips = [
+    'You are looking at a <a href="https://developer.mozilla.org/en-US/docs/Web/XSLT/Transforming_XML_with_XSLT/An_Overview" style="color: #398465" target="_blank">XML stylesheet</a>. Read the <a href="https://nuxtseo.com/sitemap/guides/customising-ui" style="color: #398465" target="_blank">docs</a> to learn how to customize it.',
+    `URLs missing? Check Nuxt Devtools Sitemap tab (or the <a href="${withQuery("/__sitemap__/debug.json", { sitemap: sitemapName })}" style="color: #398465" target="_blank">debug endpoint</a>).`
+  ];
+  if (!isShowingCanonical) {
+    const canonicalPreviewUrl = withQuery(referrer, { canonical: "" });
+    conditionalTips.push(`Your canonical site URL is <strong>${siteUrl}</strong>.`);
+    conditionalTips.push(`You can preview your canonical sitemap by visiting <a href="${canonicalPreviewUrl}" style="color: #398465; white-space: nowrap;">${fixPath(canonicalPreviewUrl)}?canonical</a>`);
+  } else {
+    conditionalTips.push(`You are viewing the canonical sitemap. You can switch to using the request origin: <a href="${fixPath(referrer)}" style="color: #398465; white-space: nowrap ">${fixPath(referrer)}</a>`);
+  }
+  const tips = conditionalTips.map((t) => `<li><p>${t}</p></li>`).join("\n");
+  const showTips = xslTips !== false;
+  let columns = [...xslColumns];
+  if (!columns.length) {
+    columns = [
+      { label: "URL", width: "50%" },
+      { label: "Images", width: "25%", select: "count(image:image)" },
+      { label: "Last Updated", width: "25%", select: "concat(substring(sitemap:lastmod,0,11),concat(' ', substring(sitemap:lastmod,12,5)),concat(' ', substring(sitemap:lastmod,20,6)))" }
+    ];
+  }
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="2.0"
+                xmlns:html="http://www.w3.org/TR/REC-html40"
+                xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+                xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9"
+                xmlns:xhtml="http://www.w3.org/1999/xhtml"
+                xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+  <xsl:template match="/">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <title>XML Sitemap</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <style type="text/css">
+          body {
+            font-family: Inter, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+          }
+
+          table {
+            border: none;
+            border-collapse: collapse;
+          }
+
+          .bg-yellow-200 {
+            background-color: #fef9c3;
+          }
+
+          .p-5 {
+            padding: 1.25rem;
+          }
+
+          .rounded {
+            border-radius: 4px;
+            }
+
+          .shadow {
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          }
+
+          #sitemap tr:nth-child(odd) td {
+            background-color: #f8f8f8 !important;
+          }
+
+          #sitemap tbody tr:hover td {
+            background-color: #fff;
+          }
+
+          #sitemap tbody tr:hover td, #sitemap tbody tr:hover td a {
+            color: #000;
+          }
+
+          .expl a {
+            color: #398465
+            font-weight: 600;
+          }
+
+          .expl a:visited {
+            color: #398465
+          }
+
+          a {
+            color: #000;
+            text-decoration: none;
+          }
+
+          a:visited {
+            color: #777;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+
+          td {
+            font-size: 12px;
+          }
+
+          .text-2xl {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.25;
+          }
+
+          th {
+            text-align: left;
+            padding-right: 30px;
+            font-size: 12px;
+          }
+
+          thead th {
+            border-bottom: 1px solid #000;
+          }
+          .fixed { position: fixed; }
+          .right-2 { right: 2rem; }
+          .top-2 { top: 2rem; }
+          .w-30 { width: 30rem; }
+          p { margin: 0; }
+          li { padding-bottom: 0.5rem; line-height: 1.5; }
+          h1 { margin: 0; }
+          .mb-5 { margin-bottom: 1.25rem; }
+          .mb-3 { margin-bottom: 0.75rem; }
+        </style>
+      </head>
+      <body>
+        <div style="grid-template-columns: 1fr 1fr; display: grid; margin: 3rem;">
+            <div>
+             <div id="content">
+          <h1 class="text-2xl mb-3">XML Sitemap</h1>
+          <h2>${title}</h2>
+          ${isNotIndexButHasIndex ? `<p style="font-size: 12px; margin-bottom: 1rem;"><a href="${fixPath("/sitemap_index.xml")}">${fixPath("/sitemap_index.xml")}</a></p>` : ""}
+          <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) &gt; 0">
+            <p class="expl" style="margin-bottom: 1rem;">
+              This XML Sitemap Index file contains
+              <xsl:value-of select="count(sitemap:sitemapindex/sitemap:sitemap)"/> sitemaps.
+            </p>
+            <table id="sitemap" cellpadding="3">
+              <thead>
+                <tr>
+                  <th width="75%">Sitemap</th>
+                  <th width="25%">Last Modified</th>
+                </tr>
+              </thead>
+              <tbody>
+                <xsl:for-each select="sitemap:sitemapindex/sitemap:sitemap">
+                  <xsl:variable name="sitemapURL">
+                    <xsl:value-of select="sitemap:loc"/>
+                  </xsl:variable>
+                  <tr>
+                    <td>
+                      <a href="{$sitemapURL}">
+                        <xsl:value-of select="sitemap:loc"/>
+                      </a>
+                    </td>
+                    <td>
+                      <xsl:value-of
+                        select="concat(substring(sitemap:lastmod,0,11),concat(' ', substring(sitemap:lastmod,12,5)),concat(' ', substring(sitemap:lastmod,20,6)))"/>
+                    </td>
+                  </tr>
+                </xsl:for-each>
+              </tbody>
+            </table>
+          </xsl:if>
+          <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) &lt; 1">
+            <p class="expl" style="margin-bottom: 1rem;">
+              This XML Sitemap contains
+              <xsl:value-of select="count(sitemap:urlset/sitemap:url)"/> URLs.
+            </p>
+            <table id="sitemap" cellpadding="3">
+              <thead>
+                <tr>
+                  ${columns.map((c) => `<th width="${c.width}">${c.label}</th>`).join("\n")}
+                </tr>
+              </thead>
+              <tbody>
+                <xsl:variable name="lower" select="'abcdefghijklmnopqrstuvwxyz'"/>
+                <xsl:variable name="upper" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/>
+                <xsl:for-each select="sitemap:urlset/sitemap:url">
+                  <tr>
+                    <td>
+                      <xsl:variable name="itemURL">
+                        <xsl:value-of select="sitemap:loc"/>
+                      </xsl:variable>
+                      <a href="{$itemURL}">
+                        <xsl:value-of select="sitemap:loc"/>
+                      </a>
+                    </td>
+                    ${columns.filter((c) => c.label !== "URL").map((c) => `<td>
+<xsl:value-of select="${c.select}"/>
+</td>`).join("\n")}
+                  </tr>
+                </xsl:for-each>
+              </tbody>
+            </table>
+          </xsl:if>
+        </div>
+        </div>
+                    ${showTips ? `<div class="w-30 top-2 shadow rounded p-5 right-2" style="margin: 0 auto;"><p><strong>Sitemap Tips (development only)</strong></p><ul style="margin: 1rem; padding: 0;">${tips}</ul><p style="margin-top: 1rem;">${creditName}</p></div>` : ""}
+        </div>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>
+`;
+});
+
+function resolveSitePath(pathOrUrl, options) {
+  let path = pathOrUrl;
+  if (hasProtocol(pathOrUrl, { strict: false, acceptRelative: true })) {
+    const parsed = parseURL(pathOrUrl);
+    path = parsed.pathname;
+  }
+  const base = withLeadingSlash(options.base || "/");
+  if (base !== "/" && path.startsWith(base)) {
+    path = path.slice(base.length);
+  }
+  const origin = options.absolute ? options.siteUrl : "";
+  const baseWithOrigin = options.withBase ? withBase(base, origin || "/") : origin;
+  const resolvedUrl = withBase(path, baseWithOrigin);
+  return path === "/" && !options.withBase ? withTrailingSlash(resolvedUrl) : fixSlashes(options.trailingSlash, resolvedUrl);
+}
+function fixSlashes(trailingSlash, pathOrUrl) {
+  const $url = parseURL(pathOrUrl);
+  const isFileUrl = $url.pathname.includes(".");
+  if (isFileUrl)
+    return pathOrUrl;
+  const fixedPath = trailingSlash ? withTrailingSlash($url.pathname) : withoutTrailingSlash($url.pathname);
+  return `${$url.protocol ? `${$url.protocol}//` : ""}${$url.host || ""}${fixedPath}${$url.search || ""}${$url.hash || ""}`;
+}
+
+const merger = createDefu((obj, key, value) => {
+  if (Array.isArray(obj[key]) && Array.isArray(value))
+    obj[key] = Array.from(/* @__PURE__ */ new Set([...obj[key], ...value]));
+  return obj[key];
+});
+function mergeOnKey(arr, key) {
+  const res = {};
+  arr.forEach((item) => {
+    const k = item[key];
+    res[k] = merger(item, res[k] || {});
+  });
+  return Object.values(res);
+}
+
+function resolve(s, resolvers) {
+  if (typeof s === "undefined")
+    return s;
+  s = typeof s === "string" ? s : s.toString();
+  if (hasProtocol(s, { acceptRelative: true, strict: false }))
+    return resolvers.fixSlashes(s);
+  return resolvers.canonicalUrlResolver(s);
+}
+function normaliseSitemapUrls(data, resolvers) {
+  const entries = data.map((e) => typeof e === "string" ? { loc: e } : e).map((e) => {
+    e = { ...e };
+    if (e.url) {
+      e.loc = e.url;
+      delete e.url;
+    }
+    e.loc = fixSlashes(false, e.loc);
+    return e;
+  }).filter(Boolean);
+  function normaliseEntry(e) {
+    if (e.lastmod) {
+      const date = normaliseDate(e.lastmod);
+      if (date)
+        e.lastmod = date;
+      else
+        delete e.lastmod;
+    }
+    if (!e.lastmod)
+      delete e.lastmod;
+    e.loc = resolve(e.loc, resolvers);
+    if (e.alternatives) {
+      e.alternatives = mergeOnKey(e.alternatives.map((e2) => {
+        const a = { ...e2 };
+        if (typeof a.href === "string")
+          a.href = resolve(a.href, resolvers);
+        else if (typeof a.href === "object" && a.href)
+          a.href = resolve(a.href.href, resolvers);
+        return a;
+      }), "hreflang");
+    }
+    if (e.images) {
+      e.images = mergeOnKey(e.images.map((i) => {
+        i = { ...i };
+        i.loc = resolve(i.loc, resolvers);
+        return i;
+      }), "loc");
+    }
+    if (e.videos) {
+      e.videos = e.videos.map((v) => {
+        v = { ...v };
+        if (v.content_loc)
+          v.content_loc = resolve(v.content_loc, resolvers);
+        return v;
+      });
+    }
+    return e;
+  }
+  return mergeOnKey(
+    entries.map(normaliseEntry).map((e) => ({ ...e, _key: `${e._sitemap || ""}${e.loc}` })),
+    "_key"
+  );
+}
+function normaliseDate(d) {
+  if (typeof d === "string")
+    return d;
+  const z = (n) => `0${n}`.slice(-2);
+  return `${d.getUTCFullYear()}-${z(d.getUTCMonth() + 1)}-${z(d.getUTCDate())}T${z(d.getUTCHours())}:${z(d.getUTCMinutes())}:${z(d.getUTCSeconds())}+00:00`;
+}
+
+function createFilter(options = {}) {
+  const include = options.include || [];
+  const exclude = options.exclude || [];
+  if (include.length === 0 && exclude.length === 0)
+    return () => true;
+  return function(path) {
+    for (const v of [{ rules: exclude, result: false }, { rules: include, result: true }]) {
+      const regexRules = v.rules.filter((r) => r instanceof RegExp);
+      if (regexRules.some((r) => r.test(path)))
+        return v.result;
+      const stringRules = v.rules.filter((r) => typeof r === "string");
+      if (stringRules.length > 0) {
+        const routes = {};
+        for (const r of stringRules) {
+          if (r === path)
+            return v.result;
+          routes[r] = true;
+        }
+        const routeRulesMatcher = toRouteMatcher(createRouter({ routes, strictTrailingSlash: false }));
+        if (routeRulesMatcher.matchAll(path).length > 0)
+          return Boolean(v.result);
+      }
+    }
+    return include.length === 0;
+  };
+}
+function filterSitemapUrls(_urls, options) {
+  const urlFilter = createFilter(options);
+  return _urls.filter((e) => {
+    let path = e.loc;
+    try {
+      path = parseURL(e.loc).pathname;
+    } catch {
+      return false;
+    }
+    if (!urlFilter(path))
+      return false;
+    if (options.isMultiSitemap && e._sitemap && options.sitemapName)
+      return e._sitemap === options.sitemapName;
+    return true;
+  });
+}
+
+function normaliseI18nSources(sources, { autoI18n, isI18nMapped }) {
+  if (autoI18n && isI18nMapped) {
+    return sources.map((s) => {
+      const urls = (s.urls || []).map((_url) => {
+        const url = typeof _url === "string" ? { loc: _url } : _url;
+        url.loc = url.loc || url.url;
+        url.loc = withLeadingSlash(url.loc);
+        return url;
+      });
+      s.urls = urls.map((url) => {
+        if (url._sitemap || url._i18nTransform)
+          return url;
+        if (url.loc) {
+          const match = url.loc.match(new RegExp(`^/(${autoI18n.locales.map((l) => l.code).join("|")})(.*)`));
+          const localeCode = match?.[1] || autoI18n.defaultLocale;
+          const pathWithoutPrefix = match?.[2];
+          const locale = autoI18n.locales.find((e) => e.code === localeCode);
+          if (locale) {
+            if (!url.alternatives) {
+              let defaultPath;
+              const alternatives = urls.map((u) => {
+                if (u._sitemap || u._i18nTransform)
+                  return false;
+                if (u?.loc) {
+                  const _match = u.loc.match(new RegExp(`^/(${autoI18n.locales.map((l) => l.code).join("|")})(.*)`));
+                  const _localeCode = _match?.[1];
+                  const _pathWithoutPrefix = _match?.[2];
+                  if (_localeCode === autoI18n.defaultLocale)
+                    defaultPath = u.loc;
+                  if (pathWithoutPrefix === _pathWithoutPrefix) {
+                    return {
+                      href: u.loc,
+                      hreflang: _localeCode || autoI18n.defaultLocale
+                    };
+                  }
+                }
+                return false;
+              }).filter(Boolean);
+              if (alternatives.length && defaultPath) {
+                alternatives.unshift({
+                  href: defaultPath,
+                  hreflang: "x-default"
+                });
+              }
+              if (alternatives.length)
+                url.alternatives = alternatives;
+            }
+            return {
+              _sitemap: locale.iso || locale.code,
+              ...url
+            };
+          }
+        }
+        return url;
+      });
+      return s;
+    });
+  }
+  return sources;
+}
+function applyI18nEnhancements(_urls, options) {
+  const { autoI18n } = options;
+  return _urls.map((e) => {
+    if (!e._i18nTransform)
+      return e;
+    delete e._i18nTransform;
+    const path = withLeadingSlash(parseURL(e.loc).pathname);
+    const match = path.match(new RegExp(`^/(${autoI18n.locales.map((l) => l.code).join("|")})(.*)`));
+    let pathWithoutLocale = path;
+    let locale;
+    if (match) {
+      pathWithoutLocale = match[2] || "/";
+      locale = match[1];
+    }
+    if (locale && true) {
+      console.warn("You're providing a locale in the url, but the url is marked as inheritI18n. This will cause issues with the sitemap. Please remove the locale from the url.");
+      return e;
+    }
+    if (autoI18n.differentDomains) {
+      return {
+        // will force it to pass filter
+        _sitemap: options.sitemapName,
+        ...e,
+        alternatives: [
+          {
+            // apply default locale domain
+            ...autoI18n.locales.find((l) => [l.code, l.iso].includes(autoI18n.defaultLocale)),
+            code: "x-default"
+          },
+          ...autoI18n.locales.filter((l) => !!l.domain)
+        ].map((locale2) => {
+          return {
+            hreflang: locale2.iso || locale2.code,
+            href: joinURL(withHttps(locale2.domain), pathWithoutLocale)
+          };
+        })
+      };
+    }
+    return autoI18n.locales.map((l) => {
+      let loc = joinURL(`/${l.code}`, pathWithoutLocale);
+      if (autoI18n.differentDomains || ["prefix_and_default", "prefix_except_default"].includes(autoI18n.strategy) && l.code === autoI18n.defaultLocale)
+        loc = pathWithoutLocale;
+      return {
+        _sitemap: options.isI18nMapped ? l.iso || l.code : void 0,
+        ...e,
+        loc,
+        alternatives: [{ code: "x-default" }, ...autoI18n.locales].map((locale2) => {
+          const code = locale2.code === "x-default" ? autoI18n.defaultLocale : locale2.code;
+          const isDefault = locale2.code === "x-default" || locale2.code === autoI18n.defaultLocale;
+          let href = "";
+          if (autoI18n.strategy === "prefix") {
+            href = joinURL("/", code, pathWithoutLocale);
+          } else if (["prefix_and_default", "prefix_except_default"].includes(autoI18n.strategy)) {
+            if (isDefault) {
+              href = pathWithoutLocale;
+            } else {
+              href = joinURL("/", code, pathWithoutLocale);
+            }
+          }
+          const hreflang = locale2.iso || locale2.code;
+          return {
+            hreflang,
+            href
+          };
+        })
+      };
+    });
+  }).flat();
+}
+
+function sortSitemapUrls(urls) {
+  return urls.sort(
+    (a, b) => {
+      const aLoc = typeof a === "string" ? a : a.loc;
+      const bLoc = typeof b === "string" ? b : b.loc;
+      return aLoc.localeCompare(bLoc, void 0, { numeric: true });
+    }
+  ).sort((a, b) => {
+    const aLoc = (typeof a === "string" ? a : a.loc) || "";
+    const bLoc = (typeof b === "string" ? b : b.loc) || "";
+    const aSegments = aLoc.split("/").length;
+    const bSegments = bLoc.split("/").length;
+    if (aSegments > bSegments)
+      return 1;
+    if (aSegments < bSegments)
+      return -1;
+    return 0;
+  });
+}
+
+function resolveKey(k) {
+  switch (k) {
+    case "images":
+      return "image";
+    case "videos":
+      return "video";
+    case "news":
+      return "news";
+    default:
+      return k;
+  }
+}
+function handleObject(key, obj) {
+  return [
+    `        <${key}:${key}>`,
+    ...Object.entries(obj).map(([sk, sv]) => {
+      if (key === "video" && Array.isArray(sv)) {
+        return sv.map((v) => {
+          if (typeof v === "string") {
+            return [
+              `            `,
+              `<${key}:${sk}>`,
+              escapeValueForXml(v),
+              `</${key}:${sk}>`
+            ].join("");
+          }
+          const attributes = Object.entries(v).filter(([ssk]) => ssk !== sk).map(([ssk, ssv]) => `${ssk}="${escapeValueForXml(ssv)}"`).join(" ");
+          return [
+            `            <${key}:${sk} ${attributes}>`,
+            // value is the same sk
+            v[sk],
+            `</${key}:${sk}>`
+          ].join("");
+        }).join("\n");
+      }
+      if (typeof sv === "object") {
+        if (key === "video") {
+          const attributes = Object.entries(sv).filter(([ssk]) => ssk !== sk).map(([ssk, ssv]) => `${ssk}="${escapeValueForXml(ssv)}"`).join(" ");
+          return [
+            `            <${key}:${sk} ${attributes}>`,
+            // value is the same sk
+            sv[sk],
+            `</${key}:${sk}>`
+          ].join("");
+        }
+        return [
+          `            <${key}:${sk}>`,
+          ...Object.entries(sv).map(([ssk, ssv]) => `                <${key}:${ssk}>${escapeValueForXml(ssv)}</${key}:${ssk}>`),
+          `            </${key}:${sk}>`
+        ].join("\n");
+      }
+      return `            <${key}:${sk}>${escapeValueForXml(sv)}</${key}:${sk}>`;
+    }),
+    `        </${key}:${key}>`
+  ].join("\n");
+}
+function handleArray(key, arr) {
+  if (arr.length === 0)
+    return false;
+  key = resolveKey(key);
+  if (key === "alternatives") {
+    return arr.map((obj) => [
+      `        <xhtml:link rel="alternate" ${Object.entries(obj).map(([sk, sv]) => `${sk}="${escapeValueForXml(sv)}"`).join(" ")} />`
+    ].join("\n")).join("\n");
+  }
+  return arr.map((obj) => handleObject(key, obj)).join("\n");
+}
+function handleEntry(k, e) {
+  return Array.isArray(e[k]) ? handleArray(k, e[k]) : typeof e[k] === "object" ? handleObject(k, e[k]) : `        <${k}>${escapeValueForXml(e[k])}</${k}>`;
+}
+function wrapSitemapXml(input, resolvers, wrapSitemapXmlOptions) {
+  const xsl = wrapSitemapXmlOptions.xsl ? resolvers.relativeBaseUrlResolver(wrapSitemapXmlOptions.xsl) : false;
+  const credits = wrapSitemapXmlOptions.credits;
+  input.unshift(`<?xml version="1.0" encoding="UTF-8"?>${xsl ? `<?xml-stylesheet type="text/xsl" href="${xsl}"?>` : ""}`);
+  if (credits)
+    input.push(`<!-- XML Sitemap generated by Nuxt Simple Sitemap v${wrapSitemapXmlOptions.version} -->`);
+  return input.join("\n");
+}
+function escapeValueForXml(value) {
+  if (value === true || value === false)
+    return value ? "yes" : "no";
+  return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+}
+
+async function buildSitemap(sitemap, resolvers) {
+  const config = useRuntimeConfig();
+  const {
+    sitemaps,
+    // enhancing
+    autoLastmod,
+    autoI18n,
+    isI18nMapped,
+    isMultiSitemap,
+    // sorting
+    sortEntries,
+    // chunking
+    defaultSitemapsChunkSize,
+    // xls
+    version,
+    xsl,
+    credits
+  } = config["nuxt-simple-sitemap"];
+  const isChunking = typeof sitemaps.chunks !== "undefined" && !Number.isNaN(Number(sitemap.sitemapName));
+  function maybeSort(urls2) {
+    return sortEntries ? sortSitemapUrls(urls2) : urls2;
+  }
+  function maybeSlice(urls2) {
+    if (isChunking && defaultSitemapsChunkSize) {
+      const chunk = Number(sitemap.sitemapName);
+      return urls2.slice(chunk * defaultSitemapsChunkSize, (chunk + 1) * defaultSitemapsChunkSize);
+    }
+    return urls2;
+  }
+  if (autoI18n?.differentDomains) {
+    const domain = autoI18n.locales.find((e) => [e.iso, e.code].includes(sitemap.sitemapName))?.domain;
+    if (domain) {
+      const _tester = resolvers.canonicalUrlResolver;
+      resolvers.canonicalUrlResolver = (path) => resolveSitePath(path, {
+        absolute: true,
+        withBase: false,
+        siteUrl: withHttps(domain),
+        trailingSlash: !_tester("/test/").endsWith("/"),
+        base: "/"
+      });
+    }
+  }
+  const sources = sitemap.includeAppSources ? await globalSitemapSources() : [];
+  sources.push(...await childSitemapSources(sitemap));
+  let resolvedSources = await resolveSitemapSources(sources);
+  if (autoI18n)
+    resolvedSources = normaliseI18nSources(resolvedSources, { autoI18n, isI18nMapped });
+  const normalisedUrls = normaliseSitemapUrls(resolvedSources.map((e) => e.urls).flat(), resolvers);
+  ({ ...sitemap.defaults || {} });
+  const _routeRulesMatcher = toRouteMatcher(
+    createRouter({ routes: config.nitro?.routeRules })
+  );
+  let enhancedUrls = normalisedUrls.map((e) => defu$1(e, sitemap.defaults)).map((e) => {
+    const path = parseURL(e.loc).pathname;
+    let routeRules = defu$1({}, ..._routeRulesMatcher.matchAll(
+      withoutBase(path.split("?")[0], useRuntimeConfig().app.baseURL)
+    ).reverse());
+    if (autoI18n?.locales && autoI18n?.strategy !== "no_prefix") {
+      const match = path.match(new RegExp(`^/(${autoI18n.locales.map((l) => l.code).join("|")})(.*)`));
+      const pathWithoutPrefix = match?.[2];
+      if (pathWithoutPrefix && pathWithoutPrefix !== path) {
+        routeRules = defu$1(routeRules, ..._routeRulesMatcher.matchAll(
+          withoutBase(pathWithoutPrefix.split("?")[0], useRuntimeConfig().app.baseURL)
+        ).reverse());
+      }
+    }
+    if (routeRules.sitemap)
+      return defu$1(e, routeRules.sitemap);
+    if (typeof routeRules.index !== "undefined" && !routeRules.index)
+      return false;
+    return e;
+  }).filter(Boolean);
+  if (autoI18n?.locales)
+    enhancedUrls = applyI18nEnhancements(enhancedUrls, { isI18nMapped, autoI18n, sitemapName: sitemap.sitemapName });
+  const filteredUrls = filterSitemapUrls(enhancedUrls, { isMultiSitemap, autoI18n, ...sitemap });
+  const sortedUrls = maybeSort(filteredUrls);
+  const slicedUrls = maybeSlice(sortedUrls);
+  const nitro = useNitroApp();
+  const ctx = {
+    urls: slicedUrls,
+    sitemapName: sitemap.sitemapName
+  };
+  await nitro.hooks.callHook("sitemap:resolved", ctx);
+  const urls = maybeSort(normaliseSitemapUrls(ctx.urls, resolvers));
+  const urlset = urls.map((e) => {
+    const keys = Object.keys(e).filter((k) => !k.startsWith("_"));
+    return [
+      "    <url>",
+      keys.map((k) => handleEntry(k, e)).filter(Boolean).join("\n"),
+      "    </url>"
+    ].join("\n");
+  });
+  return wrapSitemapXml([
+    '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    urlset.join("\n"),
+    "</urlset>"
+  ], resolvers, { version, xsl, credits });
+}
+
+async function buildSitemapIndex(resolvers) {
+  const {
+    sitemaps,
+    // enhancing
+    autoLastmod,
+    // chunking
+    defaultSitemapsChunkSize,
+    autoI18n,
+    isI18nMapped,
+    sortEntries,
+    // xls
+    version,
+    xsl,
+    credits
+  } = useRuntimeConfig()["nuxt-simple-sitemap"];
+  if (!sitemaps)
+    throw new Error("Attempting to build a sitemap index without required `sitemaps` configuration.");
+  function maybeSort(urls) {
+    return sortEntries ? sortSitemapUrls(urls) : urls;
+  }
+  const isChunking = typeof sitemaps.chunks !== "undefined";
+  const chunks = {};
+  if (isChunking) {
+    const sitemap = sitemaps.chunks;
+    const sources = await resolveSitemapSources(await globalSitemapSources());
+    const normalisedUrls = normaliseSitemapUrls(sources.map((e) => e.urls).flat(), resolvers);
+    let enhancedUrls = normalisedUrls.map((e) => defu$1(e, sitemap.defaults));
+    if (autoI18n?.locales)
+      enhancedUrls = applyI18nEnhancements(enhancedUrls, { isI18nMapped, autoI18n, sitemapName: sitemap.sitemapName });
+    const filteredUrls = filterSitemapUrls(enhancedUrls, { ...sitemap, autoI18n, isMultiSitemap: true });
+    const sortedUrls = maybeSort(filteredUrls);
+    sortedUrls.forEach((url, i) => {
+      const chunkIndex = Math.floor(i / defaultSitemapsChunkSize);
+      chunks[chunkIndex] = chunks[chunkIndex] || { urls: [] };
+      chunks[chunkIndex].urls.push(url);
+    });
+  } else {
+    for (const sitemap in sitemaps) {
+      if (sitemap !== "index") {
+        chunks[sitemap] = chunks[sitemap] || { urls: [] };
+      }
+    }
+  }
+  const entries = [];
+  for (const name in chunks) {
+    const sitemap = chunks[name];
+    const entry = {
+      sitemap: resolvers.canonicalUrlResolver(`${name}-sitemap.xml`)
+    };
+    let lastmod = sitemap.urls.filter((a) => !!a?.lastmod).map((a) => typeof a.lastmod === "string" ? new Date(a.lastmod) : a.lastmod).sort((a, b) => (b?.getTime() || 0) - (a?.getTime() || 0))?.[0];
+    if (!lastmod && autoLastmod)
+      lastmod = /* @__PURE__ */ new Date();
+    if (lastmod)
+      entry.lastmod = normaliseDate(lastmod);
+    entries.push(entry);
+  }
+  if (sitemaps.index)
+    entries.push(...sitemaps.index.sitemaps);
+  const sitemapXml = entries.map((e) => [
+    "    <sitemap>",
+    `        <loc>${escapeValueForXml(e.sitemap)}</loc>`,
+    // lastmod is optional
+    e.lastmod ? `        <lastmod>${escapeValueForXml(e.lastmod)}</lastmod>` : false,
+    "    </sitemap>"
+  ].filter(Boolean).join("\n")).join("\n");
+  return wrapSitemapXml([
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    sitemapXml,
+    "</sitemapindex>"
+  ], resolvers, { version, xsl, credits });
+}
+
+function useNitroUrlResolvers(e) {
+  const canonicalQuery = getQuery$1(e).canonical;
+  const isShowingCanonical = typeof canonicalQuery !== "undefined" && canonicalQuery !== "false";
+  const siteConfig = useSiteConfig(e);
+  return {
+    fixSlashes: (path) => fixSlashes(siteConfig.trailingSlash, path),
+    // we need these as they depend on the nitro event
+    canonicalUrlResolver: createSitePathResolver(e, {
+      canonical: isShowingCanonical || !true,
+      absolute: true,
+      withBase: true
+    }),
+    relativeBaseUrlResolver: createSitePathResolver(e, { absolute: false, withBase: true })
+  };
+}
+async function createSitemap(e, definition) {
+  const { sitemapName } = definition;
+  const nitro = useNitroApp();
+  let sitemap = await (definition.sitemapName === "index" ? buildSitemapIndex(useNitroUrlResolvers(e)) : buildSitemap(definition, useNitroUrlResolvers(e)));
+  const ctx = { sitemap, sitemapName };
+  await nitro.hooks.callHook("sitemap:output", ctx);
+  sitemap = ctx.sitemap;
+  setHeader(e, "Content-Type", "text/xml; charset=UTF-8");
+  return sitemap;
+}
+
+const _qvQTMe = defineEventHandler(async (e) => {
+  const { sitemaps } = useRuntimeConfig()["nuxt-simple-sitemap"];
+  if ("index" in sitemaps) {
+    return sendRedirect(e, withBase("/sitemap_index.xml", useRuntimeConfig().app.baseURL), 302 );
+  }
+  return createSitemap(e, Object.values(sitemaps)[0]);
+});
+
+function defineRule(rule) {
+  return rule;
+}
+function isNonFetchableLink(link) {
+  return link.startsWith("javascript:") || link.startsWith("blob:") || link.startsWith("data:") || link.startsWith("mailto:") || link.startsWith("tel:") || link.startsWith("#");
+}
+
+function RuleTrailingSlash() {
+  return defineRule({
+    test({ report, link, siteConfig }) {
+      if (!link.startsWith("/") && !link.startsWith(siteConfig.url))
+        return;
+      const $url = parseURL(link);
+      const isFile = $url.pathname.split("/").pop().includes(".");
+      if ($url.pathname === "/" || isFile)
+        return;
+      const fix = fixSlashes(siteConfig.trailingSlash, link);
+      if (!$url.pathname.endsWith("/") && siteConfig.trailingSlash) {
+        report({
+          name: "trailing-slash",
+          scope: "warning",
+          message: "Should have a trailing slash.",
+          tip: "Incorrect trailing slashes can cause duplicate pages in search engines and waste crawl budget.",
+          fix,
+          fixDescription: "Add trailing slash."
+        });
+      } else if ($url.pathname.endsWith("/") && !siteConfig.trailingSlash) {
+        report({
+          name: "trailing-slash",
+          scope: "warning",
+          message: "Should not have a trailing slash.",
+          tip: "Incorrect trailing slashes can cause duplicate pages in search engines and waste crawl budget.",
+          fix,
+          fixDescription: "Removing trailing slash."
+        });
+      }
+    }
+  });
+}
+
+function RuleMissingHash() {
+  return defineRule({
+    test({ link, report, ids, fromPath }) {
+      const [path, hash] = link.split("#");
+      if (!link.includes("#") || fixSlashes(false, path) !== fromPath)
+        return;
+      if (ids.includes(hash))
+        return;
+      const fuse = new Fuse(ids, {
+        threshold: 0.6
+      });
+      const fixedHash = fuse.search(hash.replace("#", ""))?.[0]?.item;
+      const payload = {
+        name: "missing-hash",
+        scope: "error",
+        message: `No element with id "${hash}" found.`
+      };
+      if (fixedHash) {
+        payload.fix = `${link.split("#")[0]}#${fixedHash}`;
+        payload.fixDescription = `Did you mean ${payload.fix}?`;
+      }
+      report(payload);
+    }
+  });
+}
+
+function RuleNoBaseLess() {
+  return defineRule({
+    test({ link, fromPath, report }) {
+      if (link.startsWith("/") || link.startsWith("http") || isNonFetchableLink(link))
+        return;
+      report({
+        name: "no-baseless",
+        scope: "warning",
+        message: "Should not have a base.",
+        fix: `${joinURL(fromPath, link)}`,
+        fixDescription: `Add base ${fromPath}.`
+      });
+    }
+  });
+}
+
+function RuleNoJavascript() {
+  return defineRule({
+    test({ link, report }) {
+      if (link.startsWith("javascript:")) {
+        report({
+          name: "no-javascript",
+          scope: "error",
+          tip: 'Using a <button type="button"> instead as a better practice.',
+          message: "Should not use JavaScript"
+        });
+      }
+    }
+  });
+}
+
+function RuleAbsoluteSiteUrls() {
+  return defineRule({
+    test({ report, link, siteConfig }) {
+      if (!link.startsWith(siteConfig.url))
+        return;
+      const $url = parseURL(link);
+      report({
+        name: "absolute-site-urls",
+        scope: "warning",
+        message: "Internal links should be relative.",
+        tip: "Using internal links that start with / is recommended to avoid issues when deploying your site to different domain names",
+        fix: $url.pathname,
+        fixDescription: `Remove ${siteConfig.url}.`
+      });
+    }
+  });
+}
+
+function RuleRedirects() {
+  return defineRule({
+    test({ report, response }) {
+      if (response.status !== 301 && response.status !== 302)
+        return;
+      const payload = {
+        name: "redirects",
+        scope: "warning",
+        message: "Should not redirect.",
+        tip: "Redirects use up your crawl budget and increase loading times, it's recommended to avoid them when possible."
+      };
+      const fix = typeof response.headers?.get === "function" ? response.headers.get("location") : response.headers?.location || false;
+      if (fix) {
+        payload.fix = fix;
+        payload.fixDescription = `Set to redirect URL ${fix}.`;
+      }
+      report(payload);
+    }
+  });
+}
+
+function RuleNoErrorResponse() {
+  return defineRule({
+    test({ link, response, report, pageSearch }) {
+      if (!response.status || response.status.toString().startsWith("2") || response.status.toString().startsWith("3") || isNonFetchableLink(link))
+        return;
+      const payload = {
+        name: "no-error-response",
+        scope: "error",
+        message: `Should not respond with status code ${response.status}${response.statusText ? ` (${response.statusText})` : ""}.`
+      };
+      if (link.startsWith("/") && pageSearch) {
+        const fix = pageSearch.search(link)?.[0]?.item;
+        if (fix && fix !== link) {
+          payload.fix = fix;
+          payload.fixDescription = `Did you mean ${fix}?`;
+        }
+      } else {
+        payload.canRetry = true;
+      }
+      report(payload);
+    }
+  });
+}
+
+const DefaultInspections = {
+  "missing-hash": RuleMissingHash(),
+  "no-error-response": RuleNoErrorResponse(),
+  "no-baseless": RuleNoBaseLess(),
+  "no-javascript": RuleNoJavascript(),
+  "trailing-slash": RuleTrailingSlash(),
+  "absolute-site-urls": RuleAbsoluteSiteUrls(),
+  "redirects": RuleRedirects()
+};
+function inspect(ctx, rules = DefaultInspections) {
+  const res = { error: [], warning: [], fix: ctx.link, link: ctx.link };
+  let link = ctx.link;
+  const url = parseURL(link);
+  if (!url.pathname && !url.protocol && !url.host && !isNonFetchableLink(link)) {
+    res.error.push({
+      name: "invalid-url",
+      scope: "error",
+      message: `Invalid URL: ${link}`
+    });
+    return res;
+  }
+  const validInspections = Object.entries(rules).filter(([name]) => !ctx.skipInspections || !ctx.skipInspections.includes(name)).map(([, rule]) => rule);
+  for (const rule of validInspections) {
+    rule.test({
+      ...ctx,
+      link,
+      url,
+      report(obj) {
+        res[obj.scope].push(obj);
+        if (obj.fix)
+          link = obj.fix;
+      }
+    });
+  }
+  res.passes = !res.error?.length && !res.warning?.length;
+  res.fix = link;
+  return res;
+}
+
+function generateLinkSources(s, link) {
+  const regEscapedLink = link.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+  const LinkRegExp = new RegExp(`(['"])${regEscapedLink}(['"])`);
+  const lines = s.split("\n");
+  const sources = [];
+  for (const [i, line] of lines.entries()) {
+    const index = line.search(LinkRegExp);
+    if (index !== -1) {
+      const lineNumber = i + 1;
+      const columnNumber = index - 1;
+      const start = lines.slice(0, lineNumber - 1).join("\n").length + index + 2;
+      const end = start + link.length;
+      sources.push({ start, end, lineNumber, columnNumber });
+    }
+  }
+  return sources;
+}
+const LINE_PREVIEW_OFFSET = 2;
+async function generateFileLinkPreviews(filepath, link) {
+  const contents = await readFile(filepath, "utf8");
+  const previews = generateLinkSourcePreviews(contents, link);
+  let lang = filepath.split(".").pop();
+  if (!lang)
+    lang = "vue";
+  return { previews, lang, filepath };
+}
+async function generateFileLinkDiff(filepath, original, replacement) {
+  const contents = await readFile(filepath, "utf8");
+  return generateLinkDiff(contents, original, replacement);
+}
+function generateLinkSourcePreviews(s, link) {
+  const sources = generateLinkSources(s, link);
+  const lines = s.split("\n");
+  return sources.map(({ lineNumber, columnNumber }) => {
+    const code = lines.slice(lineNumber - LINE_PREVIEW_OFFSET - 1, lineNumber + LINE_PREVIEW_OFFSET).join("\n");
+    return { code, lineNumber, columnNumber };
+  });
+}
+function generateLinkDiff(s, originalLink, newLink) {
+  const ms = new MagicString(s);
+  const sources = generateLinkSources(s, originalLink);
+  sources.forEach(({ start, end }) => {
+    ms.remove(start, end);
+    ms.prependRight(start, newLink);
+  });
+  return { diff: calculateDiff(s, ms.toString()), code: ms.toString() };
+}
+function calculateDiff(from, to) {
+  const diffs = diffLines(from.trim(), to.trim());
+  const added = [];
+  const removed = [];
+  const result = [];
+  for (const diff of diffs) {
+    const lines = diff.value.trimEnd().split("\n");
+    for (const line of lines) {
+      if (diff.added) {
+        added.push(result.length);
+        result.push(line);
+      } else if (diff.removed) {
+        removed.push(result.length);
+        result.push(line);
+      } else {
+        result.push(line);
+      }
+    }
+  }
+  return {
+    added,
+    removed,
+    result: result.join("\n")
+  };
+}
+
+const responses = {};
+async function getLinkResponse({ link, timeout, fetchRemoteUrls, baseURL }) {
+  if (link.includes("#") && !link.startsWith("#"))
+    link = link.split("#")[0];
+  const response = responses[link];
+  if (!response) {
+    if (isNonFetchableLink(link) || link.startsWith("http") && !fetchRemoteUrls) {
+      responses[link] = Promise.resolve({ status: 200, statusText: "OK", headers: {} });
+    } else {
+      responses[link] = crawlFetch(link, { timeout, baseURL });
+    }
+  }
+  return responses[link];
+}
+async function crawlFetch(link, options = {}) {
+  const timeout = options.timeout || 5e3;
+  const timeoutController = new AbortController();
+  const abortRequestTimeout = setTimeout(() => timeoutController.abort(), timeout);
+  return await $fetch$1.raw(link, {
+    baseURL: options.baseURL,
+    method: "HEAD",
+    signal: timeoutController.signal,
+    headers: {
+      "user-agent": "Nuxt Link Checker"
+    }
+  }).catch((error) => {
+    if (error.name === "AbortError")
+      return { status: 408, statusText: "Request Timeout", headers: {} };
+    return { status: 404, statusText: "Not Found", headers: {} };
+  }).finally(() => clearTimeout(abortRequestTimeout)).then((res) => ({ status: res.status, statusText: res.statusText, headers: res.headers }));
+}
+
+const _FgCl4u = defineEventHandler(async (e) => {
+  const link = decodeURIComponent(getQuery$1(e).link);
+  if (link.startsWith("mailto:") || link.startsWith("tel:"))
+    return { passes: true };
+  const body = await readBody(e);
+  const { ids, paths } = body;
+  const partialCtx = {
+    ids,
+    fromPath: fixSlashes(false, parseURL(getHeader(e, "referer") || "/").pathname),
+    siteConfig: useSiteConfig(e)
+  };
+  const runtimeConfig = useRuntimeConfig().public["nuxt-link-checker"];
+  const response = await getLinkResponse({
+    link,
+    timeout: runtimeConfig.fetchTimeout,
+    fetchRemoteUrls: runtimeConfig.fetchRemoteUrls,
+    baseURL: useNitroOrigin(e)
+  });
+  const result = inspect({
+    ...partialCtx,
+    link,
+    pageSearch: useNitroApp()._linkCheckerPageSearch,
+    response,
+    skipInspections: runtimeConfig.skipInspections
+  });
+  const filePaths = paths.map((p) => {
+    const [filepath] = p.split(":");
+    return filepath;
+  });
+  if (!result.passes) {
+    result.sources = (await Promise.all(filePaths.map(async (filepath) => await generateFileLinkPreviews(filepath, link)))).filter((s) => s.previews.length);
+    result.diff = await Promise.all((result.sources || []).map(async ({ filepath }) => generateFileLinkDiff(filepath, link, result.fix)));
+  }
+  return result;
+});
+
+const pagePaths = [
+  "/"
+];
+
+const _tXWB6I = defineEventHandler(async () => {
+  const runtimeConfig = useRuntimeConfig().public["nuxt-link-checker"];
+  const linkDb = [
+    ...pagePaths
+  ];
+  if (runtimeConfig.hasSitemapModule) {
+    const sitemapDebug = await $fetch("/api/__sitemap__/debug");
+    const entries = sitemapDebug.sources.map((source) => source.urls).flat();
+    linkDb.push(...entries.map((s) => s.loc));
+  }
+  return [.../* @__PURE__ */ new Set([...linkDb])];
+});
+
 const _lazy_1g6thd = () => Promise.resolve().then(function () { return index_post$1; });
 const _lazy_P0Oshr = () => Promise.resolve().then(function () { return index_get$1; });
 const _lazy_lrVbYJ = () => Promise.resolve().then(function () { return renderer$1; });
@@ -674,6 +2392,14 @@ const handlers = [
   { route: '/api/name', handler: _lazy_1g6thd, lazy: true, middleware: false, method: "post" },
   { route: '/api/status', handler: _lazy_P0Oshr, lazy: true, middleware: false, method: "get" },
   { route: '/__nuxt_error', handler: _lazy_lrVbYJ, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _Tpf93A, lazy: false, middleware: true, method: undefined },
+  { route: '/robots.txt', handler: _Tyk1r6, lazy: false, middleware: false, method: undefined },
+  { route: '', handler: _8T2Mu0, lazy: false, middleware: false, method: undefined },
+  { route: '/__sitemap__/debug.json', handler: _u53bwd, lazy: false, middleware: false, method: undefined },
+  { route: '/__sitemap__/style.xsl', handler: _jevHwJ, lazy: false, middleware: false, method: undefined },
+  { route: '/sitemap.xml', handler: _qvQTMe, lazy: false, middleware: false, method: undefined },
+  { route: '/api/__link_checker__/inspect', handler: _FgCl4u, lazy: false, middleware: false, method: undefined },
+  { route: '/api/__link_checker__/links', handler: _tXWB6I, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_lrVbYJ, lazy: true, middleware: false, method: undefined }
 ];
 
@@ -858,6 +2584,44 @@ const errorDev = /*#__PURE__*/Object.freeze({
   template: template$1
 });
 
+const sources$1 = [
+    {
+        "context": {
+            "name": "sitemap:urls",
+            "description": "Set with the `sitemap.urls` config."
+        },
+        "urls": [],
+        "sourceType": "user"
+    },
+    {
+        "context": {
+            "name": "nuxt:pages",
+            "description": "Generated from your static page files.",
+            "tips": [
+                "Can be disabled with `{ excludeAppSources: ['nuxt:pages'] }`."
+            ]
+        },
+        "urls": [
+            {
+                "loc": "/"
+            }
+        ],
+        "sourceType": "app"
+    }
+];
+
+const globalSources = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  sources: sources$1
+});
+
+const sources = {};
+
+const childSources = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  sources: sources
+});
+
 const index_post = defineEventHandler(async (event) => {
   try {
     const runtimeConfig = useRuntimeConfig();
@@ -960,22 +2724,11 @@ function createServerHead(options = {}) {
 
 const unheadPlugins = [];
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"name":"google","content":"notranslate"},{"name":"robots","content":""},{"name":"revisit-after","content":"1 day"},{"name":"theme-color","content":"#29292a"},{"property":"og:type","content":"website"},{"name":"keywords","content":"the end poem,the end,poem,minecraft,julian,gough,julian gough,public domain,public,domain,Minecraft End Poem,Julian Gough poetry,Philosophical gaming poetry,Minecraft storyline conclusion,Reflective game conclusion,Gaming epilogue poem,Minecraft existential themes,Julian Gough creative writing,Emotional game conclusion,Minecraft narrative verse,Minecraft End Credits poem,Minecraft philosophical reflection,Julian Gough literary creation"},{"property":"og:site:name","content":"The End Poem"},{"name":"author","content":"Julian Gough"},{"name":"color-scheme","content":"dark light"},{"property":"og:image:width","content":"1240"},{"property":"og:image:height","content":"650"},{"property":"og:image:type","content":"image/gif"},{"name":"twitter:card","content":"summary_large_image"},{"name":"twitter:image:type","content":"image/gif"},{"name":"twitter:image:width","content":"900"},{"name":"twitter:image:height","content":"470"}],"link":[{"rel":"canonical","href":"https://theendpoem.com/"},{"rel":"icon","sizes":"32x32","href":"https://theendpoem.com/favicon.ico"},{"type":"image/svg+xml","rel":"icon","sizes":"any","href":"https://theendpoem.com/icon.svg"},{"rel":"apple-touch-icon","href":"https://theendpoem.com/apple-touch-icon.png"},{"rel":"manifest","href":"https://theendpoem.com/manifest.webmanifest"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"}};
 
 const appRootId = "__nuxt";
 
 const appRootTag = "div";
-
-function buildAssetsDir() {
-  return useRuntimeConfig().app.buildAssetsDir;
-}
-function buildAssetsURL(...path) {
-  return joinURL(publicAssetsURL(), buildAssetsDir(), ...path);
-}
-function publicAssetsURL(...path) {
-  const publicBase = useRuntimeConfig().app.cdnURL || useRuntimeConfig().app.baseURL;
-  return path.length ? joinURL(publicBase, ...path) : publicBase;
-}
 
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;
