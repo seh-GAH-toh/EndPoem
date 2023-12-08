@@ -12,8 +12,6 @@ const quotesList = [
 </script>
 
 <template>
-    <span
-        class="z-10 w-full h-2 absolute top-0 left-0 bg-red-600 sm:bg-orange-600 md:bg-yellow-500 lg:bg-green-500 xl:bg-blue-600 2xl:bg-purple-600"></span>
     <main
         class="leading-normal p-10 sm:p-20 md:p-40 2xl:p-80 fade-in-fwd font-['Open_Sans'] flex flex-col gap-10 min-h-screen w-full items-center justify-center bg-[#FBFBFB] dark:bg-[#29292a] dark:text-[#FBFBFB] text-[#29292a]">
         <article>
