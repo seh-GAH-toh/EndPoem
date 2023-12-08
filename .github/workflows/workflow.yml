@@ -13,4 +13,4 @@ jobs:
       - run: bun install
 
       # Build project
-      - run: bun build
+      - run: bun run build
