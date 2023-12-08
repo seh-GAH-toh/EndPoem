@@ -44,19 +44,6 @@
                 Could Do</a>
             by Google Fonts, Animations by
             <a class="underline" href="https://animista.net" tabindex="0">Animista</a>,
-            <a class="underline" href="https://cssloaders.github.io" tabindex="0">Spinner</a>
-            and
-            <a class="underline" href="https://codepen.io/himalayasingh/pen/KOdJPM" tabindex="0">Menu button</a>.
-        </p>
-        <p class="text-sm md:text-base 2xl:text-lg">
-            <a class="underline" href="https://fonts.google.com/specimen/Nothing+You+Could+Do" tabindex="0">Nothing You
-                Could Do</a>
-            by Google Fonts, Shadowbox by
-            <a class="underline" href="https://getcssscan.com/css-box-shadow-examples" tabindex="0">Css Scan</a>, Animations
-            by
-            <a class="underline" href="https://animista.net" tabindex="0">Animista</a>,
-            <a class="underline" href="https://cssloaders.github.io" tabindex="0">Spinner</a>
-            and
             <a class="underline" href="https://codepen.io/himalayasingh/pen/KOdJPM" tabindex="0">Menu button</a>.
         </p>
     </div>

@@ -1,7 +1,7 @@
-name: bun-test
+name: bun-build
 on: [push]
 jobs:
-  bun-test:
+  bun-build:
     name: build-project
     runs-on: ubuntu-latest
     steps:
