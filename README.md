@@ -13,11 +13,18 @@ To all those who generously donated and supported me in sustaining this project:
 
 - [Laura Newman](https://lauranewman.com/pages/index.php)
 
-## Requirements:
+## Requirements
 
-- Node v21.2.0 or above
-  **OR**
-- Bun v1.0.14 or above
+- Bun v1.0.14 and above **OR** Node v21.2.0 and above
+
+## Environment variables
+
+.env variables for this project:
+
+```Properties
+# NITRO_PRESET=vercel-edge // is causing edge functions to crash
+NUXT_DISCORD_WEBHOOK=""
+```
 
 ## Setup
 
