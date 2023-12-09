@@ -10,13 +10,9 @@ export default defineNuxtConfig({
     "nuxt-simple-robots",
     "nuxt-simple-sitemap",
     "nuxt-link-checker",
-    "nuxt-security",
   ],
   runtimeConfig: {
     discordWebhook: "",
-  },
-  security: {
-    headers: {},
   },
   css: ["@/assets/css/main.css"],
   site: {

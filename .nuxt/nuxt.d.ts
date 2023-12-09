@@ -3,7 +3,6 @@
 /// <reference types="nuxt-simple-robots" />
 /// <reference types="nuxt-simple-sitemap" />
 /// <reference types="nuxt-link-checker" />
-/// <reference types="nuxt-security" />
 /// <reference types="@nuxt/devtools" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference types="nuxt" />
