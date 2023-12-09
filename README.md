@@ -34,7 +34,6 @@ The second instance happens when the user inputs any text into the name field an
 .env variables for this project:
 
 ```Properties
-# NITRO_PRESET=vercel-edge // is causing edge functions to crash
 NUXT_DISCORD_WEBHOOK=""
 ```
 
