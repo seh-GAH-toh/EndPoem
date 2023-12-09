@@ -241,19 +241,7 @@ declare module 'nuxt/schema' {
    },
   }
   interface PublicRuntimeConfig {
-   "nuxt-link-checker": {
-      hasSitemapModule: boolean,
 
-      excludeLinks: Array<any>,
-
-      skipInspections: Array<any>,
-
-      fetchTimeout: number,
-
-      showLiveInspections: boolean,
-
-      fetchRemoteUrls: boolean,
-   },
   }
 }
 declare module 'vue' {

@@ -108,6 +108,6 @@
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "../dist",
-    "../.output"
+    "../.vercel/output"
   ]
 }
