@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     preset: "vercel-edge",
   },
   routeRules: {
-    "*": {
+    "**": {
       headers: {
         "X-Frame-Options": "DENY",
         "X-Content-Type-Options": "nosniff",
