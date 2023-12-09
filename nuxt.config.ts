@@ -8,7 +8,6 @@ export default defineNuxtConfig({
       headers: {
         "X-Frame-Options": "DENY",
         "X-Content-Type-Options": "nosniff",
-        "Access-Control-Allow-Origin": "https://www.theendpoem.com",
       },
     },
   },
