@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   routeRules: {
     "/": {
       headers: {
-        "Content-Security-Policy": "default-src *; object-src 'none'",
+        "Content-Security-Policy":
+          "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'",
         "X-Frame-Options": "DENY",
         "X-Content-Type-Options": "nosniff",
       },
