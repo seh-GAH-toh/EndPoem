@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "nuxi cleanup | nuxi prepare",
+    "clear": "nuxi cleanup | nuxi prepare",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -13,7 +13,6 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "latest",
-    "@vite-pwa/nuxt": "^0.3.5",
     "nuxt": "^3.8.2",
     "nuxt-link-checker": "^2.1.10",
     "nuxt-simple-robots": "^3.1.9",
