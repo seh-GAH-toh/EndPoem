@@ -12,7 +12,7 @@ export default defineNuxtConfig({
         "Strict-Transport-Security":
           "max-age=31536000; includeSubDomains; preload",
         "Content-Security-Policy":
-          "default-src 'self'; object-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; image-src 'self' https://www.theendpoem.com;",
+          "default-src 'self'; object-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self' https://www.theendpoem.com;",
       },
     },
   },
