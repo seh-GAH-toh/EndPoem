@@ -3,7 +3,15 @@ export default defineNuxtConfig({
   nitro: {
     preset: "vercel-edge",
   },
-
+  routeRules: {
+    "/": {
+      headers: {
+        "X-Frame-Options": "DENY",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+      },
+    },
+  },
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
