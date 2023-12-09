@@ -20,6 +20,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.1.1"
+    "@vercel/analytics": "^1.1.1",
+    "nuxt-security": "^1.0.0-rc.5"
   }
 }

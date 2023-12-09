@@ -3,26 +3,20 @@ export default defineNuxtConfig({
   nitro: {
     preset: "vercel-edge",
   },
-  routeRules: {
-    "/": {
-      headers: {
-        "Content-Security-Policy":
-          "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';base-uri 'self';form-action 'self'",
-        "X-Frame-Options": "DENY",
-        "X-Content-Type-Options": "nosniff",
-        "X-XSS-Protection": "0",
-      },
-    },
-  },
+
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
     "nuxt-simple-robots",
     "nuxt-simple-sitemap",
     "nuxt-link-checker",
+    "nuxt-security",
   ],
   runtimeConfig: {
     discordWebhook: "",
+  },
+  security: {
+    headers: {},
   },
   css: ["@/assets/css/main.css"],
   site: {
