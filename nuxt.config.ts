@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     "/": {
       headers: {
         "Content-Security-Policy":
-          "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'",
+          "default-src 'none'; script-src 'unsafe-inline'; connect-src 'self'; img-src 'self'; style-src 'unsafe-inline';base-uri 'self';form-action 'self'",
         "X-Frame-Options": "DENY",
         "X-Content-Type-Options": "nosniff",
       },
