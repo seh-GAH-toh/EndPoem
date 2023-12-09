@@ -45,4 +45,12 @@ useSeoMeta({
       <LazyThePoemButton />
     </div>
   </main>
+  <p class="w-full absolute bottom-0 p-3 text-center text-sm opacity-60">
+    <i>
+      This website gather limited user data. To see how it's handled, visit the <NuxtLink
+        to="https://github.com/ArthurSegato/TheEndPoem" class="underline underline-offset-2">project's repository
+      </NuxtLink>
+      .
+    </i>
+  </p>
 </template>
