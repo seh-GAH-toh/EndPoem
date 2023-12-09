@@ -3,13 +3,6 @@ export default defineNuxtConfig({
   nitro: {
     preset: "vercel-edge",
   },
-  routeRules: {
-    "/": {
-      headers: {
-        "Access-Control-Allow-Origin": "https://www.theendpoem.com",
-      },
-    },
-  },
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
