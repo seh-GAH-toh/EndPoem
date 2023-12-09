@@ -19,7 +19,7 @@ By acessing theendpoem.com, there are two distinct occasions where user data is 
 
 ![Vercel Web Analytics Dashboard](/vercel.jpg "Vercel Web Analytics Dashboard")
 
-The second instance happens when the user inputs any text into the name field and submit it. In this case, the content entered into the name field is directly sent to a text channel on my personal Discord server, accessible only by me (as illustrated below), via a webhook.
+The second instance happens when the user inputs any text into the name field and submit it. In this case, the content entered into the name field is directly sent to a text channel on my personal Discord server, **accessible only by me** (as illustrated below), via a webhook.
 
 ![My Discord private server](/discord.jpg "My Discord private server")
 
