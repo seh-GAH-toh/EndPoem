@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "nuxt-simple-robots",
     "nuxt-simple-sitemap",
     "nuxt-link-checker",
+    "@vite-pwa/nuxt",
   ],
   runtimeConfig: {
     discordWebhook: "",
@@ -49,10 +50,6 @@ export default defineNuxtConfig({
         {
           rel: "apple-touch-icon",
           href: "https://theendpoem.com/apple-touch-icon.png",
-        },
-        {
-          rel: "manifest",
-          href: "https://theendpoem.com/manifest.webmanifest",
         },
       ],
       meta: [
@@ -122,6 +119,37 @@ export default defineNuxtConfig({
           content: "470",
         },
       ],
+    },
+  },
+  pwa: {
+    manifest: {
+      name: "The End Poem by Julian Gough",
+      short_name: "End Poem",
+      description:
+        "The End Poem is a freehand poem written by Julian Gough that appears when the player finishes minecraft. It has been in the public domain since 2022.",
+      lang: "en-US",
+      start_url: "https://theendpoem.com/",
+      icons: [
+        {
+          src: "/icon-192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          src: "/icon-512.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+        {
+          src: "/icon-maskable.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "maskable",
+        },
+      ],
+      theme_color: "#29292a",
+      background_color: "#fbfbfb",
+      display: "standalone",
     },
   },
 });
