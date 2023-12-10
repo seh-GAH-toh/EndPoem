@@ -1,4 +1,4 @@
-[![Website](/githubLogo.svg)](https://www.theendpoem.com)
+[![Website](/github-card.svg)](https://www.theendpoem.com)
 [![Uptime](https://img.shields.io/website?url=https%3A%2F%2Fwww.theendpoem.com)](https://img.shields.io/website?url=https%3A%2F%2Fwww.theendpoem.com)
 [![HSTS Status](https://img.shields.io/hsts/preload/theendpoem.com)](https://img.shields.io/hsts/preload/theendpoem.com)
 [![Mozilla HTTP Observatory](https://img.shields.io/mozilla-observatory/grade/www.theendpoem.com?publish)](https://img.shields.io/mozilla-observatory/grade/www.theendpoem.com?publish)
@@ -17,11 +17,11 @@ To all those who generously donated and supported me in sustaining this project:
 
 By acessing theendpoem.com, there are two distinct occasions where user data is collected. In the first instance, technical data is gathered anonymously (as shown below) by [Vercel Web Analytics](https://vercel.com/docs/analytics) via a JS script, which can be easily blocked by any ad-blocking extension.
 
-![Vercel Web Analytics Dashboard](/vercel.jpg "Vercel Web Analytics Dashboard")
+![Vercel Web Analytics Dashboard](/vercel-card.jpg "Vercel Web Analytics Dashboard")
 
 The second instance happens when the user inputs any text into the name field and submit it. In this case, the content entered into the name field is directly sent to a text channel on my personal Discord server, **accessible only by me** (as illustrated below), via a webhook.
 
-![My Discord private server](/discord.jpg "My Discord private server")
+![My Discord private server](/discord-card.jpg "My Discord private server")
 
 **If the user wishes to delete their name, they can simply reach out to me through any available channel on my GitHub profile, [personal website](arthursegato.dev), or via email at hello@theendpoem.com.**
 
