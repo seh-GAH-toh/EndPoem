@@ -23,7 +23,7 @@ The second instance happens when the user inputs any text into the name field an
 
 ![My Discord private server](/discord-card.jpg "My Discord private server")
 
-**If the user wishes to delete their name, they can simply reach out to me through any available channel on my GitHub profile, [personal website](arthursegato.dev), or via email at hello@theendpoem.com.**
+**If the user wishes to delete their name, they can simply reach out to me through any available channel on my GitHub profile, [personal website](https://www.arthursegato.dev/), or via email at hello@theendpoem.com.**
 
 ## Requirements
 
