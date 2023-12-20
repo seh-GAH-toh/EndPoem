@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SpeedInsights } from '@vercel/speed-insights/vue';
 const isSubmitted = useSubmitted();
 const isCreditsOpen = useCredits();
 </script>
@@ -25,4 +26,5 @@ const isCreditsOpen = useCredits();
       .
     </i>
   </p>
+  <SpeedInsights />
 </template>
