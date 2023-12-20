@@ -16,7 +16,7 @@ const isCreditsOpen = useCredits();
       <LazyThePoemButton />
     </div>
   </main>
-  <p class="w-full absolute bottom-0 p-3 text-center text-sm opacity-60">
+  <p class="w-full absolute bottom-0 p-3 text-center text-sm opacity-60" v-show="!isSubmitted">
     <i>
       This website gather limited user data. To see how it's handled, visit the <NuxtLink
         to="https://github.com/ArthurSegato/TheEndPoem/#data-protection-legislations-gdpr-lgpd-and-others"
