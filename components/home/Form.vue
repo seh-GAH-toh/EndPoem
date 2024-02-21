@@ -5,10 +5,8 @@ const isSubmitted = useSubmitted();
 const handleSubmit = () => {
     useFetch("/api/name", {
         method: "POST",
-        body: {
-            name,
-        },
-        onRequest({ }) {
+        body: { name },
+        onRequest() {
             isSubmitted.value = true;
         },
     });

@@ -1,30 +1,44 @@
 export default defineEventHandler(async (event) => {
   try {
-    const runtimeConfig = useRuntimeConfig();
-    const body = await readBody(event);
+    // Retrieve the Discord webhook URL from runtime configuration
+    const { discord } = useRuntimeConfig().webhooks;
+    // Extract the 'name' property from the body
+    const { name } = await readBody(event);
 
-    if (body.name === undefined || body.name.length === 0)
-      throw new Error("Name cannot be empty");
+    // Abort if 'name' is empty or not provided
+    if (!name || name.length === 0)
+      throw createError({
+        message: "Please enter a valid name.",
+        statusCode: 400,
+      });
 
-    fetch(runtimeConfig.discordWebhook, {
+    // Send 'name' to the Discord webhook
+    const response = await fetch(discord, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        content: `${body.name}`,
+        content: `${name}`,
       }),
     });
 
+    // Check if the response indicates an error
+    if (!response.ok) {
+      throw new Error("Failed to submit name to Discord webhook");
+    }
+
+    // Return a success message
     return {
       message: "Name successfully submitted",
     };
   } catch (error) {
-    if (error instanceof Error) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: error.message,
-      });
-    }
+    // If an error occurs during execution, return it
+    return {
+      error: {
+        message: error.message || "Internal Server Error",
+        statusCode: error.statusCode || 500,
+      },
+    };
   }
 });

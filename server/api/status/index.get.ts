@@ -1,9 +1,6 @@
-export default defineEventHandler(async (event) => {
-  try {
-    return {
-      message: "online",
-    };
-  } catch (error) {
-    return error;
-  }
+export default defineEventHandler(() => {
+  // Return a success message indicating the service is online
+  return {
+    message: "online",
+  };
 });

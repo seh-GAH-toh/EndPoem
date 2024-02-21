@@ -1,28 +1,30 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  nitro: {
-    preset: "vercel-edge",
-  },
-  routeRules: {
-    "/**": {
-      headers: {
-        "X-Frame-Options": "DENY",
-        "X-Content-Type-Options": "nosniff",
-        "X-XSS-Protection": "1; mode=block",
-        "Strict-Transport-Security":
-          "max-age=31536000; includeSubDomains; preload",
-      },
-    },
-  },
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
     "nuxt-simple-robots",
-    "nuxt-simple-sitemap",
     "nuxt-link-checker",
+    "@nuxtjs/sitemap",
+    "nuxt-security",
   ],
+  nitro: {
+    preset: "vercel-edge",
+  },
+  security: {
+    headers: {
+      strictTransportSecurity: {
+        maxAge: 31536000,
+        includeSubdomains: true,
+        preload: true,
+      },
+      xXSSProtection: "1; mode=block",
+    },
+  },
   runtimeConfig: {
-    discordWebhook: "",
+    webhooks: {
+      discord: process.env.WEBHOOK_DISCORD,
+    },
   },
   css: ["@/assets/css/main.css"],
   site: {
@@ -97,7 +99,7 @@ export default defineNuxtConfig({
           content: "The End Poem",
         },
         {
-          name: "og:image:url",
+          name: "og:image",
           content: "https://www.theendpoem.com/images/facebook-card.jpg",
         },
         {
@@ -139,7 +141,7 @@ export default defineNuxtConfig({
           content: "summary_large_image",
         },
         {
-          name: "twitter:image:url",
+          name: "twitter:image",
           content: "https://www.theendpoem.com/images/twitter-card.jpg",
         },
         {
@@ -181,7 +183,7 @@ export default defineNuxtConfig({
         },
         {
           name: "color-scheme",
-          content: "dark light",
+          content: "light dark",
         },
       ],
     },

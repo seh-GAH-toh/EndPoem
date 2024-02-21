@@ -5,7 +5,7 @@
   "scripts": {
     "clear": "nuxi cleanup | nuxi prepare",
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -13,14 +13,15 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "latest",
-    "nuxt": "^3.8.2",
+    "nuxt": "^3.10.2",
     "nuxt-link-checker": "^2.1.10",
+    "nuxt-security": "^1.1.2",
     "nuxt-simple-robots": "^3.1.10",
-    "nuxt-simple-sitemap": "^4.1.9",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^5.1.0",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.2"
   }
