@@ -3,7 +3,7 @@
 [![HSTS Status](https://img.shields.io/hsts/preload/theendpoem.com)](https://img.shields.io/hsts/preload/theendpoem.com)
 [![Mozilla HTTP Observatory](https://img.shields.io/mozilla-observatory/grade/www.theendpoem.com?publish)](https://img.shields.io/mozilla-observatory/grade/www.theendpoem.com?publish)
 [![bun-build](https://github.com/ArthurSegato/TheEndPoem/actions/workflows/workflow.yml/badge.svg)](https://github.com/ArthurSegato/TheEndPoem/actions/workflows/workflow.yml)
-[![Donate on Stripe](https://img.shields.io/badge/Donate-Stripe-1D24CA)](https://donate.stripe.com/7sI29F4lo7Pt80g28a)
+[![Donate on Stripe](https://img.shields.io/badge/Donate-Stripe-1D24CA)](https://donate.stripe.com/9AQbMl1Pt5DV4i4288)
 
 The End Poem is a freehand poem written by musician Julian Gough that appears when the player finishes minecraft, before the credits. It has been in the public domain, under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, since 2022.
 
