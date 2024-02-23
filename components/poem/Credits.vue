@@ -22,7 +22,7 @@
             with the goal to spread and disassociate the End Poem with
             <a class="underline" href="https://en.wikipedia.org/wiki/Minecraft" tabindex="0">Minecraft</a>, if you wish to
             support this project, consider making a donation via
-            <a class="underline" href="https://donate.stripe.com/7sI29F4lo7Pt80g28a" tabindex="0">Stripe</a>, any amount is
+            <a class="underline" href="https://donate.stripe.com/9AQbMl1Pt5DV4i4288" tabindex="0">Stripe</a>, any amount is
             greatly appreciated.
         </p>
         <p class="text-sm md:text-base 2xl:text-lg">
