@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "nuxt-link-checker",
     "@nuxtjs/sitemap",
     "nuxt-security",
+    "@nuxtjs/google-fonts",
   ],
   nitro: {
     preset: "vercel-edge",
@@ -19,6 +20,12 @@ export default defineNuxtConfig({
         preload: true,
       },
       xXSSProtection: "1; mode=block",
+    },
+  },
+  googleFonts: {
+    families: {
+      "Open+Sans": [400, 700],
+      "Nothing+You+Could+Do": [400],
     },
   },
   runtimeConfig: {

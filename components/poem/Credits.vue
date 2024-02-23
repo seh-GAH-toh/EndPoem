@@ -29,11 +29,11 @@
             Below are listed all the resources utilized in its development. Should you
             encounter any issues or wish to request improvements, please don't
             hesitate to reach out via email at
-            <a class="underline" href="mailto:hello@theendpoem.com" tabindex="0">hello@theendpoem.com</a>, Alternatively, if
-            you'd prefer to take the initiative to fix any
-            concerns yourself, you're more than welcome to contribute directly to the
-            <a class="underline" href="https://github.com/ArthurSegato/Website-TheEndPoem" tabindex="0">Github
-                repository</a>.
+            <a class="underline" href="mailto:github.reentry594@passinbox.com"
+                tabindex="0">github.reentry594@passinbox.com</a>, Alternatively, if
+            you'd prefer to take the initiative to fix any concerns yourself, you're more than welcome to contribute
+            directly to the <a class="underline" href="https://github.com/ArthurSegato/Website-TheEndPoem"
+                tabindex="0">Github repository</a>.
         </p>
         <p class="text-sm md:text-base 2xl:text-lg">
             Icons by
