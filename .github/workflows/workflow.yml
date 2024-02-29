@@ -7,7 +7,7 @@ on:
     branches-ignore:
       - main
 jobs:
-  Deploy-Preview:
+  Lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,10 +20,14 @@ jobs:
 
       - name: Lint code
         run: bun lint:fix
-
+  Unit-Tests:
+    runs-on: ubuntu-latest
+    steps:
       - name: Execute Unit tests
         run: bun test:unit
-
+  Deploy-Preview:
+    runs-on: ubuntu-latest
+    steps:
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
