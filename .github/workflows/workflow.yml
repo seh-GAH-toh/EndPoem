@@ -15,11 +15,11 @@ jobs:
       - name: Install Latest Bun Runtime
         uses: oven-sh/setup-bun@v1
 
-      - name: Lint code
-        run: bun lint:fix
-
       - name: Install Dependencies
         run: bun install
+
+      - name: Lint code
+        run: bun lint:fix
 
       - name: Execute Unit tests
         run: bun test:unit
