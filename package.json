@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint:js": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
+    "lint:js": "eslint --ignore-path .gitignore --ext .ts,.vue .",
     "lint:prettier": "prettier --check .",
     "lint": "bun lint:js && bun lint:prettier",
     "lint:fix": "prettier --write --list-different . && bun lint:js --fix",
