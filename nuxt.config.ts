@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "nuxt-security",
     "@nuxtjs/google-fonts",
+    "@nuxt/test-utils/module",
   ],
   nitro: {
     preset: "vercel-edge",
