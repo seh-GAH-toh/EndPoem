@@ -15,6 +15,6 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
   },
   nitro: {
-    preset: "cloudflare-pages",
+    preset: "cloudflare_module",
   },
 })
