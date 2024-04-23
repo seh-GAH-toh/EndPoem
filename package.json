@@ -4,13 +4,14 @@
   "type": "module",
   "scripts": {
     "clear": "nuxt cleanup | nuxt prepare",
-    "build": "nuxt build --host",
-    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.0",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
