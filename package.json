@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "endpoem",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,8 +11,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.6.1",
+    "@nuxtjs/seo": "^2.0.0-rc.10",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "nuxt": "^3.11.2",
+    "nuxt-security": "^1.3.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   }
