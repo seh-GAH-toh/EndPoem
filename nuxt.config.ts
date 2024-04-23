@@ -13,5 +13,8 @@ export default defineNuxtConfig({
     name: 'The End Poem by Julian Gough',
     description: 'The End Poem is a freehand poem written by Julian Gough that appears when the player finishes minecraft. It has been in the public domain since 2022.',
     defaultLocale: 'en',
-  }
+  },
+  nitro: {
+    preset: "cloudflare-pages",
+  },
 })
