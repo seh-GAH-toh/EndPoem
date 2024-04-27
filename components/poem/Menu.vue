@@ -66,8 +66,8 @@ const isMenuOpen = useMenu();
         Below are listed all the resources utilized in its development. Should you
         encounter any issues or wish to request improvements, please don't
         hesitate to reach out via email at
-        <NuxtLink class="underline" to="mailto:github.reentry594@passinbox.com" tabindex="0">
-          github.reentry594@passinbox.com</NuxtLink>, Alternatively, if you'd prefer to take the initiative to fix
+        <NuxtLink class="underline" to="mailto:hello@theendpoem.com" tabindex="0">hello@theendpoem.com</NuxtLink>,
+        Alternatively, if you'd prefer to take the initiative to fix
         any
         concerns yourself, you're more than welcome to contribute directly to the
         <NuxtLink class="underline" to="https://github.com/ArthurSegato/Website-TheEndPoem" tabindex="0">Github
