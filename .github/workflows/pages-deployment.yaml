@@ -15,8 +15,10 @@ jobs:
         with:
           node-version: "20.x"
       
-      - name: Build
-         run: npm install
+      - name: Install Dependencies
+         run: npm ci
+
+      - name: BUild
          run: npm run build
       
       - name: Publish
