@@ -109,10 +109,6 @@ Refer to the [deployment page](https://nuxt.com/docs/getting-started/deployment)
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [Semantic Versioning](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ArthurSegato/Portfolio/tags).
-
 ## Authors
 
 - **Julian Gough** - Author of the End Poem - [juliangough.com](https://www.juliangough.com/)
