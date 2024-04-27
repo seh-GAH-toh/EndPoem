@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     preset: "cloudflare-pages"
   },
 
-  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxt/fonts", "nuxt-security", "@nuxtjs/seo"],
+  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxt/fonts", "nuxt-security"],
   css: ["@/assets/css/main.css"],
   runtimeConfig: {
     webhooks: {
