@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     preset: "cloudflare-pages"
   },
 
-  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxt/fonts", "nuxt-security"],
+  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxt/fonts", "nuxt-security", "nuxt-simple-robots", "@nuxtjs/sitemap", "nuxt-link-checker"],
   css: ["@/assets/css/main.css"],
   runtimeConfig: {
     webhooks: {
@@ -15,8 +15,5 @@ export default defineNuxtConfig({
   },
   site: {
     url: 'https://www.theendpoem.com/',
-    name: 'The End Poem by Julian Gough',
-    description: 'The End Poem is a freehand poem written by Julian Gough that appears when the player finishes minecraft. It has been in the public domain since 2022.',
-    defaultLocale: 'en',
   },
 })

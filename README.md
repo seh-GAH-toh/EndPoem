@@ -2,8 +2,6 @@
 [![Uptime](https://img.shields.io/website?url=https%3A%2F%2Fwww.theendpoem.com)](https://img.shields.io/website?url=https%3A%2F%2Fwww.theendpoem.com)
 [![HSTS Status](https://img.shields.io/hsts/preload/theendpoem.com)](https://img.shields.io/hsts/preload/theendpoem.com)
 [![Mozilla HTTP Observatory](https://img.shields.io/mozilla-observatory/grade/www.theendpoem.com?publish)](https://img.shields.io/mozilla-observatory/grade/www.theendpoem.com?publish)
-[![Vercel Preview Deployment](https://github.com/ArthurSegato/TheEndPoem/actions/workflows/workflow.yml/badge.svg)](https://github.com/ArthurSegato/TheEndPoem/actions/workflows/workflow.yml)
-[![Donate on Stripe](https://img.shields.io/badge/Donate-Stripe-1D24CA)](https://donate.stripe.com/9AQbMl1Pt5DV4i4288)
 
 The End Poem is a freehand poem written by musician Julian Gough that appears when the player finishes minecraft, before the credits. It has been in the public domain, under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, since 2022.
 
@@ -95,12 +93,12 @@ bun run preview
 
 ## Deployment
 
-This project is automatically deployed on the Vercel Edge network. However, if it is necessary to deploy it in another environment, adjust or completely remove, the Nitro preset configuration on `nuxt.config.ts`, based on the deployment environment you intend to use.
+This project is automatically deployed on the Cloudflare Pages network. However, if it is necessary to deploy it in another environment, adjust or completely remove, the Nitro preset configuration on `nuxt.config.ts`, based on the deployment environment you intend to use.
 
 ```Javascript
 nitro: {
-  /* Preset for vercel */
-  preset: "vercel-edge",
+  /* Preset for cloudflare */
+  preset: "cloudflare-pages",
 },
 ```
 
@@ -139,11 +137,7 @@ Below is a list of all the external assets used in the development of this websi
 
 ### Data protection legislations (GDPR, LGPD and others)
 
-By acessing theendpoem.com, there are two distinct occasions where user data is collected. In the first instance, technical data is gathered anonymously (as shown below) by [Vercel Web Analytics](https://vercel.com/docs/analytics) via a JS script, which can be easily blocked by any ad-blocking extension.
-
-![Vercel Web Analytics Dashboard](.github/assets/vercel.jpg "Vercel Web Analytics Dashboard")
-
-The second instance happens when the user inputs any text into the name field and submit it. In this case, the content entered into the name field is directly sent to a text channel on my personal Discord server, **accessible only by me** (as illustrated below), via a webhook.
+By acessing theendpoem.com, there is one occasion where user data is collected, it happens when the user inputs any text into the name field and submit it. In this case, the content entered into "name" field is directly sent to a text channel on my personal Discord server, **accessible only by me** (as illustrated below), via a webhook.
 
 ![My Discord private server](.github/assets/discord.jpg "My Discord private server")
 

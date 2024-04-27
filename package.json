@@ -21,7 +21,10 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240423.0",
+    "@nuxtjs/sitemap": "^5.1.4",
     "nitro-cloudflare-dev": "^0.1.4",
+    "nuxt-link-checker": "^3.0.0-rc.8",
+    "nuxt-simple-robots": "^4.0.0-rc.17",
     "wrangler": "^3.52.0"
   }
 }
