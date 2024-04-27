@@ -13,7 +13,7 @@ const sendName = () => {
 </script>
 
 <template>
-  <form class="relative flex w-fit flex-col" @submit.prevent="sendName">
+  <form class="relative flex w-fit flex-col" @submit.prevent="sendName" autocomplete="off">
     <div class="peer h-12 border-b-2 transition-all duration-300 ease-in-out"
       :class="name.length >= 2 ? 'border-b-[#29292a] dark:border-b-[#FBFBFB]' : 'border-b-[#29292a]/50 dark:border-b-[#FBFBFB]/50'">
       <input id="name" v-model="name" type="text" name="name"
