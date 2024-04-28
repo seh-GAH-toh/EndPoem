@@ -70,7 +70,7 @@ const isMenuOpen = useMenu();
         Alternatively, if you'd prefer to take the initiative to fix
         any
         concerns yourself, you're more than welcome to contribute directly to the
-        <NuxtLink class="underline" to="https://github.com/ArthurSegato/Website-TheEndPoem" tabindex="0">Github
+        <NuxtLink class="underline" to="https://github.com/ArthurSegato/EndPoem" tabindex="0">Github
           repository</NuxtLink>.
       </p>
       <p class="text-sm md:text-base 2xl:text-lg">
