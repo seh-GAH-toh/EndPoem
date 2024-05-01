@@ -112,7 +112,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:image:type",
-          content: "image/jpg",
+          content: "image/png",
         },
         {
           name: "twitter:title",
@@ -142,7 +142,7 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:image:type",
-          content: "image/jpg",
+          content: "image/png",
         },
         {
           name: "twitter:image:width",
