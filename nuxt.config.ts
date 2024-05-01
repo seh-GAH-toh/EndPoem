@@ -1,12 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/fonts",
+    "nuxt-security",
+    "nuxt-simple-robots",
+    "@nuxtjs/sitemap",
+    "nuxt-link-checker",
+  ],
   nitro: {
-    preset: "cloudflare-pages"
+    preset: "cloudflare-pages",
   },
-
-  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxt/fonts", "nuxt-security", "nuxt-simple-robots", "@nuxtjs/sitemap", "nuxt-link-checker"],
   css: ["@/assets/css/main.css"],
   runtimeConfig: {
     webhooks: {
@@ -14,7 +19,7 @@ export default defineNuxtConfig({
     },
   },
   site: {
-    url: 'https://www.theendpoem.com/',
+    url: "https://www.theendpoem.com/",
   },
   app: {
     head: {
@@ -30,22 +35,22 @@ export default defineNuxtConfig({
         {
           rel: "icon",
           sizes: "16x16",
-          href: "https://www.theendpoem.com/favicon.ico",
+          href: "favicon.ico",
         },
         {
           rel: "icon",
           sizes: "32x32",
-          href: "https://www.theendpoem.com/favicon32.ico",
+          href: "favicon32.ico",
         },
         {
           type: "image/svg+xml",
           rel: "icon",
           sizes: "any",
-          href: "https://www.theendpoem.com/icon.svg",
+          href: "icon.svg",
         },
         {
           rel: "apple-touch-icon",
-          href: "https://www.theendpoem.com/apple-touch-icon.png",
+          href: "apple-touch-icon.png",
         },
       ],
       meta: [
@@ -86,11 +91,11 @@ export default defineNuxtConfig({
         },
         {
           name: "og:image",
-          content: "https://www.theendpoem.com/images/facebook-card.jpg",
+          content: "/images/facebook-card.jpg",
         },
         {
           name: "og:image:secure_url",
-          content: "https://www.theendpoem.com/images/facebook-card.jpg",
+          content: "/images/facebook-card.jpg",
         },
         {
           name: "og:image:alt",
@@ -128,7 +133,7 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:image",
-          content: "https://www.theendpoem.com/images/twitter-card.jpg",
+          content: "/images/twitter-card.jpg",
         },
         {
           name: "twitter:image:alt",
@@ -149,7 +154,7 @@ export default defineNuxtConfig({
         },
         {
           name: "thumbnail",
-          content: "https://www.theendpoem.com/images/google-card.png",
+          content: "/images/google-card.png",
         },
         {
           name: "google",
@@ -173,5 +178,5 @@ export default defineNuxtConfig({
         },
       ],
     },
-  }
-})
+  },
+});

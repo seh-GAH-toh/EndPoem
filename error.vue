@@ -13,20 +13,23 @@ const quotesList = [
 
 <template>
   <main
-    class="leading-normal p-10 sm:p-20 md:p-40 2xl:p-80 font-['Open_Sans'] flex flex-col gap-10 min-h-screen w-full items-center justify-center bg-[#FBFBFB] dark:bg-[#29292a] dark:text-[#FBFBFB] text-[#29292a]">
+    class="flex min-h-screen w-full flex-col items-center justify-center gap-10 bg-[#FBFBFB] p-10 font-['Open_Sans'] leading-normal text-[#29292a] sm:p-20 md:p-40 2xl:p-80 dark:bg-[#29292a] dark:text-[#FBFBFB]"
+  >
     <article class="fade-in">
       <q class="text-xl">{{
         quotesList[Math.floor(Math.random() * quotesList.length)]
-        }}</q>
+      }}</q>
       <address class="text-right text-lg">Douglas Adams</address>
     </article>
   </main>
   <footer
-    class="fade-in dark:text-[#FBFBFB] text-[#29292a] z-10 w-full absolute bottom-0 py-5 text-center left-0 px-10 sm:px-20">
+    class="fade-in absolute bottom-0 left-0 z-10 w-full px-10 py-5 text-center text-[#29292a] sm:px-20 dark:text-[#FBFBFB]"
+  >
     <p>
       It appears that an error has occurred. Kindly navigate back to the main
       page or click
-      <NuxtLink to="/" class="underline underline-offset-2"><strong>here</strong>
+      <NuxtLink to="/" class="underline underline-offset-2"
+        ><strong>here</strong>
       </NuxtLink>
       to proceed.
     </p>
