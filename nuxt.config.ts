@@ -95,7 +95,7 @@ export default defineNuxtConfig({
         },
         {
           name: "og:image:secure_url",
-          content: "/images/facebook-card.jpg",
+          content: "https://www.theendpoem.com/images/facebook-card.png",
         },
         {
           name: "og:image:alt",
@@ -133,7 +133,7 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:image",
-          content: "/images/twitter-card.jpg",
+          content: "https://www.theendpoem.com/images/twitter-card.jpg",
         },
         {
           name: "twitter:image:alt",
@@ -154,7 +154,7 @@ export default defineNuxtConfig({
         },
         {
           name: "thumbnail",
-          content: "/images/google-card.png",
+          content: "https://www.theendpoem.com/images/google-card.png",
         },
         {
           name: "google",
