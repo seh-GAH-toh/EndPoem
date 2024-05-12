@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxt/fonts": "^0.6.1",
+    "@nuxtjs/seo": "^2.0.0-rc.10",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "nuxt": "^3.11.2",
     "nuxt-security": "^1.4.3",
@@ -19,9 +20,6 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@nuxtjs/sitemap": "^5.1.4",
-    "nuxt-link-checker": "^3.0.0-rc.10",
-    "nuxt-simple-robots": "^4.0.0-rc.17",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14"
   }

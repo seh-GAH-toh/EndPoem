@@ -14,7 +14,7 @@ These instructions will give you a copy of the project up and running on your lo
 
 Requirements for the software and other tools to build, test and push.
 
-- [Bun v1.0.26](https://bun.sh/) or above
+- [Bun v1.1.8](https://bun.sh/) or above
 
 Environment variables required to run this project:
 
@@ -94,12 +94,12 @@ bun run preview
 
 ## Deployment
 
-This project is automatically deployed on the Cloudflare Pages network. However, if it is necessary to deploy it in another environment, adjust or completely remove, the Nitro preset configuration on `nuxt.config.ts`, based on the deployment environment you intend to use.
+This project is automatically deployed on the Vercel Edge network. However, if it is necessary to deploy it in another environment, adjust or completely remove, the Nitro preset configuration on `nuxt.config.ts`, based on the deployment environment you intend to use.
 
 ```Javascript
 nitro: {
-  /* Preset for cloudflare */
-  preset: "cloudflare-pages",
+  /* Preset for vercel */
+  preset: "vercel-edge",
 },
 ```
 

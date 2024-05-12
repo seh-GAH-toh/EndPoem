@@ -2,7 +2,8 @@ export default eventHandler(async (event) => {
   try {
     // Retrieve the Discord webhook URL from runtime configuration
     const { discord } = useRuntimeConfig().webhooks;
-    // Extract the 'name' property from the body
+
+    // Extract the 'name' property from request body
     const { name } = await readBody(event);
 
     // Abort if 'name' is empty or not provided
