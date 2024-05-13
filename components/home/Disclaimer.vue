@@ -5,19 +5,16 @@
         Hey, I'm a web/game developer seeking urgent employment. If you can help
         me, contact me on
         <strong>
-          <NuxtLink
-            class="underline underline-offset-2"
-            to="https://www.linkedin.com/in/arthur-segato/"
-          >
+          <NuxtLink class="underline underline-offset-2" to="https://www.linkedin.com/in/arthur-segato/">
             linkedin
           </NuxtLink>
         </strong>
         or
         <strong>
-          <NuxtLink class="underline" to="mailto:hello@theendpoem.com">
+          <NuxtLink class="underline" to="mailto:github.reentry594@passinbox.com">
             email
-          </NuxtLink> </strong
-        >.
+          </NuxtLink>
+        </strong>.
       </i>
     </p>
   </footer>

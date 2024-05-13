@@ -37,10 +37,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <article
-    class="flex max-w-3xl flex-col gap-3 px-16 py-24 leading-relaxed"
-    v-if="isMenuOpen"
-  >
+  <article class="flex max-w-3xl flex-col gap-3 px-16 py-24 leading-relaxed" v-if="isMenuOpen">
     <h4 class="text-2xl font-bold lg:text-3xl">Special Thanks</h4>
     <p>
       To all those who generously donated and supported me in sustaining this
@@ -48,10 +45,7 @@ onMounted(() => {
     </p>
     <ul class="list-disc pl-4">
       <li>
-        <NuxtLink
-          to="https://lauranewman.com/pages/index.php"
-          class="underline"
-        >
+        <NuxtLink to="https://lauranewman.com/pages/index.php" class="underline">
           Laura Newman
         </NuxtLink>
       </li>
@@ -59,111 +53,53 @@ onMounted(() => {
     <h4 class="text-2xl font-bold lg:text-3xl">Credits</h4>
     <p>
       The <strong>“End Poem”</strong> has been released into the
-      <NuxtLink
-        class="underline"
-        to="https://creativecommons.org/publicdomain/zero/1.0/"
-        tabindex="0"
-        >public domain
+      <NuxtLink class="underline" to="https://creativecommons.org/publicdomain/zero/1.0/" tabindex="0">public domain
       </NuxtLink>
       by its creator,
-      <NuxtLink class="underline" to="https://www.juliangough.com" tabindex="0"
-        >Julian Gough</NuxtLink
-      >. For insights into his decision, I highly recommend checking out his
-      <NuxtLink
-        class="underline"
-        to="https://theeggandtherock.substack.com/p/i-wrote-a-story-for-a-friend"
-        tabindex="0"
-        >blog post</NuxtLink
-      >
+      <NuxtLink class="underline" to="https://www.juliangough.com" tabindex="0">Julian Gough</NuxtLink>. For insights
+      into his decision, I highly recommend checking out his
+      <NuxtLink class="underline" to="https://theeggandtherock.substack.com/p/i-wrote-a-story-for-a-friend"
+        tabindex="0">blog post</NuxtLink>
       discussing the rationale behind this move. Additionaly, if you'd like to
       show support for his creative endeavors, consider making a donation via
       his
-      <NuxtLink
-        class="underline"
-        to="https://www.paypal.com/donate/?hosted_button_id=525T2WCA24268"
-        tabindex="0"
-      >
-        PayPal account</NuxtLink
-      >.
+      <NuxtLink class="underline" to="https://www.paypal.com/donate/?hosted_button_id=525T2WCA24268" tabindex="0">
+        PayPal account</NuxtLink>.
     </p>
     <p>
       The <strong>"theendpoem.com"</strong> was created by
-      <NuxtLink
-        class="underline"
-        to="https://github.com/ArthurSegato"
-        tabindex="0"
-        >Arthur Segato</NuxtLink
-      >
+      <NuxtLink class="underline" to="https://github.com/ArthurSegato" tabindex="0">Arthur Segato</NuxtLink>
       with the goal to spread and disassociate the End Poem with
-      <NuxtLink
-        class="underline"
-        to="https://en.wikipedia.org/wiki/Minecraft"
-        tabindex="0"
-        >Minecraft</NuxtLink
-      >, if you wish to support this project, consider making a donation via
-      <NuxtLink
-        class="underline"
-        to="https://donate.stripe.com/9AQbMl1Pt5DV4i4288"
-        tabindex="0"
-        >Stripe</NuxtLink
-      >, any amount is greatly appreciated.
+      <NuxtLink class="underline" to="https://en.wikipedia.org/wiki/Minecraft" tabindex="0">Minecraft</NuxtLink>, if you
+      wish to support this project, consider making a donation via
+      <NuxtLink class="underline" to="https://donate.stripe.com/9AQbMl1Pt5DV4i4288" tabindex="0">Stripe</NuxtLink>, any
+      amount is greatly appreciated.
     </p>
     <p>
       Below are listed all the resources utilized in its development. Should you
       encounter any issues or wish to request improvements, please don't
       hesitate to reach out via email at
-      <NuxtLink class="underline" to="mailto:hello@theendpoem.com" tabindex="0"
-        >hello@theendpoem.com</NuxtLink
-      >, Alternatively, if you'd prefer to take the initiative to fix any
+      <NuxtLink class="underline" to="mailto:github.reentry594@passinbox.com" tabindex="0">
+        github.reentry594@passinbox.com</NuxtLink>, Alternatively, if you'd prefer to take the initiative to fix any
       concerns yourself, you're more than welcome to contribute directly to the
-      <NuxtLink
-        class="underline"
-        to="https://github.com/ArthurSegato/EndPoem"
-        tabindex="0"
-        >Github repository </NuxtLink
-      >.
+      <NuxtLink class="underline" to="https://github.com/ArthurSegato/EndPoem" tabindex="0">Github repository
+      </NuxtLink>.
     </p>
     <p>
       Icons by
-      <NuxtLink
-        class="underline"
-        to="https://icons.getbootstrap.com"
-        tabindex="0"
-        >Bootstrap Icons</NuxtLink
-      >,
-      <NuxtLink
-        class="underline"
-        to="https://fonts.google.com/specimen/Open+Sans"
-        tabindex="0"
-        >Open Sans</NuxtLink
-      >
+      <NuxtLink class="underline" to="https://icons.getbootstrap.com" tabindex="0">Bootstrap Icons</NuxtLink>,
+      <NuxtLink class="underline" to="https://fonts.google.com/specimen/Open+Sans" tabindex="0">Open Sans</NuxtLink>
       and
-      <NuxtLink
-        class="underline"
-        to="https://fonts.google.com/specimen/Nothing+You+Could+Do"
-        tabindex="0"
-        >Nothing You Could Do</NuxtLink
-      >
+      <NuxtLink class="underline" to="https://fonts.google.com/specimen/Nothing+You+Could+Do" tabindex="0">Nothing You
+        Could Do</NuxtLink>
       by Google Fonts, Animations by
-      <NuxtLink class="underline" to="https://animista.net" tabindex="0"
-        >Animista</NuxtLink
-      >,
-      <NuxtLink
-        class="underline"
-        to="https://codepen.io/himalayasingh/pen/KOdJPM"
-        tabindex="0"
-        >Menu button</NuxtLink
-      >
+      <NuxtLink class="underline" to="https://animista.net" tabindex="0">Animista</NuxtLink>,
+      <NuxtLink class="underline" to="https://codepen.io/himalayasingh/pen/KOdJPM" tabindex="0">Menu button</NuxtLink>
       .
     </p>
   </article>
-  <article
-    v-else
-    class="flex max-w-3xl flex-col gap-3 px-16 py-24 leading-relaxed text-[#007878] dark:text-[#b3d7d7]"
-  >
-    <h2
-      class="text-2xl font-bold text-[#29292a] lg:text-3xl dark:text-[#FBFBFB]"
-    >
+  <article v-else class="flex max-w-3xl flex-col gap-3 px-16 py-24 leading-relaxed text-[#007878] dark:text-[#b3d7d7]">
+    <h2 class="text-2xl font-bold text-[#29292a] lg:text-3xl dark:text-[#FBFBFB]">
       End Poem.
     </h2>
     <p>I see the player you mean.</p>
