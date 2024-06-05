@@ -38,18 +38,6 @@ onMounted(() => {
 
 <template>
   <article class="flex max-w-3xl flex-col gap-3 px-16 py-24 leading-relaxed" v-if="isMenuOpen">
-    <h4 class="text-2xl font-bold lg:text-3xl">Special Thanks</h4>
-    <p>
-      To all those who generously donated and supported me in sustaining this
-      project:
-    </p>
-    <ul class="list-disc pl-4">
-      <li>
-        <NuxtLink to="https://lauranewman.com/pages/index.php" class="underline">
-          Laura Newman
-        </NuxtLink>
-      </li>
-    </ul>
     <h4 class="text-2xl font-bold lg:text-3xl">Credits</h4>
     <p>
       The <strong>“End Poem”</strong> has been released into the
@@ -68,7 +56,7 @@ onMounted(() => {
     </p>
     <p>
       The <strong>"theendpoem.com"</strong> was created by
-      <NuxtLink class="underline" to="https://github.com/ArthurSegato" tabindex="0">Arthur Segato</NuxtLink>
+      <NuxtLink class="underline" to="https://github.com/seh-GAH-toh" tabindex="0">Arthur Segato</NuxtLink>
       with the goal to spread and disassociate the End Poem with
       <NuxtLink class="underline" to="https://en.wikipedia.org/wiki/Minecraft" tabindex="0">Minecraft</NuxtLink>, if you
       wish to support this project, consider making a donation via
@@ -82,7 +70,7 @@ onMounted(() => {
       <NuxtLink class="underline" to="mailto:github.reentry594@passinbox.com" tabindex="0">
         github.reentry594@passinbox.com</NuxtLink>, Alternatively, if you'd prefer to take the initiative to fix any
       concerns yourself, you're more than welcome to contribute directly to the
-      <NuxtLink class="underline" to="https://github.com/ArthurSegato/EndPoem" tabindex="0">Github repository
+      <NuxtLink class="underline" to="https://github.com/seh-GAH-toh/EndPoem" tabindex="0">Github repository
       </NuxtLink>.
     </p>
     <p>
@@ -97,6 +85,18 @@ onMounted(() => {
       <NuxtLink class="underline" to="https://codepen.io/himalayasingh/pen/KOdJPM" tabindex="0">Menu button</NuxtLink>
       .
     </p>
+    <h4 class="text-2xl font-bold lg:text-3xl">Special Thanks</h4>
+    <p>
+      To all those who generously donated and supported me in sustaining this
+      project:
+    </p>
+    <ul class="list-disc pl-4">
+      <li>
+        <NuxtLink to="https://lauranewman.com/pages/index.php" class="underline">
+          Laura Newman
+        </NuxtLink>
+      </li>
+    </ul>
   </article>
   <article v-else class="flex max-w-3xl flex-col gap-3 px-16 py-24 leading-relaxed text-[#007878] dark:text-[#b3d7d7]">
     <h2 class="text-2xl font-bold text-[#29292a] lg:text-3xl dark:text-[#FBFBFB]">
