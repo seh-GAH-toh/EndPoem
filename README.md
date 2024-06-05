@@ -113,9 +113,9 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## Authors
 
 - **Julian Gough** - Author of the End Poem - [juliangough.com](https://www.juliangough.com/)
-- **Arthur Segato** - Developed the website theendpoem.com - [ArthurSegato](https://github.com/ArthurSegato)
+- **Arthur Segato** - Developed the website theendpoem.com - [ArthurSegato](https://github.com/seh-GAH-toh)
 
-See also the list of [contributors](https://github.com/ArthurSegato/TheEndPoem/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/seh-GAH-toh/EndPoem) who participated in this project.
 
 ## License
 
