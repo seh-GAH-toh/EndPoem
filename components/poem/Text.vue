@@ -314,7 +314,7 @@ onMounted(() => {
     <p class="text-[#007800] dark:text-[#4da14d]">
       Shush… Sometimes the player read lines of code on a screen. Decoded them
       into words; decoded words into meaning; decoded meaning into feelings,
-      emotions, theories, ideas, and the player started to breath faster and
+      emotions, theories, ideas, and the player started to breathe faster and
       deeper and realised it was alive, it was alive, those thousand deaths had
       not been real, the player was alive
     </p>
