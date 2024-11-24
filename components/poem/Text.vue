@@ -215,7 +215,7 @@ onMounted(() => {
     <p class="text-[#007800] dark:text-[#4da14d]">Yes. Player…</p>
     <p>Use its name.</p>
     <p class="text-[#007800] dark:text-[#4da14d]">
-      {{ name }}
+      {{ name }}. Player of games.
     </p>
     <p>Good.</p>
     <p class="text-[#007800] dark:text-[#4da14d]">
@@ -241,7 +241,7 @@ onMounted(() => {
       Once upon a time, there was a player.
     </p>
     <p>
-      {{ name }}
+      The player was you, {{ name }}.
     </p>
     <p class="text-[#007800] dark:text-[#4da14d]">
       Sometimes it thought itself human, on the thin crust of a spinning globe
@@ -263,7 +263,7 @@ onMounted(() => {
       Sometimes the player woke from one dream into another, then woke from that
       into a third.
     </p>
-    <p>Sometimes the player dreamed it watched words on a screen</p>
+    <p>Sometimes the player dreamed it watched words on a screen.</p>
     <p class="text-[#007800] dark:text-[#4da14d]">Let's go back.</p>
     <p class="text-[#007800] dark:text-[#4da14d]">
       The atoms of the player were scattered in the grass, in the rivers, in the
