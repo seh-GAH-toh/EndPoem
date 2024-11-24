@@ -141,11 +141,8 @@ onMounted(() => {
       what true structure did this player create, in the reality behind the
       screen?
     </p>
-    <p class="text-[#007800] dark:text-[#4da14d]">
-      It worked, with a million others, to sculpt a true world in a fold of
-    </p>
     <p>
-      the
+      It worked, with a million others, to sculpt a true world in a fold of the
       <span class="inline-block w-16 text-center">{{ secrets.first }}, </span>
       and created a
       <span class="inline-block w-16 text-center">{{ secrets.second }}</span>
@@ -198,8 +195,10 @@ onMounted(() => {
     <p class="text-[#007800] dark:text-[#4da14d]">
       But it would be so easy to tell them...
     </p>
-    <p>Too strong for this dream. To tell them how to live is to prevent</p>
-    <p class="text-[#007800] dark:text-[#4da14d]">them living.</p>
+    <p>
+      Too strong for this dream. To tell them how to live is to prevent
+      them living.
+    </p>
     <p class="text-[#007800] dark:text-[#4da14d]">
       I will not tell the player how to live.
     </p>
