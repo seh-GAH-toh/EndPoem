@@ -113,8 +113,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## Authors
 
 - **Julian Gough** - Author of the End Poem - [juliangough.com](https://www.juliangough.com/)
-- **Arthur Segato** - Developed the website theendpoem.com - [seh-GAH-toh](https://github.com/seh-GAH-toh)
-- **Eric Schneider** - Fixed spelling mistakes - [ericschn](https://github.com/ericschn)
+- **Arthur Segato** - Author of this project - [seh-GAH-toh](https://github.com/seh-GAH-toh)
 
 See also the list of [contributors](https://github.com/seh-GAH-toh/EndPoem) who participated in this project.
 
@@ -146,4 +145,6 @@ By acessing theendpoem.com, there is one occasion where user data is collected, 
 
 To all those who generously donated and supported me in sustaining this project:
 
-- [Laura Newman](https://lauranewman.com/pages/index.php)
+- [Laura Newman](https://lauranewman.com/pages/index.php), for helping with the project costs.
+- [Eric Schneider](https://github.com/ericschn), for fixing my spelling mistakes.
+- [Ria](https://github.com/MYSan7), for fixing my coloring mistakes.
