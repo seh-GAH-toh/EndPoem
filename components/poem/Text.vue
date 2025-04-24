@@ -99,6 +99,10 @@ onMounted(() => {
     </ul>
   </article>
   <article v-else class="flex max-w-3xl flex-col gap-3 px-16 py-24 leading-relaxed text-[#007878] dark:text-[#b3d7d7]">
+    <p>In honor of the man I one day hope to be even a fifth of</p>
+    <p class="text-[#007800] dark:text-[#4da14d]">thank you, Grandpa.</p>
+    <p>Today, the universe feels a little sad.</p>
+  <!--
     <h2 class="text-2xl font-bold text-[#29292a] lg:text-3xl dark:text-[#FBFBFB]">
       End Poem.
     </h2>
@@ -369,5 +373,6 @@ onMounted(() => {
     </p>
     <p>You are the player.</p>
     <p class="text-[#007800] dark:text-[#4da14d]">Wake up.</p>
+    !-->
   </article>
 </template>
