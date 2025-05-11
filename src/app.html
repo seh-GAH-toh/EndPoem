@@ -4,9 +4,12 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preload" href="%sveltekit.assets%/font/OpenSansBold.woff2" type="font/woff2"cas="font" crossorigin/>
+		<link rel="preload" href="%sveltekit.assets%/font/NothingYouCouldDo.woff2" type="font/woff2"cas="font" crossorigin/>
+		<link rel="preload" href="%sveltekit.assets%/font/OpenSans.woff2" type="font/woff2"cas="font" crossorigin/>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
+		<main class="w-full h-screen bg-base-bg text-base-text antialiased font-base">%sveltekit.body%</main>
 	</body>
 </html>
