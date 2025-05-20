@@ -1,15 +1,19 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="preload" href="%sveltekit.assets%/font/OpenSansBold.woff2" type="font/woff2"cas="font" crossorigin/>
-		<link rel="preload" href="%sveltekit.assets%/font/NothingYouCouldDo.woff2" type="font/woff2"cas="font" crossorigin/>
-		<link rel="preload" href="%sveltekit.assets%/font/OpenSans.woff2" type="font/woff2"cas="font" crossorigin/>
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<main class="p-2 w-full min-h-screen h-dvh bg-base-bg text-base-text antialiased font-base">%sveltekit.body%</main>
-	</body>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="preload" href="%sveltekit.assets%/font/OpenSansBold.woff2" type="font/woff2" cas="font" crossorigin />
+	<link rel="preload" href="%sveltekit.assets%/font/NothingYouCouldDo.woff2" type="font/woff2" cas="font"
+		crossorigin />
+	<link rel="preload" href="%sveltekit.assets%/font/OpenSans.woff2" type="font/woff2" cas="font" crossorigin />
+	%sveltekit.head%
+</head>
+
+<body data-sveltekit-preload-data="hover" class="w-full min-h-dvh h-dvh bg-base-bg box-content">
+	%sveltekit.body%
+</body>
+
 </html>

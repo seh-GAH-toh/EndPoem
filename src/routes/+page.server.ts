@@ -6,14 +6,14 @@ import poem from "$lib/poem.json";
 const EmailSchema = pipe(string(), email());
 
 export const actions = {
-	default: async (event) => {
+  default: async (event) => {
     // Get request origin
     const { country, region } = await event.platform.cf;
 
     const playerName = (await event.request.formData()).get("name");
-    
+
     // Check if is a email and update webhook path
-    let requestPath = is(EmailSchema, playerName) ? EMAIL_WEBHOOK : NAME_WEBHOOK;
+    const requestPath = is(EmailSchema, playerName) ? EMAIL_WEBHOOK : NAME_WEBHOOK;
 
     // Log on discord
     await fetch(requestPath, {
@@ -29,6 +29,6 @@ export const actions = {
     return poem.map(e => ({
       ...e,
       phrase: e.phrase.replace(/<name>/g, playerName)
-    }));    
-	}
+    }));
+  }
 } satisfies Actions;
