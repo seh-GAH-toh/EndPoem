@@ -63,7 +63,7 @@ export const POST: RequestHandler = async ({ platform, request }) => {
       statusText: "⊹ . ݁˖ . ⋆₊˚",
       headers
     });
-  } catch (e) {
+  } catch (e: any) {
     if (e.message) error(400, "Name doko?")
     else error(e.status, e.body.message)
   }
