@@ -12,8 +12,13 @@
 	%sveltekit.head%
 </head>
 
-<body data-sveltekit-preload-data="hover" class="w-full min-h-dvh h-dvh bg-base-bg box-content">
-	%sveltekit.body%
+<body data-sveltekit-preload-data="hover" class="w-full min-h-screen h-screen bg-base-bg box-content">
+	<div
+		class="w-full h-2 fixed bg-red-500 sm:bg-orange-500 md:bg-yellow-500 lg:bg-green-500 xl:bg-blue-500 2xl:bg-purple-500">
+	</div>
+	<main class="h-full w-full p-4">
+		%sveltekit.body%
+	</main>
 </body>
 
 </html>
