@@ -7,12 +7,24 @@
 
 	let isDisabled = $derived(name.length < 2);
 
-	const handleSubmit = ({}) => {
-		formState.isSubmited = true;
+	const handleSubmit = ({ formElement, cancel }) => {
+		// Prevent default submission
+		cancel();
 
-		return async ({ result }) => {
-			formState.poem = result;
-		};
+		fetch(formElement.action, {
+			method: formElement.method,
+			headers: {
+				'Content-Type': 'text/plain'
+			},
+			body: name
+		}).then(async (response) => {
+			// Handle response
+			if (response.headers.get('content-type') == 'application/json')
+				formState.poem = await response.json();
+			else formState.poem = await response.text();
+		});
+
+		formState.isSubmited = true;
 	};
 </script>
 

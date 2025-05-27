@@ -15,24 +15,26 @@ const EmailValidation = pipe(string(), email());
 export const POST: RequestHandler = async ({ platform, request }) => {
   try {
     // Extract the name from the submitted body
-    const { name } = await request.json();
+    const name = await request.text();
 
     // Validate it
     const validatedName = safeParse(NameValidation, name);
-
-    // Throw validation error
     if (!validatedName.success) error(400, validatedName.issues[0].message);
 
     // Extract request geographic location
     const { country, region } = await platform.cf;
 
-    // Determine the default logic (assume it's an email)
+    // Assume it's an email (less expensive to run)
     let webhookUrl = EMAIL_WEBHOOK;
     let responseMessage = "https://catpedia.wiki/images/b/be/Guhhh.jpeg";
+    let headers = {
+      'content-type': 'text/plain'
+    }
 
     // If the input is not a email, treat it as a name
     if (!is(EmailValidation, name)) {
       webhookUrl = NAME_WEBHOOK;
+      headers['content-type'] = "application/json";
 
       // Insert input on the poem
       responseMessage = JSON.stringify(
@@ -44,6 +46,7 @@ export const POST: RequestHandler = async ({ platform, request }) => {
     }
 
     // Send a log of the request to Discord via webhook
+    // I will not follow you home (yet)
     await fetch(webhookUrl, {
       method: "POST",
       headers: {
@@ -54,9 +57,11 @@ export const POST: RequestHandler = async ({ platform, request }) => {
       }),
     });
 
+    // Return poem (or silly cat)
     return new Response(responseMessage, {
       status: 200,
       statusText: "⊹ . ݁˖ . ⋆₊˚",
+      headers
     });
   } catch (e) {
     if (e.message) error(400, "Name doko?")
