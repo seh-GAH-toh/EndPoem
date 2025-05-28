@@ -1,24 +1,12 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="preload" href="%sveltekit.assets%/font/OpenSansBold.woff2" type="font/woff2" cas="font" crossorigin />
-	<link rel="preload" href="%sveltekit.assets%/font/NothingYouCouldDo.woff2" type="font/woff2" cas="font"
-		crossorigin />
-	<link rel="preload" href="%sveltekit.assets%/font/OpenSans.woff2" type="font/woff2" cas="font" crossorigin />
-	%sveltekit.head%
-</head>
-
-<body data-sveltekit-preload-data="hover" class="w-full min-h-screen h-screen bg-base-bg box-content">
-	<div
-		class="w-full h-2 fixed bg-red-500 sm:bg-orange-500 md:bg-yellow-500 lg:bg-green-500 xl:bg-blue-500 2xl:bg-purple-500">
-	</div>
-	<main class="h-full w-full p-4">
-		%sveltekit.body%
-	</main>
-</body>
-
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
 </html>
