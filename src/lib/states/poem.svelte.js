@@ -1,4 +1,4 @@
-export const formState = $state({
-	isSubmited: false,
+export const poemState = $state({
+	wasNameSubmited: false,
 	poem: []
 });

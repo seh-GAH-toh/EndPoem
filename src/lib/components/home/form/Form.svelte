@@ -1,10 +1,9 @@
 <script>
 	import { enhance } from '$app/forms';
-	import { formState } from '$lib/states/poem.svelte.js';
-	import FormButton from './FormButton.svelte';
+	import { poemState } from '$lib/states/poem.svelte.js';
+	import FormButton from '$lib/components/home/form/FormButton.svelte';
 
 	let name = $state('');
-
 	let isDisabled = $derived(name.length < 2);
 
 	const handleSubmit = ({ formElement, cancel }) => {
@@ -20,11 +19,11 @@
 		}).then(async (response) => {
 			// Handle response
 			if (response.headers.get('content-type') == 'application/json')
-				formState.poem = await response.json();
-			else formState.poem = await response.text();
+				poemState.poem = await response.json();
+			else poemState.poem = await response.text();
 		});
 
-		formState.isSubmited = true;
+		poemState.wasNameSubmited = true;
 	};
 </script>
 
