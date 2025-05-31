@@ -1,8 +1,7 @@
 <script>
-	import { fade } from 'svelte/transition';
-
 	import Title from '$lib/components/home/Title.svelte';
-	import Form from '$lib/components/home/form/Form.svelte';
+	import Form from '$lib/components/home/Form.svelte';
+	import { fade } from 'svelte/transition';
 </script>
 
 <section

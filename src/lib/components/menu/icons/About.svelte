@@ -1,5 +1,14 @@
+<script>
+	import { menuState } from '$lib/states/menu.svelte.js';
+
+	function handleClick() {
+		menuState.isAboutOpen = !menuState.isAboutOpen;
+	}
+</script>
+
 <li class="flex aspect-square w-6">
 	<button
+		onclick={handleClick}
 		class="outline-base-text dark:outline-base-text-dark w-full cursor-pointer focus:outline-1"
 		aria-label="About"
 		title="About"

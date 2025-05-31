@@ -1,8 +1,9 @@
 <script>
-	import MenuIcon from '$lib/components/poem/menu/MenuIcon.svelte';
-	import About from '$lib/components/poem/menu/About.svelte';
-	import Github from '$lib/components/poem/menu/Github.svelte';
-	import TextSpeed from '$lib/components/poem/menu/TextSpeed.svelte';
+	import MenuIcon from '$lib/components/menu/icons/MenuIcon.svelte';
+	import About from '$lib/components/menu/icons/About.svelte';
+	import Api from '$lib/components/menu/icons/Api.svelte';
+	import Github from '$lib/components/menu/icons/Github.svelte';
+	import TextSpeed from '$lib/components/menu/icons/TextSpeed.svelte';
 
 	import { slide } from 'svelte/transition';
 
@@ -28,6 +29,7 @@
 	{#if isMenuOpen}
 		<ul class="flex flex-col gap-4 pt-4" transition:slide>
 			<About />
+			<Api />
 			<Github />
 			<TextSpeed />
 		</ul>

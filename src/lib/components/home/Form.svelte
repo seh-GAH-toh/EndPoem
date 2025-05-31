@@ -1,7 +1,8 @@
 <script>
+	import Submit from '$lib/components/home/icons/Submit.svelte';
+
 	import { enhance } from '$app/forms';
 	import { poemState } from '$lib/states/poem.svelte.js';
-	import FormButton from '$lib/components/home/form/FormButton.svelte';
 
 	let name = $state('');
 	let isDisabled = $derived(name.length < 2);
@@ -42,12 +43,5 @@
 		bind:value={name}
 		class="text-base-text dark:text-base-text-dark font-base outline-base-text dark:outline-base-text-dark w-full rounded-3xl px-4 antialiased outline-0 focus:outline-1"
 	/>
-	<button
-		type="submit"
-		aria-label="submit"
-		disabled={isDisabled}
-		class=" bg-base-menu dark:bg-base-menu-dark outline-base-text dark:outline-base-text-dark text-base-text dark:text-base-text-dark absolute flex aspect-square h-full items-center justify-center rounded-3xl outline-0 focus:outline-1 disabled:cursor-not-allowed disabled:opacity-50"
-	>
-		<FormButton {isDisabled} />
-	</button>
+	<Submit {isDisabled} />
 </form>

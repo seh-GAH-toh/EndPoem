@@ -36,7 +36,9 @@
 	}
 </script>
 
-<h3 class="text-base-text dark:text-base-text-dark pb-6 text-2xl font-extrabold antialiased">
+<h3
+	class="text-base-text dark:text-base-text-dark font-base pb-6 text-2xl font-extrabold antialiased"
+>
 	End Poem.
 </h3>
 {#each displayedLines as { entity, phrase }, i}
@@ -45,10 +47,10 @@
 		onintroend={onAnimationComplete}
 		bind:this={lastLine}
 		class={[
-			'fade-in text-base leading-7 antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10',
+			'font-base fade-in text-base leading-7 antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10',
 			entity
-				? 'text-poem-green dark:text-poem-green-dark'
-				: 'text-poem-blue dark:text-poem-blue-dark italic'
+				? 'text-poem-green dark:text-poem-green-dark italic'
+				: 'text-poem-blue dark:text-poem-blue-dark'
 		]}
 	>
 		{phrase}
