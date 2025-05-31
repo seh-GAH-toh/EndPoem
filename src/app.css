@@ -4,11 +4,17 @@
     --font-base: Open Sans, sans-serif;
     --font-signature: Nothing You Could Do, cursive;
 
-    --color-base-bg: oklch(0.96 0 0);
-    --color-base-text: oklch(0.32 0 0);
-    --color-base-menu: oklch(0.92 0 89.88);
-    --color-poem-green: oklch(0.5 0.0705 155.47);
-    --color-poem-blue: oklch(0.48 0.045 239.17);
+    --color-base-bg: #F2F2F2;
+    --color-base-text: #333333;
+    --color-base-menu: #E5E5E5;
+    --color-poem-green: #4B6E54;
+    --color-poem-blue: #4B6072;
+
+    --color-base-bg-dark: #222222;
+    --color-base-text-dark: #D4D4D4;
+    --color-base-menu-dark: #2A2A2A;
+    --color-poem-green-dark: #A7D8B3;
+    --color-poem-blue-dark: #A3B9D1;
 }
 
 @font-face {

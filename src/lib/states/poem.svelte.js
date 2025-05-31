@@ -1,4 +1,5 @@
 export const poemState = $state({
 	wasNameSubmited: false,
-	poem: []
+	poem: [],
+	speed: 2
 });

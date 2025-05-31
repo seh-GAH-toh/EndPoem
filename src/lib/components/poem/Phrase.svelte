@@ -1,36 +1,30 @@
 <script>
-	let { poem } = $props();
-
-	let displayedLines = $state([]);
+	let { poem, speed } = $props();
 
 	let currentLineIndex = 0;
-	let isTyping = false;
+	let isRunning = false;
 
+	let displayedLines = $state([]);
 	let lastLine = $state();
 
-	$effect(() => {
-		if (!isTyping && currentLineIndex < poem.length) {
-			revealNextLine();
-		}
-	});
-
 	function revealNextLine() {
-		if (currentLineIndex < poem.length) {
-			isTyping = true;
+		if (!isRunning && currentLineIndex < poem.length) {
+			isRunning = true;
 			displayedLines.push(poem[currentLineIndex]);
 		}
 	}
 
+	$effect(() => revealNextLine());
+
 	function onAnimationComplete() {
-		isTyping = false;
+		isRunning = false;
 		currentLineIndex++;
 		revealNextLine();
-		lastLine.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	}
 
 	function typewriter(node) {
 		const fullText = node.textContent || '';
-		const animationDuration = fullText.length / (3 * 0.01);
+		const animationDuration = fullText.length / (speed * 0.01);
 
 		return {
 			duration: animationDuration,
@@ -42,8 +36,9 @@
 	}
 </script>
 
-<h3 class="text-base-text pb-6 text-2xl font-extrabold antialiased">End Poem.</h3>
-
+<h3 class="text-base-text dark:text-base-text-dark pb-6 text-2xl font-extrabold antialiased">
+	End Poem.
+</h3>
 {#each displayedLines as { entity, phrase }, i}
 	<p
 		in:typewriter
@@ -51,7 +46,9 @@
 		bind:this={lastLine}
 		class={[
 			'fade-in text-base leading-7 antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10',
-			entity ? 'text-poem-green' : 'text-poem-blue italic'
+			entity
+				? 'text-poem-green dark:text-poem-green-dark'
+				: 'text-poem-blue dark:text-poem-blue-dark italic'
 		]}
 	>
 		{phrase}
