@@ -5,6 +5,7 @@
 	import AboutDialog from '$lib/components/dialogs/AboutDialog.svelte';
 
 	import { poemState } from '$lib/states/poem.svelte.js';
+	import ApiDialog from '../lib/components/dialogs/ApiDialog.svelte';
 </script>
 
 <Menu />
@@ -14,3 +15,4 @@
 	<Poem />
 {/if}
 <AboutDialog />
+<ApiDialog />

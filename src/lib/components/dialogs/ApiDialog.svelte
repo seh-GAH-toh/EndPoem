@@ -1,148 +1,96 @@
 <script>
 	import { menuState } from '$lib/states/menu.svelte.js';
 	import { fade } from 'svelte/transition';
+	const json = JSON.stringify(
+		[
+			{
+				entity: 0,
+				phrase: 'I see the player you mean.'
+			},
+			{
+				entity: 1,
+				phrase: 'name?'
+			}
+		],
+		null,
+		2
+	);
 </script>
 
 {#if menuState.isApiOpen}
 	<dialog
 		transition:fade
-		class="fixed inset-0 flex h-full w-full items-center justify-center bg-transparent p-4 backdrop-blur-2xl md:p-8"
+		class="text-base-text dark:text-base-text-dark fixed inset-0 flex h-full w-full items-center justify-center bg-transparent p-4 backdrop-blur-2xl md:p-8"
 	>
 		<article
-			class=" bg-base-menu dark:bg-base-menu-dark flex max-h-full w-full flex-col gap-4 overflow-auto rounded-2xl p-6 transition-all duration-300 ease-in-out md:p-12 lg:w-fit lg:px-16"
+			class=" bg-base-menu dark:bg-base-menu-dark flex max-h-full w-fit flex-col gap-4 overflow-auto rounded-2xl p-6 transition-all duration-300 ease-in-out md:p-12 lg:px-16"
 		>
 			<header>
-				<h3
-					class="text-base-text dark:text-base-text-dark w-full text-center text-2xl font-extrabold"
-				>
-					API
-				</h3>
+				<h3 class=" w-full text-center text-2xl font-extrabold">API Reference</h3>
 			</header>
 			<section class="flex flex-col gap-1 md:gap-2">
-				<h4 class="text-base-text dark:text-base-text-dark pb-1 text-xl font-extrabold">
-					End Poem
-				</h4>
-				<p class="text-base-text dark:text-base-text-dark">
-					The “<strong>End Poem</strong>” has been released into the
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://creativecommons.org/publicdomain/zero/1.0/">public domain</a
-					>
-					by its creator,
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://www.juliangough.com/"><strong>Julian Gough</strong>.</a
+				<h4 class=" pb-1 text-xl font-extrabold">Base URL</h4>
+				<p>
+					<code class="bg-base-bg dark:bg-base-bg-dark rounded p-2">
+						<strong class="bg-poem-green inline-block rounded p-1 leading-none">POST</strong>
+						https://api.theendpoem.com/
+					</code>
+				</p>
+				<p>Returns a customized poem using the provided name.</p>
+			</section>
+			<section class="flex flex-col gap-1 md:gap-2">
+				<h4 class=" pb-1 text-xl font-extrabold">Request</h4>
+				<p>
+					<strong>Headers:</strong>
+					<code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">Content-Type: text/plain</code
 					>
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
-					For insights into his decision, I highly recommend checking out his
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://theeggandtherock.com/p/i-wrote-a-story-for-a-friend">blog post</a
-					>
-					discussing the rationale behind this move.
-				</p>
-				<p class="text-base-text dark:text-base-text-dark">
-					Additionaly, if you'd like to show support for his creative endeavors, consider making a
-					donation via his
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://www.paypal.com/donate/?hosted_button_id=525T2WCA24268">PayPal account.</a
-					>
+				<p>
+					<strong>Body:</strong>
+					A plain text string containing a name (e.g.,
+					<code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">"julian"</code> )
 				</p>
 			</section>
 			<section class="flex flex-col gap-1 md:gap-2">
-				<h4 class="text-base-text dark:text-base-text-dark pb-1 text-xl font-extrabold">
-					theendpoem.com
-				</h4>
-				<p class="text-base-text dark:text-base-text-dark">
-					The "<strong>theendpoem.com</strong>" was created by
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://www.segato.dev/">Arthur Segato</a
+				<h4 class=" pb-1 text-xl font-extrabold">Response</h4>
+				<p>
+					<strong> Headers:</strong>
+					<code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5"
+						>Content-Type: application/json</code
 					>
-					with the goal to spread and disassociate the End Poem with
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://www.minecraft.net/en-us">Minecraft</a
-					>.
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
-					If you wish to support this project, consider making a donation via <a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://wise.com/pay/me/arthursegatop">Wise</a
-					>, any amount is greatly appreciated.
+				<p>
+					<strong>Status:</strong>
+					<code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">200 OK</code>
 				</p>
-			</section>
-			<section class="flex flex-col gap-1 md:gap-2">
-				<h4 class="text-base-text dark:text-base-text-dark pb-1 text-xl font-extrabold">
-					Especial Thanks
-				</h4>
-				<p class="text-base-text dark:text-base-text-dark">
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://lauranewman.com/pages/index.php">Laura Newman</a
-					>, for helping with the project costs.
+				<p>
+					<strong>Response:</strong>
+					A JSON array of poem lines where each line has:
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://github.com/ricdoric">Eric Schneider</a
-					>, for fixing my spelling mistakes.
+				<ul class=" list-disc pl-4">
+					<li>
+						<code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">entity</code>: Either
+						<code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">0</code>
+						or <code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">1</code>, indicating who
+						is speaking.
+					</li>
+					<li>
+						<code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">phrase:</code> A string representing
+						what the entity is saying.
+					</li>
+				</ul>
+				<p>
+					<strong>Example:</strong>
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://github.com/MYSan7">Ria</a
-					>, for fixing my coloring mistakes.
+				<pre class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5"><code>{json}</code></pre>
+				<p>
+					<strong>Obs:</strong>
+					In the <code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">phrase</code> field,
+					the parts that should be replaced for an obfuscated effect are marked with
+					<code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">{'<secret>'}</code>.
 				</p>
-			</section>
-			<section class="flex flex-col gap-1 md:gap-2">
-				<h4 class="text-base-text dark:text-base-text-dark pb-1 text-xl font-extrabold">
-					External Assets
-				</h4>
-				<p class="text-base-text dark:text-base-text-dark">
-					Icons by <a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://github.com/cyberalien/line-md">Vjacheslav Trushkin</a
-					>
-					and
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://heroicons.com/">Heroicons</a
-					>.
-				</p>
-				<p class="text-base-text dark:text-base-text-dark">
-					Animations by <a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://animista.net/">Animista</a
-					>.
-				</p>
-				<p class="text-base-text dark:text-base-text-dark">
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://fonts.google.com/specimen/Nothing+You+Could+Do">Nothing You Could Do</a
-					>
-					by
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://kimberlygeswein.com/">Kimberly Geswein</a
-					>
-					and
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://fonts.google.com/specimen/Open+Sans">Open Sans</a
-					>
-					by
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://mattesontypographics.com/">Steve Matteson</a
-					>
-					on
-					<a
-						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://fonts.google.com/">Google Fonts</a
-					>.
+				<p>
+					Since I haven't implemented that functionality yet <em>(svelte got hands)</em>, good luck.
 				</p>
 			</section>
 		</article>

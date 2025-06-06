@@ -11,7 +11,7 @@
 			stroke-dashoffset="16"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="2"
+			stroke-width="1.5"
 			><path d="M5 5h14"
 				><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="16;0" /></path
 			><path d="M5 12h14"
@@ -40,7 +40,7 @@
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="2"
+			stroke-width="1.5"
 			d="M5 5L12 12L19 5M12 12H12M5 19L12 12L19 19"
 			><animate
 				fill="freeze"
@@ -57,7 +57,7 @@
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="2"
+			stroke-width="1.5"
 			d="M5 5h14M5 12h14M5 19h14"
 			><animate
 				fill="freeze"

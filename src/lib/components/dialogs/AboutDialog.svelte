@@ -9,20 +9,14 @@
 		class="fixed inset-0 flex h-full w-full items-center justify-center bg-transparent p-4 backdrop-blur-2xl md:p-8"
 	>
 		<article
-			class=" bg-base-menu dark:bg-base-menu-dark flex max-h-full w-full flex-col gap-4 overflow-auto rounded-2xl p-6 transition-all duration-300 ease-in-out md:p-12 lg:w-fit lg:px-16"
+			class=" text-base-text dark:text-base-text-dark bg-base-menu dark:bg-base-menu-dark flex max-h-full w-fit flex-col gap-4 overflow-auto rounded-2xl p-6 transition-all duration-300 ease-in-out md:p-12 lg:px-16"
 		>
 			<header>
-				<h3
-					class="text-base-text dark:text-base-text-dark w-full text-center text-2xl font-extrabold"
-				>
-					About
-				</h3>
+				<h3 class=" w-full text-center text-2xl font-extrabold">About</h3>
 			</header>
 			<section class="flex flex-col gap-1 md:gap-2">
-				<h4 class="text-base-text dark:text-base-text-dark pb-1 text-xl font-extrabold">
-					End Poem
-				</h4>
-				<p class="text-base-text dark:text-base-text-dark">
+				<h4 class=" pb-1 text-xl font-extrabold">End Poem</h4>
+				<p>
 					The “<strong>End Poem</strong>” has been released into the
 					<a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
@@ -34,7 +28,7 @@
 						href="https://www.juliangough.com/"><strong>Julian Gough</strong>.</a
 					>
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
+				<p>
 					For insights into his decision, I highly recommend checking out his
 					<a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
@@ -42,7 +36,7 @@
 					>
 					discussing the rationale behind this move.
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
+				<p>
 					Additionaly, if you'd like to show support for his creative endeavors, consider making a
 					donation via his
 					<a
@@ -52,10 +46,8 @@
 				</p>
 			</section>
 			<section class="flex flex-col gap-1 md:gap-2">
-				<h4 class="text-base-text dark:text-base-text-dark pb-1 text-xl font-extrabold">
-					theendpoem.com
-				</h4>
-				<p class="text-base-text dark:text-base-text-dark">
+				<h4 class=" pb-1 text-xl font-extrabold">theendpoem.com</h4>
+				<p>
 					The "<strong>theendpoem.com</strong>" was created by
 					<a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
@@ -67,7 +59,7 @@
 						href="https://www.minecraft.net/en-us">Minecraft</a
 					>.
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
+				<p>
 					If you wish to support this project, consider making a donation via <a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
 						href="https://wise.com/pay/me/arthursegatop">Wise</a
@@ -75,22 +67,20 @@
 				</p>
 			</section>
 			<section class="flex flex-col gap-1 md:gap-2">
-				<h4 class="text-base-text dark:text-base-text-dark pb-1 text-xl font-extrabold">
-					Especial Thanks
-				</h4>
-				<p class="text-base-text dark:text-base-text-dark">
+				<h4 class=" pb-1 text-xl font-extrabold">Especial Thanks</h4>
+				<p>
 					<a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
 						href="https://lauranewman.com/pages/index.php">Laura Newman</a
 					>, for helping with the project costs.
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
+				<p>
 					<a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
 						href="https://github.com/ricdoric">Eric Schneider</a
 					>, for fixing my spelling mistakes.
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
+				<p>
 					<a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
 						href="https://github.com/MYSan7">Ria</a
@@ -98,10 +88,8 @@
 				</p>
 			</section>
 			<section class="flex flex-col gap-1 md:gap-2">
-				<h4 class="text-base-text dark:text-base-text-dark pb-1 text-xl font-extrabold">
-					External Assets
-				</h4>
-				<p class="text-base-text dark:text-base-text-dark">
+				<h4 class=" pb-1 text-xl font-extrabold">External Assets</h4>
+				<p>
 					Icons by <a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
 						href="https://github.com/cyberalien/line-md">Vjacheslav Trushkin</a
@@ -112,13 +100,13 @@
 						href="https://heroicons.com/">Heroicons</a
 					>.
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
+				<p>
 					Animations by <a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
 						href="https://animista.net/">Animista</a
 					>.
 				</p>
-				<p class="text-base-text dark:text-base-text-dark">
+				<p>
 					<a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
 						href="https://fonts.google.com/specimen/Nothing+You+Could+Do">Nothing You Could Do</a
