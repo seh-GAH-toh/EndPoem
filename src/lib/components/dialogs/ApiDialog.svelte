@@ -9,7 +9,7 @@
 			},
 			{
 				entity: 1,
-				phrase: 'name?'
+				phrase: 'julian?'
 			}
 		],
 		null,
@@ -32,7 +32,10 @@
 				<h4 class=" pb-1 text-xl font-extrabold">Base URL</h4>
 				<p>
 					<code class="bg-base-bg dark:bg-base-bg-dark rounded p-2">
-						<strong class="bg-poem-green inline-block rounded p-1 leading-none">POST</strong>
+						<strong
+							class="bg-poem-green-dark dark:bg-poem-green inline-block rounded p-1 leading-none"
+							>POST</strong
+						>
 						https://api.theendpoem.com/
 					</code>
 				</p>
@@ -82,7 +85,9 @@
 				<p>
 					<strong>Example:</strong>
 				</p>
-				<pre class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5"><code>{json}</code></pre>
+				<pre class="bg-base-bg dark:bg-base-bg-dark whitespace-pre-wrap rounded p-1.5"><code
+						>{json}</code
+					></pre>
 				<p>
 					<strong>Obs:</strong>
 					In the <code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">phrase</code> field,

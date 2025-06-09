@@ -41,8 +41,9 @@
 					donation via his
 					<a
 						class="outline-base-text dark:outline-base-text-dark underline underline-offset-2 focus:outline-1"
-						href="https://www.paypal.com/donate/?hosted_button_id=525T2WCA24268">PayPal account.</a
-					>
+						href="https://www.paypal.com/donate/?hosted_button_id=525T2WCA24268"
+						><strong>PayPal account</strong></a
+					>.
 				</p>
 			</section>
 			<section class="flex flex-col gap-1 md:gap-2">
