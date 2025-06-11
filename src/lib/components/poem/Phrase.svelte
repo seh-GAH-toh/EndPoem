@@ -1,31 +1,26 @@
 <script>
+	import Obfuscated from './Obfuscated.svelte';
+
 	let { poem, speed } = $props();
 
-	let currentLineIndex = 0;
-	let isRunning = false;
+	function tokenizePhrase(phrase) {
+		const tokens = phrase.split(/<obfuscated>/);
+		const parts = [];
 
-	let displayedLines = $state([]);
-	let lastLine = $state();
+		tokens.forEach((token, index) => {
+			if (token) parts.push(token);
+			if (index < tokens.length - 1) {
+				parts.push('obfuscated');
+			}
+		});
 
-	function revealNextLine() {
-		if (!isRunning && currentLineIndex < poem.length) {
-			isRunning = true;
-			displayedLines.push(poem[currentLineIndex]);
-		}
+		return parts;
 	}
 
-	$effect(() => revealNextLine());
-
-	function onAnimationComplete() {
-		isRunning = false;
-		currentLineIndex++;
-		revealNextLine();
-	}
-
-	function typewriter(node) {
-		const fullText = node.textContent || '';
+	function textGenerator(node) {
+		const fullText = node.textContent.split(' ') || '';
 		const animationDuration = fullText.length / (speed * 0.01);
-
+		console.log(fullText);
 		return {
 			duration: animationDuration,
 			tick: (progress) => {
@@ -41,11 +36,8 @@
 >
 	End Poem.
 </h3>
-{#each displayedLines as { entity, phrase }, i}
+{#each poem as { entity, phrase }, i}
 	<p
-		in:typewriter
-		onintroend={onAnimationComplete}
-		bind:this={lastLine}
 		class={[
 			'font-base fade-in text-base leading-7 antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10',
 			entity
@@ -53,6 +45,12 @@
 				: 'text-poem-blue dark:text-poem-blue-dark'
 		]}
 	>
-		{phrase}
+		{#each tokenizePhrase(phrase) as part}
+			{#if part != 'obfuscated'}
+				{@html part}
+			{:else}
+				<Obfuscated />
+			{/if}
+		{/each}
 	</p>
 {/each}

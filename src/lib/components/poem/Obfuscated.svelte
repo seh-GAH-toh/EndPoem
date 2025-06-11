@@ -4,16 +4,12 @@
 
 	let string = $state('');
 
-	async function generateGlitch() {
+	setInterval(async () => {
 		string = '';
 		for (let i = 0; i <= 5; i++) {
 			string += characters.charAt(Math.floor(Math.random() * characters.length));
 		}
-	}
-
-	setInterval(() => {
-		generateGlitch();
-	}, 100);
+	}, 120);
 </script>
 
-<span>{string}</span>
+<span class="inline-flex w-[4.5rem] justify-center">{string}</span>

@@ -9,7 +9,7 @@
     },
     {
         "entity": 0,
-        "phrase": "Yes. Take care. It has reached a higher level now. It can read our thoughts"
+        "phrase": "Yes. Take care. It has reached a higher level now. It can read our thoughts."
     },
     {
         "entity": 1,
@@ -49,7 +49,7 @@
     },
     {
         "entity": 0,
-        "phrase": "It worked, with a million others, to sculpt a true world in a fold of the <secret>, and created a <secret> for <secret>, in the <secret>."
+        "phrase": "It worked, with a million others, to sculpt a true world in a fold of the <obfuscated>, and created a <obfuscated> for <obfuscated>, in the <obfuscated>."
     },
     {
         "entity": 1,
@@ -85,7 +85,7 @@
     },
     {
         "entity": 1,
-        "phrase": "Sometimes I do not care. Sometimes I wish to tell them, this world you take for truth is merely <secret> and <secret>, I wish to tell them that they are <secret> in the <secret>. They see so little of reality, in their long dream."
+        "phrase": "Sometimes I do not care. Sometimes I wish to tell them, this world you take for truth is merely <obfuscated> and <obfuscated>, I wish to tell them that they are <obfuscated> in the <obfuscated>. They see so little of reality, in their long dream."
     },
     {
         "entity": 0,
