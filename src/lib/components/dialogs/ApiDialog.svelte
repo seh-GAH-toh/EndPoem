@@ -85,14 +85,14 @@
 				<p>
 					<strong>Example:</strong>
 				</p>
-				<pre class="bg-base-bg dark:bg-base-bg-dark whitespace-pre-wrap rounded p-1.5"><code
+				<pre class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5 whitespace-pre-wrap"><code
 						>{json}</code
 					></pre>
 				<p>
 					<strong>Obs:</strong>
 					In the <code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">phrase</code> field,
 					the parts that should be replaced for an obfuscated effect are marked with
-					<code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">{'<secret>'}</code>.
+					<code class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5">&lt;secret&gt;</code>.
 				</p>
 				<p>
 					Since I haven't implemented that functionality yet <em>(svelte got hands)</em>, good luck.

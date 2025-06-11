@@ -1,45 +1,47 @@
 @import 'tailwindcss';
 
 @theme {
-    --font-base: Open Sans, sans-serif;
-    --font-signature: Nothing You Could Do, cursive;
+	--font-base: Open Sans, sans-serif;
+	--font-signature: Nothing You Could Do, cursive;
 
-    --color-base-bg: #F2F2F2;
-    --color-base-text: #333333;
-    --color-base-menu: #E5E5E5;
-    --color-poem-green: #4B6E54;
-    --color-poem-blue: #4B6072;
+	--color-base-bg: #f2f2f2;
+	--color-base-text: #333333;
+	--color-base-menu: #e5e5e5;
+	--color-poem-green: #4b6e54;
+	--color-poem-blue: #4b6072;
 
-    --color-base-bg-dark: #222222;
-    --color-base-text-dark: #D4D4D4;
-    --color-base-menu-dark: #2A2A2A;
-    --color-poem-green-dark: #A7D8B3;
-    --color-poem-blue-dark: #A3B9D1;
+	--color-base-bg-dark: #222222;
+	--color-base-text-dark: #d4d4d4;
+	--color-base-menu-dark: #2a2a2a;
+	--color-poem-green-dark: #a7d8b3;
+	--color-poem-blue-dark: #a3b9d1;
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 800;
-    font-stretch: 100%;
-    font-display: swap;
-    src: url(/fonts/OpenSansBold.woff2) format('woff2');
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 800;
+	font-stretch: 100%;
+	font-display: swap;
+	src: url(/fonts/OpenSansBold.woff2) format('woff2');
 }
 
 @font-face {
-    font-family: 'Nothing You Could Do';
-    font-style: normal;
-    font-weight: 400;
-    src: url(/fonts/NothingYouCouldDo.woff2) format('woff2');
+	font-family: 'Nothing You Could Do';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/fonts/NothingYouCouldDo.woff2) format('woff2');
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-stretch: 100%;
-    src: url(/fonts/OpenSans.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: url(/fonts/OpenSans.woff2) format('woff2');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /* ----------------------------------------------
@@ -56,26 +58,26 @@
  */
 
 .fade-in {
-    -webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	-webkit-animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+	animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 @-webkit-keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
+	0% {
+		opacity: 0;
+	}
 
-    100% {
-        opacity: 1;
-    }
+	100% {
+		opacity: 1;
+	}
 }
 
 @keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
+	0% {
+		opacity: 0;
+	}
 
-    100% {
-        opacity: 1;
-    }
+	100% {
+		opacity: 1;
+	}
 }

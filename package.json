@@ -1,15 +1,17 @@
 {
 	"name": "endpoem",
 	"private": true,
-	"version": "0.0.1",
+	"version": "3.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
-		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"prettier": "prettier --check .",
+		"prettier:fix": "prettier --write .",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.9",
