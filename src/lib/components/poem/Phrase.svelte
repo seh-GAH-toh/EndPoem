@@ -1,7 +1,7 @@
 <script>
 	import Obfuscated from './Obfuscated.svelte';
 
-	let { poem, speed } = $props();
+	let { poem } = $props();
 
 	function tokenizePhrase(phrase) {
 		const tokens = phrase.split(/<obfuscated>/);
@@ -17,9 +17,10 @@
 		return parts;
 	}
 
+	/*
 	function textGenerator(node) {
 		const fullText = node.textContent.split(' ') || '';
-		const animationDuration = fullText.length / (speed * 0.01);
+		const animationDuration = fullText.length / (1 * 0.01);
 		console.log(fullText);
 		return {
 			duration: animationDuration,
@@ -29,6 +30,7 @@
 			}
 		};
 	}
+	*/
 </script>
 
 <h3
@@ -36,7 +38,7 @@
 >
 	End Poem.
 </h3>
-{#each poem as { entity, phrase }, i}
+{#each poem as { entity, phrase }, index (index)}
 	<p
 		class={[
 			'font-base fade-in text-base leading-7 antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10',
@@ -45,9 +47,9 @@
 				: 'text-poem-blue dark:text-poem-blue-dark'
 		]}
 	>
-		{#each tokenizePhrase(phrase) as part}
+		{#each tokenizePhrase(phrase) as part, index (index)}
 			{#if part != 'obfuscated'}
-				{@html part}
+				{part}
 			{:else}
 				<Obfuscated />
 			{/if}
