@@ -16,21 +16,6 @@
 
 		return parts;
 	}
-
-	/*
-	function textGenerator(node) {
-		const fullText = node.textContent.split(' ') || '';
-		const animationDuration = fullText.length / (1 * 0.01);
-		console.log(fullText);
-		return {
-			duration: animationDuration,
-			tick: (progress) => {
-				const charsToShow = ~~(fullText.length * progress);
-				node.textContent = fullText.slice(0, charsToShow);
-			}
-		};
-	}
-	*/
 </script>
 
 <h3
@@ -38,6 +23,11 @@
 >
 	End Poem.
 </h3>
+<p
+	class="text-poem-blue dark:text-poem-blue-dark font-base fade-in w-fit text-base leading-7 antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10"
+>
+	MMMMM
+</p>
 {#each poem as { entity, phrase }, index (index)}
 	<p
 		class={[
