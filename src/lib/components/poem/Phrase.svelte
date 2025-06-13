@@ -2,20 +2,6 @@
 	import Obfuscated from './Obfuscated.svelte';
 
 	let { poem } = $props();
-
-	function tokenizePhrase(phrase) {
-		const tokens = phrase.split(/<obfuscated>/);
-		const parts = [];
-
-		tokens.forEach((token, index) => {
-			if (token) parts.push(token);
-			if (index < tokens.length - 1) {
-				parts.push('obfuscated');
-			}
-		});
-
-		return parts;
-	}
 </script>
 
 <h3
@@ -23,26 +9,15 @@
 >
 	End Poem.
 </h3>
-<p
-	class="text-poem-blue dark:text-poem-blue-dark font-base fade-in w-fit text-base leading-7 antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10"
->
-	MMMMM
-</p>
 {#each poem as { entity, phrase }, index (index)}
 	<p
 		class={[
-			'font-base fade-in text-base leading-7 antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10',
+			'font-base text-base leading-7 antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10',
 			entity
-				? 'text-poem-green dark:text-poem-green-dark italic'
-				: 'text-poem-blue dark:text-poem-blue-dark'
+				? 'text-poem-green dark:text-poem-green-dark ml-10 italic sm:ml-12 md:ml-14'
+				: 'text-poem-blue dark:text-poem-blue-dark font-medium'
 		]}
 	>
-		{#each tokenizePhrase(phrase) as part, index (index)}
-			{#if part != 'obfuscated'}
-				{part}
-			{:else}
-				<Obfuscated />
-			{/if}
-		{/each}
+		{phrase}
 	</p>
 {/each}
