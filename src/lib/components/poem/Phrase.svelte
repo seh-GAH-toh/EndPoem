@@ -1,7 +1,22 @@
 <script>
 	import Obfuscated from './Obfuscated.svelte';
+	import Part from './Part.svelte';
 
 	let { poem } = $props();
+
+	function tokenizePhrase(phrase) {
+		const tokens = phrase.split(/<obfuscated>/);
+		const parts = [];
+
+		tokens.forEach((token, index) => {
+			if (token) parts.push(token);
+			if (index < tokens.length - 1) {
+				parts.push('obfuscated');
+			}
+		});
+
+		return parts;
+	}
 </script>
 
 <h3
@@ -18,6 +33,12 @@
 				: 'text-poem-blue dark:text-poem-blue-dark font-medium'
 		]}
 	>
-		{phrase}
+		{#each tokenizePhrase(phrase) as part, index (index)}
+			{#if part != 'obfuscated'}
+				<Part {part} />
+			{:else}
+				<Obfuscated />
+			{/if}
+		{/each}
 	</p>
 {/each}

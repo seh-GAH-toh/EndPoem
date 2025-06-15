@@ -12,4 +12,4 @@
 	}, 120);
 </script>
 
-<span class="inline-flex w-[4.5rem] justify-center overflow-hidden">{string}</span>
+<span class="inline-flex w-[4.6rem] justify-end overflow-hidden">{string}</span>
