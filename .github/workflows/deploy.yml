@@ -24,10 +24,8 @@ jobs:
       - name: Build project
         run: NAME_WEBHOOK=${{ secrets.NAME_WEBHOOK }} EMAIL_WEBHOOK=${{ secrets.EMAIL_WEBHOOK }} bun run build
 
-      - name: Deploy
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./svelte-kit/cloudflare --project-name=endpoem
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: bunx wrangler pages deploy
+
