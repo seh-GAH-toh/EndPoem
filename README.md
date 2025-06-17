@@ -48,4 +48,4 @@ In this case, the content entered into "name" field is directly sent to a text c
 
 **If a user wishes to delete their name, they can reach out to me and I will remove it.**
 
-![My Discord private server](.github/assets/discord.jpg "My Discord private server")
+![My Discord private server](.github/assets/discord.jpg 'My Discord private server')
