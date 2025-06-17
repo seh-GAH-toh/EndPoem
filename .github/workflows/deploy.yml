@@ -1,0 +1,33 @@
+name: Deploy Production
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy-production:
+    name: Deploy to Cloudflare Pages
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+
+    steps:
+      - name: Fetch repository
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install packges
+        run: bun install
+
+      - name: Build project
+        run: bun run build
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ./svelte-kit/output --project-name=EndPoem
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

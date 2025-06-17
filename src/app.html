@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/OpenSansBold.woff2"
+			type="font/woff2"
+			as="font"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/NothingYouCouldDo.woff2"
+			type="font/woff2"
+			as="font"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/OpenSans.woff2"
+			type="font/woff2"
+			as="font"
+			crossorigin="anonymous"
+		/>
+		%sveltekit.head%
+	</head>
+
+	<body
+		data-sveltekit-preload-data="hover"
+		class="bg-base-bg dark:bg-base-bg-dark box-content h-screen min-h-screen w-full"
+	>
+		<div
+			class="fixed h-2 w-full bg-red-500 sm:bg-orange-500 md:bg-yellow-500 lg:bg-green-500 xl:bg-blue-500 2xl:bg-purple-500"
+		></div>
+		<main class="relative h-full w-full p-4">%sveltekit.body%</main>
+	</body>
+</html>
