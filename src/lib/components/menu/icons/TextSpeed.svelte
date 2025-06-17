@@ -1,28 +1,12 @@
 <script>
-	import { poemState } from '$lib/states/poem.svelte.js';
-
-	function togglePoemSpeed() {
-		switch (poemState.speed) {
-			case 1:
-				poemState.speed = 2;
-				break;
-			case 2:
-				poemState.speed = 3;
-				break;
-			case 3:
-				poemState.speed = 1;
-				break;
-			default:
-				break;
-		}
-	}
+	import { poemState, togglePoemSpeed, currentSpeed } from '$lib/states/poem.svelte.js';
 </script>
 
 <li class="flex aspect-square w-6">
 	<button
 		class="outline-base-text dark:outline-base-text-dark w-full cursor-pointer focus:outline-1"
-		aria-label="Text Speed"
-		title="Text Speed"
+		aria-label={`Text Speed - ${currentSpeed}`}
+		title={`Text Speed - ${currentSpeed}`}
 		onclick={togglePoemSpeed}
 	>
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -62,7 +46,7 @@
 							values="M12 14C12 14 12 14 12 14C12 14 12 14 12 14C12 14 12 14 12 14C12 14 12 14 12 14Z;M14 14C14 15.1 13.1 16 12 16C10.9 16 10 15.1 10 14C10 12.9 12 4 12 4C12 4 14 12.9 14 14Z"
 						/></path
 					>
-					{#if poemState.speed == 1}
+					{#if currentSpeed === 'Slow'}
 						<animateTransform
 							fill="freeze"
 							attributeName="transform"
@@ -71,7 +55,7 @@
 							type="rotate"
 							values="-100 12 14;-45 12 14"
 						/>
-					{:else if poemState.speed == 2}
+					{:else if currentSpeed === 'Medium'}
 						<animateTransform
 							fill="freeze"
 							attributeName="transform"

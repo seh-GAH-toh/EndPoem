@@ -3,6 +3,7 @@
 	import EasterEgg from '$lib/components/poem/EasterEgg.svelte';
 	import { fade } from 'svelte/transition';
 	import { poemState } from '$lib/states/poem.svelte.js';
+	import { onMount } from 'svelte';
 </script>
 
 <section
@@ -13,7 +14,7 @@
 		class="h-full w-10/12 transition-all duration-300 ease-in-out sm:w-9/12 md:w-8/12 lg:w-7/12"
 	>
 		{#if typeof poemState.poem === 'object'}
-			<Phrase poem={poemState.poem} speed={poemState.speed} />
+			<Phrase poem={poemState.poem} duration={poemState.speed} />
 		{:else}
 			<EasterEgg src={poemState.poem} />
 		{/if}

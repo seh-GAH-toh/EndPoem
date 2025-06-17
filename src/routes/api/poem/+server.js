@@ -1,5 +1,5 @@
-import { is, email, pipe, string, minLength, safeParse } from 'valibot';
-import { NAME_WEBHOOK, EMAIL_WEBHOOK } from '$env/static/private';
+import { is, pipe, string, minLength, safeParse } from 'valibot';
+import { NAME_WEBHOOK } from '$env/static/private';
 import poem from '$lib/server/poem.json';
 import { error } from '@sveltejs/kit';
 
@@ -11,7 +11,6 @@ const NameValidation = pipe(
 		'They reached out with a name,\nbut it was only a breath, not a word\nThe universe waited for more.'
 	)
 );
-const EmailValidation = pipe(string(), email());
 
 export const POST = async ({ platform, request }) => {
 	try {
@@ -25,30 +24,17 @@ export const POST = async ({ platform, request }) => {
 		// Extract request geographic location
 		const { country, region } = await platform.cf;
 
-		// Assume it's an email (less expensive to run)
-		let webhookUrl = EMAIL_WEBHOOK;
-		let responseMessage = 'https://catpedia.wiki/images/b/be/Guhhh.jpeg';
-		let headers = {
-			'content-type': 'text/plain'
-		};
-
-		// If the input is not a email, treat it as a name
-		if (!is(EmailValidation, name)) {
-			webhookUrl = NAME_WEBHOOK;
-			headers['content-type'] = 'application/json';
-
-			// Insert input on the poem
-			responseMessage = JSON.stringify(
-				poem.map((line) => ({
-					...line,
-					phrase: line.phrase.replace(/<name>/g, name)
-				}))
-			);
-		}
+		// Insert name on the poem
+		const responseMessage = JSON.stringify(
+			poem.map((line) => ({
+				...line,
+				phrase: line.phrase.replace(/<name>/g, name)
+			}))
+		);
 
 		// Send a log of the request to Discord via webhook
 		// I will not follow you home (yet)
-		await fetch(webhookUrl, {
+		await fetch(NAME_WEBHOOK, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -58,14 +44,13 @@ export const POST = async ({ platform, request }) => {
 			})
 		});
 
-		// Return poem (or silly cat)
+		// Return poem
 		return new Response(responseMessage, {
 			status: 200,
 			statusText: '⊹ . ݁˖ . ⋆₊˚',
-			headers
+			headers: { 'Content-Type': 'application/json' }
 		});
 	} catch (e) {
-		if (e.message) error(400, 'Name doko?');
-		else error(e.status, e.body.message);
+		error(e.status, e.body.message);
 	}
 };

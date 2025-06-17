@@ -3,6 +3,9 @@
 
 	import { enhance } from '$app/forms';
 	import { poemState } from '$lib/states/poem.svelte.js';
+	import { email, is, pipe, string } from 'valibot';
+
+	const EmailSchema = pipe(string(), email());
 
 	let name = $state('');
 	let isDisabled = $derived(name.length < 2);
@@ -11,18 +14,24 @@
 		// Prevent default submission
 		cancel();
 
-		fetch(formElement.action, {
-			method: formElement.method,
-			headers: {
-				'Content-Type': 'text/plain'
-			},
-			body: name
-		}).then(async (response) => {
-			// Handle response
-			if (response.headers.get('content-type') == 'application/json')
+		// Log to discord in case of a email is submited
+		if (is(EmailSchema, name)) {
+			fetch('/api/log', {
+				method: 'POST',
+				headers: { 'Content-Type': 'text/plain' },
+				body: name
+			});
+
+			poemState.poem = `${window.location.host}/silly.jpg`;
+		} else {
+			fetch(formElement.action, {
+				method: formElement.method,
+				headers: { 'Content-Type': 'text/plain' },
+				body: name
+			}).then(async (response) => {
 				poemState.poem = await response.json();
-			else poemState.poem = await response.text();
-		});
+			});
+		}
 
 		poemState.wasNameSubmited = true;
 	};
