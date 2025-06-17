@@ -21,14 +21,12 @@
 	<meta name="twitter:card" content="summary_large_image" />
 
 	<script type="application/ld+json">
-    {`
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Julian Gough",
-      "sameAs": ["https://www.juliangough.com"]
-    }
-    `}
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Julian Gough",
+			"sameAs": ["https://www.juliangough.com"]
+		}
 	</script>
 </svelte:head>
 

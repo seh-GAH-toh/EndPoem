@@ -1,4 +1,4 @@
-import { is, pipe, string, minLength, safeParse } from 'valibot';
+import { pipe, string, minLength, safeParse } from 'valibot';
 import { NAME_WEBHOOK } from '$env/static/private';
 import poem from '$lib/server/poem.json';
 import { error } from '@sveltejs/kit';

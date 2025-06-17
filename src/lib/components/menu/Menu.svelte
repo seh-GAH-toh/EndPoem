@@ -5,7 +5,7 @@
 	import Github from '$lib/components/menu/icons/Github.svelte';
 	import TextSpeed from '$lib/components/menu/icons/TextSpeed.svelte';
 
-	import { fade, slide } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 
 	let isMenuOpen = $state(false);
 	let firsApareance = $state(true);
@@ -16,7 +16,7 @@
 </script>
 
 <nav
-	class="fade-in bg-base-menu dark:bg-base-menu-dark dark:text-base-text-dark dark:outline-base-text-dark text-base-text outline-base-text fixed right-4 top-4 z-10 overflow-hidden rounded-full p-4 focus-within:outline-1 sm:left-5 sm:right-auto sm:top-10 md:left-8 lg:left-16"
+	class="fade-in bg-base-menu dark:bg-base-menu-dark dark:text-base-text-dark dark:outline-base-text-dark text-base-text outline-base-text fixed top-4 right-4 z-10 overflow-hidden rounded-full p-4 focus-within:outline-1 sm:top-10 sm:right-auto sm:left-5 md:left-8 lg:left-16"
 >
 	<button
 		aria-label="Menu"

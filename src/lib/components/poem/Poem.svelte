@@ -3,7 +3,6 @@
 	import EasterEgg from '$lib/components/poem/EasterEgg.svelte';
 	import { fade } from 'svelte/transition';
 	import { poemState } from '$lib/states/poem.svelte.js';
-	import { onMount } from 'svelte';
 </script>
 
 <section

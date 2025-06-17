@@ -1,5 +1,5 @@
 <script>
-	import { poemState, togglePoemSpeed, currentSpeed } from '$lib/states/poem.svelte.js';
+	import { togglePoemSpeed, currentSpeed } from '$lib/states/poem.svelte.js';
 </script>
 
 <li class="flex aspect-square w-6">

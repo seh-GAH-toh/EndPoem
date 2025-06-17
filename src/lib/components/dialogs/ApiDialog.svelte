@@ -85,7 +85,7 @@
 				<p>
 					<strong>Example:</strong>
 				</p>
-				<pre class="bg-base-bg dark:bg-base-bg-dark whitespace-pre-wrap rounded p-1.5"><code
+				<pre class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5 whitespace-pre-wrap"><code
 						>{json}</code
 					></pre>
 				<p>

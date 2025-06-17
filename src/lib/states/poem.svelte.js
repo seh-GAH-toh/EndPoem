@@ -12,7 +12,7 @@ export const poemState = $state({
 
 export let currentSpeed = Object.keys(Speeds).find((key) => Speeds[key] === poemState.speed);
 
-export const togglePoemSpeed = (() => {
+export const togglePoemSpeed = () => {
 	switch (poemState.speed) {
 		case Speeds.Slow:
 			poemState.speed = Speeds.Medium;
@@ -26,4 +26,4 @@ export const togglePoemSpeed = (() => {
 		default:
 			break;
 	}
-});
+};
