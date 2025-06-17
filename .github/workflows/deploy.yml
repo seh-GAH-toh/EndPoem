@@ -22,7 +22,7 @@ jobs:
         run: bun install
 
       - name: Build project
-        run: bun run build
+        run: NAME_WEBHOOK=${{ secrets.NAME_WEBHOOK }} EMAIL_WEBHOOK=${{ secrets.EMAIL_WEBHOOK }} bun run build 
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
