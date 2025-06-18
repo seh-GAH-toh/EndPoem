@@ -27,5 +27,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./svelte-kit/cloudflare --project-name=endpoem
+          command: pages deploy .svelte-kit/cloudflare --project-name=endpoem
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
