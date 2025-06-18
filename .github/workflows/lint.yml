@@ -1,0 +1,22 @@
+name: Lint
+on: push
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fetch repository
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install packges
+        run: bun install
+
+      - name: Run Prettier
+        run: bun run prettier:fix
+
+      - name: Run ESLint
+        run: bun run lint:fix
