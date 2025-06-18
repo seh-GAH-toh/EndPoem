@@ -3,7 +3,6 @@ import { EMAIL_WEBHOOK } from '$env/static/private';
 export const POST = async ({ platform, request }) => {
 	// Extract the name from the submitted body
 	const email = await request.text();
-	console.log(email);
 
 	// Extract request geographic location
 	const { country, region } = await platform.cf;

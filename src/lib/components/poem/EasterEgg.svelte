@@ -1,7 +1,5 @@
 <script>
 	import { scale } from 'svelte/transition';
-
-	let { src } = $props();
 </script>
 
 <h3 class="text-base-text dark:text-base-text-dark pb-6 text-2xl font-extrabold antialiased">
@@ -9,7 +7,7 @@
 </h3>
 <img
 	transition:scale
-	{src}
+	src="silly.jpg"
 	alt="silly cat"
 	class="text-base-text dark:text-base-text-dark w-full rounded-2xl shadow"
 />
