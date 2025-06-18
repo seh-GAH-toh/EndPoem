@@ -22,7 +22,7 @@
 				body: name
 			});
 
-			poemState.poem = `${window.location.host}/silly.jpg`;
+			poemState.poem = false;
 		} else {
 			fetch(formElement.action, {
 				method: formElement.method,

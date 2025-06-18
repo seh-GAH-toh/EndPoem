@@ -2,7 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="%sveltekit.assets%/16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/32x32.png" />
+		<link rel="icon" type="image/svg+xml" sizes="any" href="%sveltekit.assets%/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="%sveltekit.assets%/apple-touch-icon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link
 			rel="preload"
@@ -32,9 +35,6 @@
 		data-sveltekit-preload-data="hover"
 		class="bg-base-bg dark:bg-base-bg-dark box-content h-screen min-h-screen w-full"
 	>
-		<div
-			class="fixed h-2 w-full bg-red-500 sm:bg-orange-500 md:bg-yellow-500 lg:bg-green-500 xl:bg-blue-500 2xl:bg-purple-500"
-		></div>
 		<main class="relative h-full w-full p-4">%sveltekit.body%</main>
 	</body>
 </html>
