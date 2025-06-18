@@ -1,16 +1,14 @@
-name: Deploy Production
 on:
   push:
     branches:
       - main
 jobs:
-  deploy-production:
-    name: Deploy to Cloudflare Pages
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       deployments: write
-
+    name: Deploy to Cloudflare Pages
     steps:
       - name: Fetch repository
         uses: actions/checkout@v4
