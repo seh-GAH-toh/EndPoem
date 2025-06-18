@@ -15,7 +15,7 @@
 		{#if typeof poemState.poem === 'object'}
 			<Phrase poem={poemState.poem} duration={poemState.speed} />
 		{:else}
-			<EasterEgg src={poemState.poem} />
+			<EasterEgg />
 		{/if}
 	</article>
 </section>
