@@ -9,7 +9,6 @@
 	title="End Poem by Julian Gough"
 	description="The End Poem is a freehand poem written by Julian Gough that appears when the player finishes Minecraft. It has been in the public domain since 2022."
 	keywords="minecraft, julian, gough, julian gough, poem, end, end poem, the end, the end poem, minecraft poem, julian gough poem, julian gough minecraft"
-	base="https://theendpoem.com/"
 	applicationName="End Poem"
 	themeColor="#f2f2f2"
 	notranslate="true"
