@@ -1,4 +1,5 @@
 import helmet from "sveltekit-helmet";
+import { randomBytes } from "crypto"
 
 export const handle = helmet({
     strictTransportSecurity: {
@@ -7,7 +8,7 @@ export const handle = helmet({
     },
     contentSecurityPolicy: {
         directives: {
-            "script-src": ["'self'", "'https://theendpoem.com'"]
+            "script-src": ["'self'", `'nonce-${randomBytes(32).toString("hex")}'`]
         }
     }
 });
