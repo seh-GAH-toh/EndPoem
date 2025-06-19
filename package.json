@@ -33,6 +33,7 @@
 		"vite": "^6.3.5"
 	},
 	"dependencies": {
+		"sveltekit-helmet": "^2.1.0",
 		"valibot": "^1.1.0",
 		"wrangler": "^4.20.2"
 	}
