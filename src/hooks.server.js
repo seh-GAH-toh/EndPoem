@@ -1,5 +1,5 @@
 import helmet from "sveltekit-helmet";
-import { randomBytes } from "crypto"
+import { randomBytes } from "node:crypto"
 
 export const handle = helmet({
     strictTransportSecurity: {
