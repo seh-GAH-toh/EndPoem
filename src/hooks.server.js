@@ -7,7 +7,7 @@ export const handle = helmet({
     },
     contentSecurityPolicy: {
         directives: {
-            "script-src": ["'self'", "'theendpoem.com'"]
+            "script-src": ["'self'", "'https://theendpoem.com'"]
         }
     }
 });
