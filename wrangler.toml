@@ -1,3 +1,4 @@
 compatibility_date = "2022-04-05"
+compatibility_flags = [ "nodejs_compat" ]
 pages_build_output_dir=".svelte-kit/cloudflare"
 name="endpoem"
