@@ -1,5 +1,4 @@
 import helmet from "sveltekit-helmet";
-import { randomBytes } from "node:crypto"
 
 export const handle = helmet({
     strictTransportSecurity: {
@@ -8,7 +7,7 @@ export const handle = helmet({
     },
     contentSecurityPolicy: {
         directives: {
-            "script-src": ["'self'", `'nonce-${randomBytes(32).toString("hex")}'`]
+            "script-src": ["'self'", `'unsafe-inline'`]
         }
     }
 });
