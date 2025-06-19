@@ -5,4 +5,9 @@ export const handle = helmet({
         maxAge: 63072000,
         preload: true,
     },
+    contentSecurityPolicy: {
+        directives: {
+            "script-src": ["`self", "`theendpoem.com"]
+        }
+    }
 });
