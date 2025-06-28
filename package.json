@@ -30,7 +30,7 @@
 		"svelte": "^5.34.8",
 		"svelte-seo": "^1.6.1",
 		"tailwindcss": "^4.1.11",
-		"vite": "^6.3.5"
+		"vite": "^7.0.0"
 	},
 	"dependencies": {
 		"sveltekit-helmet": "^2.1.0",
