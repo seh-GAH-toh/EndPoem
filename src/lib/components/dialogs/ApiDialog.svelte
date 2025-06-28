@@ -19,6 +19,7 @@
 
 {#if menuState.isApiOpen}
 	<dialog
+		aria-modal="true"
 		transition:fade
 		class="text-base-text dark:text-base-text-dark fixed inset-0 flex h-full w-full items-center justify-center bg-transparent p-4 backdrop-blur-2xl md:p-8"
 	>
@@ -85,7 +86,7 @@
 				<p>
 					<strong>Example:</strong>
 				</p>
-				<pre class="bg-base-bg dark:bg-base-bg-dark rounded p-1.5 whitespace-pre-wrap"><code
+				<pre class="bg-base-bg dark:bg-base-bg-dark whitespace-pre-wrap rounded p-1.5"><code
 						>{json}</code
 					></pre>
 				<p>

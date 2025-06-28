@@ -12,7 +12,7 @@
 	<button
 		onclick={handleClick}
 		class="outline-base-text dark:outline-base-text-dark w-full cursor-pointer focus:outline-1"
-		aria-label="API Reference"
+		aria-label={!menuState.isApiOpen ? 'Open API Reference' : 'Close API Reference'}
 		title="API Reference"
 	>
 		<svg

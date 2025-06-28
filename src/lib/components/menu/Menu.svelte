@@ -16,18 +16,17 @@
 </script>
 
 <nav
-	class="fade-in bg-base-menu dark:bg-base-menu-dark dark:text-base-text-dark dark:outline-base-text-dark text-base-text outline-base-text fixed top-4 right-4 z-10 overflow-hidden rounded-full p-4 focus-within:outline-1 sm:top-10 sm:right-auto sm:left-5 md:left-8 lg:left-16"
+	class="fade-in bg-base-menu dark:bg-base-menu-dark dark:text-base-text-dark dark:outline-base-text-dark text-base-text outline-base-text fixed right-4 top-4 z-10 overflow-hidden rounded-full p-4 focus-within:outline-1 sm:left-5 sm:right-auto sm:top-10 md:left-8 lg:left-16"
 >
 	<button
-		aria-label="Menu"
-		title="Menu"
+		title={!isMenuOpen ? 'Open Menu' : 'Close Menu'}
 		class="flex aspect-square w-6 cursor-pointer outline-0"
 		onclick={handleMenu}
 	>
 		<MenuIcon {isMenuOpen} {firsApareance} />
 	</button>
 	{#if isMenuOpen}
-		<ul class="flex flex-col gap-4 pt-4" transition:slide>
+		<ul class="flex flex-col gap-4 pt-4" transition:slide role="menubar">
 			<About />
 			<Api />
 			<Github />

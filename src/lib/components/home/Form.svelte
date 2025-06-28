@@ -49,6 +49,9 @@
 		id="name"
 		autocomplete="off"
 		placeholder="Name"
+		aria-label="player"
+		autocorrect="off"
+		required
 		bind:value={name}
 		class="text-base-text dark:text-base-text-dark font-base outline-base-text dark:outline-base-text-dark w-full rounded-3xl px-4 antialiased outline-0 focus:outline-1"
 	/>

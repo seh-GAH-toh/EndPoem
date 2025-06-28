@@ -49,7 +49,7 @@
 		transition:fade={{ duration }}
 		onintroend={onAnimationComplete}
 		class={[
-			'font-base text-base leading-7 break-words antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10',
+			'font-base break-words text-base leading-7 antialiased transition-all duration-200 ease-in-out sm:leading-8 md:text-lg md:leading-10',
 			entity
 				? 'text-poem-green dark:text-poem-green-dark ml-10 italic sm:ml-12 md:ml-14'
 				: 'text-poem-blue dark:text-poem-blue-dark font-medium'
