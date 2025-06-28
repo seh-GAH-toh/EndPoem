@@ -5,6 +5,7 @@
 
 {#if menuState.isAboutOpen}
 	<dialog
+		aria-modal="true"
 		transition:fade
 		class="fixed inset-0 flex h-full w-full items-center justify-center bg-transparent p-4 backdrop-blur-2xl md:p-8"
 	>

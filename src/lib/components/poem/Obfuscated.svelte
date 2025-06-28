@@ -12,4 +12,6 @@
 	}, 120);
 </script>
 
-<span class="inline-flex w-[4.6rem] justify-end overflow-hidden">{string}</span>
+<span aria-label="obfuscated text" class="inline-flex w-[4.6rem] justify-end overflow-hidden"
+	>{string}</span
+>

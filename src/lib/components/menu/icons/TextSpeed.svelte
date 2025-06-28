@@ -27,7 +27,7 @@
 <li class="flex aspect-square w-6">
 	<button
 		class="outline-base-text dark:outline-base-text-dark w-full cursor-pointer focus:outline-1"
-		aria-label={`Text Speed - ${getCurrentSpeed(poemState.speed)}`}
+		aria-label={`Text Speed ${getCurrentSpeed(poemState.speed)}`}
 		title={`Text Speed - ${getCurrentSpeed(poemState.speed)}`}
 		onclick={togglePoemSpeed}
 	>

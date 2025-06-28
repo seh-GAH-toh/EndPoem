@@ -12,7 +12,7 @@
 	<button
 		onclick={handleClick}
 		class="outline-base-text dark:outline-base-text-dark w-full cursor-pointer focus:outline-1"
-		aria-label="About"
+		aria-label={!menuState.isAboutOpen ? 'Open About' : 'Close About'}
 		title="About"
 	>
 		<svg
