@@ -13,6 +13,8 @@ const NameValidation = pipe(
 );
 
 export const POST = async ({ platform, request }) => {
+
+
 	// Extract the name from the submitted body
 	const name = await request.text();
 
