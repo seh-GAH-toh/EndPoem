@@ -1,9 +1,6 @@
 export default {
     async fetch(request) {
-        const url = new URL(request.url);
-        const target = 'https://theendpoem.com/api/poem';
-
-        return fetch(target, {
+        return fetch('https://theendpoem.com/api/poem', {
             method: request.method,
             headers: request.headers,
             body: request.body
