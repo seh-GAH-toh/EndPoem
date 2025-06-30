@@ -4,19 +4,19 @@
 	async function togglePoemSpeed() {
 		switch (poemState.speed) {
 			case 600:
-				poemState.speed = 1000;
-				break;
-			case 1000:
 				poemState.speed = 1500;
 				break;
 			case 1500:
+				poemState.speed = 1000;
+				break;
+			case 1000:
 				poemState.speed = 600;
 				break;
 		}
 	}
 
 	function currentSpeed(speed) {
-		if (speed === 600) return 'Slow';
+		if (speed === 1500) return 'Slow';
 		if (speed === 1000) return 'Medium';
 		else return 'Fast';
 	}
@@ -68,7 +68,7 @@
 							values="M12 14C12 14 12 14 12 14C12 14 12 14 12 14C12 14 12 14 12 14C12 14 12 14 12 14Z;M14 14C14 15.1 13.1 16 12 16C10.9 16 10 15.1 10 14C10 12.9 12 4 12 4C12 4 14 12.9 14 14Z"
 						/></path
 					>
-					{#if poemState.speed === 600}
+					{#if poemState.speed === 1500}
 						<animateTransform
 							fill="freeze"
 							attributeName="transform"
