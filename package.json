@@ -26,7 +26,7 @@
 		"globals": "^16.5.0",
 		"prettier": "^3.7.4",
 		"prettier-plugin-svelte": "^3.4.0",
-		"prettier-plugin-tailwindcss": "^0.6.14",
+		"prettier-plugin-tailwindcss": "^0.7.0",
 		"svelte": "^5.45.5",
 		"svelte-seo": "^1.7.1",
 		"tailwindcss": "^4.1.17",
